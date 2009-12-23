@@ -1,0 +1,42 @@
+html,body{ padding: 0px; margin: 0px; background-color: black; color: white; }
+* { font-family: Arial, Helvetica, sans-serif; font-weight: lighter; }
+#header, #footer { 
+    height: 70px;
+    background-color: black;
+    color: white;	
+}
+
+#header a, #footer a { color: white; border-bottom: 1px dashed black; text-decoration: none }
+#header a:hover, #footer a:hover { border-bottom: 1px dashed white; }
+
+#header h1{
+    line-height: 70px;
+    margin: 0px;
+}
+#header #entrance {
+    line-height: 70px;
+    font-size: 10pt;
+    float: right;
+}
+
+#middle-wrap {
+    background-color: white;
+    color: black;
+    background: url(/images/middle-bg.png) center center;
+}
+
+.width-wrap {
+    margin: auto;
+    width: 842px;
+}
+
+#middle {
+    padding: 8px 20px; 
+}
+
+#copyright { text-align: center; font-size: 10pt; padding: 20px; }
+
+#footer { font-size: 8pt; }
+#footer #left   { width: 321px; float:left; text-align: right; }
+#footer #center { width: 200px; float:left; text-align: center; }
+#footer #right  { width: 321px; float:left; text-align: left; }

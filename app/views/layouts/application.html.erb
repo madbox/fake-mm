@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>FAKE-MUSICAL MAGAZINE (development)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content=""/>
+    <%= stylesheet_link_tag 'web' %>
+    <%= javascript_include_tag :defaults %>
+  </head>
+  <body>
+    
+    <div id="header">
+      <div class="width-wrap">
+	<div id="entrance"><%= link_to 'Вход', '' -%></div>
+	<h1>FAKE-MUSICAL MAGAZINE</h1>
+      </div>
+    </div>
+
+    <div id="middle-wrap">
+      <div id="middle" class="width-wrap">
+	<div id="nav">nav</div>
+	<div id="content">
+	  <%= yield %>
+	</div>
+      </div>
+      <div id="copyright">FAKE-MM © 2007-2009</div>
+    </div>
+    
+    <div id="footer">
+      <div class="width-wrap">
+	<div id="left">
+	  <p>Наши партнёры:</p>
+	  <p>www.art-shot.ru www.alba-studio.ru www.givana-studio.ru</p>
+ 	</div>
+	<div id="center">
+	  <img src="/images/fake-logo.png" width='180px' alt='logo' title='logo' />
+	</div>
+	<div id="right">
+	  <p>Наши партнёры:</p>
+	  <p>www.art-shot.ru www.alba-studio.ru www.givana-studio.ru</p>
+	</div>
+      </div>
+    </div>
+    
+  </body>
+</html>
