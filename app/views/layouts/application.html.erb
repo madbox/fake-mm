@@ -12,17 +12,54 @@
     
     <div id="header">
       <div class="width-wrap">
-	<div id="entrance"><%= link_to 'Вход', '' -%></div>
-	<h1>FAKE-MUSICAL MAGAZINE</h1>
+	<div id="entrance">
+	  <% unless current_user %>
+  	    <%= link_to 'Вход', login_path -%>
+	    <%= link_to 'Регистрация', register_path -%>
+	  <% else %>
+	    <%= link_to 'Профиль', profile_path -%>
+  	    <%= link_to 'Выход', logout_path -%>
+	  <% end %>
+	</div>
+	<h1><%= link_to 'FAKE-MUSICAL MAGAZINE', root_path -%></h1>
       </div>
     </div>
 
     <div id="middle-wrap">
       <div id="middle" class="width-wrap">
-	<div id="nav">nav</div>
+	<div id="nav">
+	  <div id="top-menu" class="menu">
+	    <ul>
+	      <li class="first"><%= link_to 'Главная', '' -%></li>
+	      <li><%= link_to 'О журнале', '' -%></li>
+	      <li><%= link_to 'Поиск', '' -%></li>
+	      <li><%= link_to 'Правила пользования', '' -%></li>
+	      <li><%= link_to 'Статистика', '' -%></li>
+	      <li class="last"><%= link_to 'Обратная связь', '' -%></li>
+	    </ul>
+	  </div>
+	  <div class="menu-header">Главная</div>
+	  <div id="main-menu" class="menu">
+	    <ul>
+	      <li class="first"><%= link_to 'Cover', '' -%></li>
+	      <li><%= link_to 'Новости', '' -%></li>
+	      <li><%= link_to 'Features', '' -%></li>
+	      <li><%= link_to 'Рубрики', '' -%></li>
+	      <li><%= link_to 'Рецензии', '' -%></li>
+	      <li><%= link_to 'Интерактив', '' -%></li>
+	      <li><%= link_to 'Classifields', '' -%></li>
+	      <li><%= link_to 'Lists', '' -%></li>
+	      <li><%= link_to 'Афиша', '' -%></li>
+	      <li class="last"><%= link_to 'Фотоальбом', '' -%></li>
+	    </ul>
+	  </div>
+	  <div class="menu-header">Не главная</div>
+	</div>
+
 	<div id="content">
 	  <%= yield %>
 	</div>
+
       </div>
       <div id="copyright">FAKE-MM © 2007-2009</div>
     </div>

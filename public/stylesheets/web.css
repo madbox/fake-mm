@@ -1,5 +1,6 @@
 html,body{ padding: 0px; margin: 0px; background-color: black; color: white; }
 * { font-family: Arial, Helvetica, sans-serif; font-weight: lighter; }
+a { text-decoration: none; }
 #header, #footer { 
     height: 70px;
     background-color: black;
@@ -31,8 +32,18 @@ html,body{ padding: 0px; margin: 0px; background-color: black; color: white; }
 }
 
 #middle {
-    padding: 8px 20px; 
+    padding: 0px 20px 8px 20px; 
 }
+
+#nav { padding: 1px 0px; }
+#nav .menu ul { margin: 0px; padding: 0px; list-style-type: none; }
+#nav .menu li { display: inline; padding-left: 4px; padding-right: 8px; border-right: 1px solid black; }
+#nav .menu li.first{ padding-left: 0px; }
+#nav .menu li.last{ border: none;}
+#nav div.menu{ margin: 8px; font-size: 10pt; }
+#nav .menu-header { background-color: black; color: white; text-align: center; }
+
+#contert {}
 
 #copyright { text-align: center; font-size: 10pt; padding: 20px; }
 
@@ -40,3 +51,11 @@ html,body{ padding: 0px; margin: 0px; background-color: black; color: white; }
 #footer #left   { width: 321px; float:left; text-align: right; }
 #footer #center { width: 200px; float:left; text-align: center; }
 #footer #right  { width: 321px; float:left; text-align: left; }
+
+/* Registration page: Users/new */
+#big-title { text-align: center;  margin: 90px 0px 40px 0px; }
+#big-title h1 { font-weight: 900; font-size: 115pt; margin: 0px; padding: 0px; line-height: 110px; }
+#big-title p { font-size: 35pt; text-transform: uppercase; margin: 0px }
+#big-title strong { font-weight: 900; }
+
+#register-form { width: 420px; margin: 0px auto; }

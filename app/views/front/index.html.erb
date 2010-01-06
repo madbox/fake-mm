@@ -1,2 +1,15 @@
-<h1>Front#index</h1>
-<p>Find me in app/views/front/index.html.erb</p>
+<h1>Main page</h1>
+
+<% if current_user %>
+<h2>Controls</h2>
+<ul>
+  <li><%= link_to 'new article', new_article_path -%></li>
+</ul>
+<% end %>
+
+<h2>Articles</h2>
+<ul>
+  <% for article in @articles do %>
+  <li><%= link_to article.title, article %></li>
+  <% end %>
+</ul>

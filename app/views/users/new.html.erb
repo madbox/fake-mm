@@ -1,0 +1,34 @@
+<div id="big-title">
+  <h1>FAKE-MM</h1>
+  <p><strong>Your color</strong> Your style</p>
+</div>
+
+<div id="register-form">
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+  
+  <table>
+    <tr>
+      <td>
+	<%= f.label :email %><br />
+	<%= f.text_field :email %>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+	<%= f.label :password %><br />
+	<%= f.password_field :password %>
+      </td>
+      <td>
+	<%= f.label :password_confirmation %><br />
+	<%= f.password_field :password_confirmation %>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+</div

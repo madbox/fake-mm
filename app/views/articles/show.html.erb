@@ -1,0 +1,22 @@
+<p>
+  <b>Title:</b>
+  <%=h @article.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @article.content %>
+</p>
+
+<p>
+  <b>Image-vl:</b>
+  <%=h @article.image_vl %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @article.user.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_article_path(@article) %>
