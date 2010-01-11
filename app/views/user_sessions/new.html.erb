@@ -1,17 +1,28 @@
-<h1>New user_session</h1>
+<div id="big-title">
+  <h1>FAKE-MM</h1>
+  <p><strong>Your color</strong> Your style</p>
+</div>
 
+<div id="register-form">
 <% form_for(@user_session) do |f| %>
   <%= f.error_messages %>
+  
+  <table>
+    <tr>
+      <td>
+	<%= f.label t('activerecord.attributes.user.email') %><br />
+	<%= f.text_field :email %>
+      </td>
+      <td>
+	<%= f.label t('activerecord.attributes.user.password') %><br />
+	<%= f.password_field :password %>
+      </td>
+    </tr>
+  </table>
 
   <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit t('actions.login') %>
   </p>
 <% end %>
+</div
+

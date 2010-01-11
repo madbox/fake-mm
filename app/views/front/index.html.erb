@@ -1,12 +1,9 @@
-<div class="box">
-  <div id="news-of-the-day">
-    <h1>Новость дня</h1>
-    <img src="" />
-    <p>Собранием журнала было принято решение по продвижению интернет проектов FAKE-MM на общий обзор общественности. В данный момент активно продвигается страничка вконтакте, так же в скором времени начнётся продвижение li.ru. Методы продвижения выбирались из доступных. Журнал был строго ограничен в финансовом плане. Однако мы сумели позволить себе сделать пару вечеринок и забить клуб на ещё пару вечеринок. Всё что будет, будет не случайно. Работа продолжается.</p>
-    <div class="box-footer">Корреспондент: Джигурда Антон</div>
+<div>
+  <div id="news-of-the-day" class="box h500">
+    <%= render @article, :type => :news_of_the_day %>
   </div>
 
-  <div id="announcement">
+  <div id="announcement" class="box h500">
     <h1>Афиша</h1>
     <p>Какой-то контент, очень длинный , очень длинный...</p>
     <div class="box-footer">Вся афиша</div>
@@ -14,47 +11,34 @@
 
   <div class="clear"></div>
 
-  <div id="features">
+  <div id="features" class=" box h200">
     <h1>Features</h1>
-    <div class="feature first">
+    <div class="feature box first">
       <img src="" />
       <p>Какой-то контент, очень длинный , очень длинный...</p>
       <div class="box-footer">10 янв 09</div>
+      <div class="clear"></div>
     </div>
-    <div class="feature">
+    <div class="feature box">
       <img src="" />
       <p>Какой-то контент, очень длинный , очень длинный...</p>
       <div class="box-footer">10 янв 09</div>
+      <div class="clear"></div>
     </div>
   </div>
-  <div id="reviews">
+  <div id="reviews" class="box h200">
     <h1>Рецензии</h1>
     <p>Какой-то контент, очень длинный , очень длинный...</p>
     <div class="box-footer">10 янв 09</div>
+      <div class="clear"></div>
   </div>
-  <div id="categories">
+  <div id="categories" class="box h200">
     <h1>Рубрики</h1>
     <p>Какой-то контент, очень длинный , очень длинный...</p>
     <div class="box-footer">10 янв 09</div>
+      <div class="clear"></div>
   </div>
 
   <div class="clear"></div>
   
 </div>
-<!--
-<h1>Main page</h1>
-
-<% if current_user %>
-<h2>Controls</h2>
-<ul>
-  <li><%= link_to 'new article', new_article_path -%></li>
-</ul>
-<% end %>
-
-<h2>Articles</h2>
-<ul>
-  <% for article in @articles do %>
-  <li><%= link_to article.title, article %></li>
-  <% end %>
-</ul>
--->

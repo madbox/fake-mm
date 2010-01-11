@@ -1,0 +1,7 @@
+<% if type == :news_of_the_day %>
+    <h1><%= link_to t('actions.show_news_of_the_day'), article_path(@article) -%></h1>
+    <img src="<%= @article.image.url -%>" />
+    <h2><%= @article.title -%></h2>
+    <p><%= @article.content -%></p>
+    <div class="box-footer">Корреспондент: <%= @article.user.name -%></div>
+<% end %>

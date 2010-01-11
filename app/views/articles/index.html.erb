@@ -1,4 +1,4 @@
-<h1>Listing articles</h1>
+<h1><%=t 'activerecord.models.articles' -%></h1>
 
 <table>
   <tr>
@@ -12,15 +12,15 @@
   <tr>
     <td><%=h article.title %></td>
     <td><%=h article.content %></td>
-    <td><%=h article.image-vl %></td>
+    <td><%=h article.image.url %></td>
     <td><%=h article.user_id %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to t('actions.show'), article %></td>
+    <td><%= link_to t('actions.edit'), edit_article_path(article) %></td>
+    <td><%= link_to t('actions.destroy'), article, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New article', new_article_path %>
+<%= link_to t('actions.new_article'), new_article_path %>

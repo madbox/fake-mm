@@ -1,0 +1,22 @@
+ru:
+  actions:
+    login: "Войти"
+    edit: "Изменить"
+    show: "Показать"
+    destroy: "Удалить"
+    show_articles: "Статьи"
+    new_article: "Новая статья"
+    show_news_of_the_day: "Новость дня"
+  titles:
+    new_article: "Создание статья"
+    edit_article: "Редактирование статьи"
+  activerecord:
+    models:
+      user: "Профиль"
+      users: "Пользователи"
+      article: "Статья"
+      articles: "Статьи"
+    attributes:
+      user:
+        email: "Почта"
+        password: "Пароль"

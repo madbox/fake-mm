@@ -1,8 +1,14 @@
-<h1>Prifile</h1>
+<h1><%= t('activerecord.models.user') -%></h1>
+
+<div id="user-menu">
+  <ul>
+    <li><%= link_to t('actions.show_articles'), articles_path -%></li>
+  </ul>
+</div>
 
 <p>
-  <b>Email:</b>
+  <b><%=t 'activerecord.attributes.user.email' -%></b>:
   <%=h @user.email %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to t('actions.edit'), edit_user_path(@user) %>
