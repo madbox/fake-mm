@@ -10,6 +10,8 @@ ru:
   titles:
     new_article: "Создание статья"
     edit_article: "Редактирование статьи"
+  misc:
+    unknown_user: "Неизвестный"
   activerecord:
     models:
       user: "Профиль"

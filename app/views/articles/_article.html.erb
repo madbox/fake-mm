@@ -3,5 +3,5 @@
     <img src="<%= @article.image.url -%>" />
     <h2><%= @article.title -%></h2>
     <p><%= @article.content -%></p>
-    <div class="box-footer">Корреспондент: <%= @article.user.name -%></div>
+    <div class="box-footer">Корреспондент: <%= link_to @article.user.name, user_path(@article.user) -%></div>
 <% end %>

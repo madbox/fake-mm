@@ -76,7 +76,7 @@ a { text-decoration: none; }
 	  text-align: center;
 	}
 .box h1 a {color: white; width: 100%; display: block; }
-.box h2 { font-size: 20pt; font-weight: 100; }
+.box h2 { font-size: 20pt; font-weight: 100; margin-top: 0.2em; }
 .box p { margin-bottom: 3em; font-size: 10pt;}
 
 div.h500 { position: relative; min-height: 500px; }

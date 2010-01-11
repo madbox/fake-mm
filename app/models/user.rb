@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   has_many :comments, :through => :articles
 
   def name
-    [lname, fname].join(' ')
+    if (str = [lname, fname].join(' ')).blank?
+      I18n.t('misc.unknown_user')
+    else
+      str
+    end
   end
 end
