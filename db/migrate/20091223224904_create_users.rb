@@ -1,6 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
+      # authlogic
       t.string    :email,               :null => false
       t.string    :crypted_password,    :null => false
       t.string    :persistence_token,   :null => false
@@ -14,10 +15,19 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :current_login_ip                                  
       t.string    :last_login_ip                                     
 
-      t.string    :nick,
-      t.string    :fname,
-      t.string    :lname,
+      # paperclip
+      t.string :avatar_file_name
+      t.string :avatar_content_type
+      t.integer :avatar_file_size
+      t.datetime :avatar_updated_at
+
+
+      t.string    :nick
+      t.string    :fname
+      t.string    :lname
       t.string    :sname
+      
+
 
       t.timestamps
     end

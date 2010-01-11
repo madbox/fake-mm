@@ -3,4 +3,5 @@ class Article < ActiveRecord::Base
   has_many :comments
 
   validates_presence_of :user
+  has_attached_file :image, :styles => {:normal => "400x300>"}, :default_style => :normal
 end
