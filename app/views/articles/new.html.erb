@@ -8,15 +8,31 @@
     <%= f.text_field :title %>
   </p>
   <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
     <%= f.label :content %><br />
     <%= f.text_area :content %>
   </p>
   <p>
-    <%= f.label :image %><br />
-    <%= f.file_field :image %>
+    <%= f.label :imagebv408x611 %><br />
+    <%= f.file_field :imagebv %>
+  </p>
+  <p>
+    <%= f.label :imagebh500x300 %><br />
+    <%= f.file_field :imagebh %>
+  </p>
+  <p>
+    <%= f.label :imagemv96x96 %><br />
+    <%= f.file_field :imagemv %>
+  </p>
+  <p>
+    <%= f.label :imagemh200x300 %><br />
+    <%= f.file_field :imagemh %>
   </p>
 
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit t('actions.create') %>
   </p>
 <% end %>

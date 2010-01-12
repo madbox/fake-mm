@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  filter_resource_access
+
   # GET /comments
   # GET /comments.xml
   def index
@@ -24,6 +26,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   # GET /comments/new.xml
   def new
+    @article = Article.find(params[:article_id])
     @comment = Comment.new
 
     respond_to do |format|
@@ -35,12 +38,14 @@ class CommentsController < ApplicationController
   # GET /comments/1/edit
   def edit
     @comment = Comment.find(params[:id])
+    @comment.article = Article.find(params[:article_id])
   end
 
   # POST /comments
   # POST /comments.xml
   def create
     @comment = Comment.new(params[:comment])
+    @comment.article = Article.find(params[:article_id])
 
     respond_to do |format|
       if @comment.save

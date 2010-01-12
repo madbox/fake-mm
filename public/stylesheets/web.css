@@ -94,3 +94,7 @@ div.h200 { position: relative; min-height: 200px; }
 
 /* Logged in menu */
 #user-menu { border: 1px solid black; }
+
+/* comments */
+
+.comment { margin: 0.5em; border: 1px solid black; }

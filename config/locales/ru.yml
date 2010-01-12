@@ -4,12 +4,19 @@ ru:
     edit: "Изменить"
     show: "Показать"
     destroy: "Удалить"
+    create: "Готово"
     show_articles: "Статьи"
     new_article: "Новая статья"
     show_news_of_the_day: "Новость дня"
+    new_comment: "Добавить коментарий"
   titles:
     new_article: "Создание статья"
     edit_article: "Редактирование статьи"
+    no_articles: "Нет статей"
+    announcement: "Афиша"
+    reviews: "Рецензии"
+    features: "Features"
+    categories: "Рубрики"
   misc:
     unknown_user: "Неизвестный"
   activerecord:

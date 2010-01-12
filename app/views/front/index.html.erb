@@ -1,10 +1,14 @@
 <div>
   <div id="news-of-the-day" class="box h500">
+    <% if @article %>
     <%= render @article, :type => :news_of_the_day %>
+    <% else %>
+    <h1><%= t 'titles.no_articles' -%></h1>
+    <% end %>
   </div>
 
   <div id="announcement" class="box h500">
-    <h1>Афиша</h1>
+    <h1><%= t 'titles.announcement' -%></h1>
     <p>Какой-то контент, очень длинный , очень длинный...</p>
     <div class="box-footer">Вся афиша</div>
   </div>
@@ -12,7 +16,7 @@
   <div class="clear"></div>
 
   <div id="features" class=" box h200">
-    <h1>Features</h1>
+    <h1><%= t 'titles.features' -%></h1>
     <div class="feature box first">
       <img src="" />
       <p>Какой-то контент, очень длинный , очень длинный...</p>
@@ -27,13 +31,13 @@
     </div>
   </div>
   <div id="reviews" class="box h200">
-    <h1>Рецензии</h1>
+    <h1><%= t 'titles.reviews' -%></h1>
     <p>Какой-то контент, очень длинный , очень длинный...</p>
     <div class="box-footer">10 янв 09</div>
       <div class="clear"></div>
   </div>
   <div id="categories" class="box h200">
-    <h1>Рубрики</h1>
+    <h1><%= link_to t('titles.categories'), categories_path -%></h1>
     <p>Какой-то контент, очень длинный , очень длинный...</p>
     <div class="box-footer">10 янв 09</div>
       <div class="clear"></div>

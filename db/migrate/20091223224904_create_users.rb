@@ -27,8 +27,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :lname
       t.string    :sname
       
-
-
       t.timestamps
     end
   end

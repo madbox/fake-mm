@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  filter_access_to :all
+
   def new
     @user = User.new
   end
@@ -14,7 +16,11 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = current_user
+    unless params[:id].blank?
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
   end
  
   def edit

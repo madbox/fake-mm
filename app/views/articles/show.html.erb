@@ -3,19 +3,20 @@
   <%=h @article.title %>
 </p>
 
+
+<p>
+  <b>Description:</b>
+  <%=h @article.content %>
+</p>
+
 <p>
   <b>Content:</b>
   <%=h @article.content %>
 </p>
 
 <p>
-  <b>Image-vl:</b>
-  <%=h @article.image_vl %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <%= image_tag @article.image.url %>
+  <b>Imagebv:</b>
+  <%= image_tag @article.imagebv.url %>
 </p>
 
 <p>
@@ -25,3 +26,13 @@
 
 
 <%= link_to 'Edit', edit_article_path(@article) %>
+
+<div id="comments">
+  <% for comment in @article.comments do %>
+    <%= render comment %>
+  <% end %>
+
+  <div id="comment-menu">
+    <%= link_to t('actions.new_comment'), new_article_comment_path(@article) -%>
+  </div>
+</div>

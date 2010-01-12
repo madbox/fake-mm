@@ -1,7 +1,28 @@
 <% if type == :news_of_the_day %>
-    <h1><%= link_to t('actions.show_news_of_the_day'), article_path(@article) -%></h1>
-    <img src="<%= @article.image.url -%>" />
-    <h2><%= @article.title -%></h2>
-    <p><%= @article.content -%></p>
-    <div class="box-footer">Корреспондент: <%= link_to @article.user.name, user_path(@article.user) -%></div>
+
+<h1><%= link_to t('actions.show_news_of_the_day'), article_path(article) -%></h1>
+<img src="<%= article.imagebv.url -%>" />
+<h2><%= article.title -%></h2>
+<p><%= article.content -%></p>
+<div class="box-footer">Корреспондент: <%= link_to article.user.name, user_path(article.user) -%></div>
+
+<% elsif type == :plain %>
+
+<h2><%= article.title -%></h2>
+<p><%= article.content -%></p>
+<p><%= article.image.url -%></p>
+
+<div id="article-info">
+  <ul>
+    <li><%= article.author -%></li>
+    <li><%= article.source -%></li>
+    <li><%= article.photographer -%></li>
+    <li><%= article.category.name -%></li>
+  </ul>
+</div>
+
+<% elsif type == :list_item %>
+
+<li><%= article.title -%> | <%= link_to t('actions.show'), article -%></li>
+
 <% end %>

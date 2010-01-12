@@ -11,8 +11,8 @@
 <% @articles.each do |article| %>
   <tr>
     <td><%=h article.title %></td>
-    <td><%=h article.content %></td>
-    <td><%=h article.image.url %></td>
+    <td><%=h article.description %></td>
+    <td><%=h article.imagebv.url %></td>
     <td><%=h article.user_id %></td>
     <td><%= link_to t('actions.show'), article %></td>
     <td><%= link_to t('actions.edit'), edit_article_path(article) %></td>

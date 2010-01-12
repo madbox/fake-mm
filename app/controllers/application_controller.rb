@@ -8,8 +8,15 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password
 
   helper_method :current_user, :current_user_session
-  
+
+#  before_filter { |c| Authorization.current_user = c.current_user }
+
   private
+  
+  def permission_denied
+    flash[:error] = I18n.t("errors.authorization_failed")
+    redirect_to root_url
+  end
   
   def current_user_session
     return @current_user_session if defined?(@current_user_session)

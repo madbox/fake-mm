@@ -1,0 +1,17 @@
+<p>
+  <b>Name:</b>
+  <%=h @category.name %>
+</p>
+
+<p>
+  <b>Articles:</b>
+  <ul>
+  <% for article in @category.articles do %>
+    <%= render article, :type => :list_item %>
+  <% end %>
+  </ul>
+</p>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

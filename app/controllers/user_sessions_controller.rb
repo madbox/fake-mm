@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  filter_access_to :all
+
   # GET /user_sessions/new
   # GET /user_sessions/new.xml
   def new

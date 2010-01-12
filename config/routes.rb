@@ -1,9 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :categories
+
   map.resource :user_sessions
   map.resource :profile, :controller => 'users'
-  map.resources :users
+  map.resources :users, :has_many => :articles
   map.resources :comments
-  map.resources :articles
+  map.resources :articles, :has_many => :comments
 
   # The priority is based upon order of creation: first created -> highest priority.
 

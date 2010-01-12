@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  filter_resource_access
+
   # GET /articles
   # GET /articles.xml
   def index
@@ -14,6 +16,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.xml
   def show
     @article = Article.find(params[:id])
+    @article.update_attribute( :views_count, @article.views_count + 1 )
 
     respond_to do |format|
       format.html # show.html.erb
