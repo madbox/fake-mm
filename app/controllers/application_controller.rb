@@ -9,14 +9,17 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :current_user_session
 
-#  before_filter { |c| Authorization.current_user = c.current_user }
+  def permission_denied
+    flash[:error] = I18n.t('errors.authorization_failed')
+    respond_to do |format|
+      format.html { redirect_to(:back) rescue redirect_to('/') }
+      # format.xml  { head :unauthorized }
+      # format.js   { head :unauthorized }
+    end
+  end
+
 
   private
-  
-  def permission_denied
-    flash[:error] = I18n.t("errors.authorization_failed")
-    redirect_to root_url
-  end
   
   def current_user_session
     return @current_user_session if defined?(@current_user_session)

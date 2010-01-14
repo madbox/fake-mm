@@ -3,7 +3,10 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :user_sessions
   map.resource :profile, :controller => 'users'
-  map.resources :users, :has_many => :articles
+  map.resources :users do |user|
+    user.resources :articles
+    user.resources :comments, :through => :articles
+  end
   map.resources :comments
   map.resources :articles, :has_many => :comments
 

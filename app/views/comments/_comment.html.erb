@@ -3,4 +3,8 @@
     User: <%= comment.user.name -%>
   </p>
   <p><%= comment.content -%></p>
+  <p>
+    <%= link_to t('actions.edit'), edit_article_comment_path(@article, comment) -%> |
+    <%= link_to t('actions.destroy'), comment, :method => :delete -%>
+  </p>
 </div>

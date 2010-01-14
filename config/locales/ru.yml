@@ -5,7 +5,11 @@ ru:
     show: "Показать"
     destroy: "Удалить"
     create: "Готово"
+    show_comments: "Комментарии"
+    show_my_comments: "Мои комментарии"
+    show_categories: "Рубрики"
     show_articles: "Статьи"
+    show_my_articles: "Мои статьи"
     new_article: "Новая статья"
     show_news_of_the_day: "Новость дня"
     new_comment: "Добавить коментарий"
@@ -19,6 +23,12 @@ ru:
     categories: "Рубрики"
   misc:
     unknown_user: "Неизвестный"
+  roles:
+    guest: "Гость"
+    customer: "Читатель"
+    admin: "Администратор"
+  errors:
+    authorization_failed: "Не достаточно прав для выполнения операции"
   activerecord:
     models:
       user: "Профиль"
@@ -29,3 +39,4 @@ ru:
       user:
         email: "Почта"
         password: "Пароль"
+        roles: "Роли"

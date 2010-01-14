@@ -3,7 +3,9 @@
 <div id="user-menu">
   <ul>
     <li><%= link_to t('actions.show_articles'), articles_path -%></li>
+    <li><%= link_to t('actions.show_my_articles'), user_articles_path(@user) -%></li>
     <li><%= link_to t('actions.show_comments'), comments_path -%></li>
+    <li><%= link_to t('actions.show_my_comments'), user_comments_path(@user) -%></li>
     <li><%= link_to t('actions.show_categories'), categories_path -%></li>
   </ul>
 </div>
@@ -11,6 +13,11 @@
 <p>
   <b><%=t 'activerecord.attributes.user.email' -%></b>:
   <%=h @user.email %>
+</p>
+
+<p>
+  <b><%=t 'activerecord.attributes.user.roles' -%></b>:
+  <%=h @user.role_symbols.map{|s| t("roles.#{s}")}.join(', ') %>
 </p>
 
 <%= link_to t('actions.edit'), edit_user_path(@user) %>

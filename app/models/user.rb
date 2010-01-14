@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   end
 
   def role_symbols
-    @role_symbols ||= [:guest, :customer]
+    # TODO: нориальные роли надо сделать
+    @role_symbols ||= ( email == 'admin@admin.ad' ? [:guest, :customer, :admin] : [:guest, :customer] )
   end
 end

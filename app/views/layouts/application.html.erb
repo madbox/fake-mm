@@ -27,6 +27,11 @@
 
     <div id="middle-wrap">
       <div id="middle" class="width-wrap">
+	
+	<% if flash.has_key? :error %>
+	<div id="flash" class="error"><%= flash[:error] -%></div>
+	<% end %>
+
 	<div id="nav">
 	  <div id="top-menu" class="menu">
 	    <ul>

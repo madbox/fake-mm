@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated!"
-      redirect_to profite_url
+      redirect_to profile_url
     else
       render :action => :edit
     end
