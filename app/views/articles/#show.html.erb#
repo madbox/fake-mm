@@ -3,6 +3,7 @@
 <% else %>
 
 <%= styled_field 'text', @article, :title %>
+
 <p>
   <b>Category:</b>
   <%=h @article.category.name %>

@@ -1,6 +1,8 @@
 class CreateArticles < ActiveRecord::Migration
   def self.up
     create_table :articles do |t|
+      t.string :sysname, :null => false
+
       t.string :title, :null => false
       t.string :custom_author, :default => ''
       t.string :custom_author_link, :default => ''

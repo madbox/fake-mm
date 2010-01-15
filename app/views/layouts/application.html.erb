@@ -35,10 +35,10 @@
 	<div id="nav">
 	  <div id="top-menu" class="menu">
 	    <ul>
-	      <li class="first"><%= link_to 'Главная', '' -%></li>
-	      <li><%= link_to 'О журнале', '' -%></li>
-	      <li><%= link_to 'Поиск', '' -%></li>
-	      <li><%= link_to 'Правила пользования', '' -%></li>
+	      <li class="first"><%= link_to 'Главная', root_url -%></li>
+	      <li><%= link_to 'О журнале', Article.find_by_sysname('about') -%></li>
+	      <li><%= link_to 'Поиск', '#' -%></li>
+	      <li><%= link_to 'Правила пользования', Article.find_by_sysname('rules') -%></li>
 	      <li><%= link_to 'Статистика', '' -%></li>
 	      <li class="last"><%= link_to 'Обратная связь', '' -%></li>
 	    </ul>
@@ -75,7 +75,7 @@
 	  <p>www.art-shot.ru www.alba-studio.ru www.givana-studio.ru</p>
  	</div>
 	<div id="center">
-	  <img src="/images/fake-logo1.png" width='180px' alt='logo' title='logo' />
+	  <img src="/images/logo.jpg" width='200px' alt='logo' title='logo' />
 	</div>
 	<div id="right">
 	  <p>Наши партнёры:</p>

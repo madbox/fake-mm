@@ -1,8 +1,8 @@
 class CreateCategories < ActiveRecord::Migration
   def self.up
     create_table :categories do |t|
-      t.string :name, :default => 'Unnamed'
-      t.boolean :public, :default => false
+      t.string :sysname, :null => false
+      t.boolean :public, :null => false, :default => false
 
       t.timestamps
     end

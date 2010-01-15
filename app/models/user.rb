@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   has_many :articles
   has_many :comments, :through => :articles
+  has_many :assignments
+  has_many :roles,    :through => :assignments
 
   has_attached_file :avatar, :styles => {:normal => "300x200"}, :default_style => :normal
 

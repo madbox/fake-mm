@@ -68,7 +68,7 @@ a { text-decoration: none; }
 /* Main page boxes */
 
 .box h1 { margin: 0px 0px 8px 0px; 
-	  padding: 2px; 
+	  padding: 2px 0px;; 
 	  background-color: black; 
 	  color: white; 
 	  text-transform: uppercase;
@@ -101,3 +101,9 @@ div.h200 { position: relative; min-height: 200px; }
 /* flash */
 #flash { margin: 0.5em 0px; padding: 0.5em; }
 #flash.error { background-color: #F88;}
+
+/* articles */
+#article-simple {margin: 8px; }
+#article-simple img {float: right;  padding-left: 8px; margin-bottom: 8px; }
+#article-simple.box h1 { width: 408px; }
+#article-simple .box-footer { position: relative; }

@@ -1,12 +1,22 @@
 ActionController::Routing::Routes.draw do |map|
+  map.review '/review'    , :controller => 'categories', :action => 'review'
+  map.features '/features', :controller => 'categories', :action => 'features'
+  map.news '/news'        , :controller => 'categories', :action => 'news'
+  map.resources :roles
+
+  map.resources :assigments
+  map.resources :styles
   map.resources :categories
 
   map.resource :user_sessions
   map.resource :profile, :controller => 'users'
   map.resources :users do |user|
     user.resources :articles
+    user.resources :assigments
     user.resources :comments, :through => :articles
+    user.resources :roles, :through => :assigments
   end
+
   map.resources :comments
   map.resources :articles, :has_many => :comments
 

@@ -13,6 +13,7 @@ ru:
     new_article: "Новая статья"
     show_news_of_the_day: "Новость дня"
     new_comment: "Добавить коментарий"
+    update: "Сохранить"
   titles:
     new_article: "Создание статья"
     edit_article: "Редактирование статьи"
@@ -23,6 +24,11 @@ ru:
     categories: "Рубрики"
   misc:
     unknown_user: "Неизвестный"
+  categories:
+    system: "Системная"
+    features: "Features"
+    news: "Новости"
+    review: "Рецензии"
   roles:
     guest: "Гость"
     customer: "Читатель"
@@ -40,3 +46,12 @@ ru:
         email: "Почта"
         password: "Пароль"
         roles: "Роли"
+      article:
+        title: "Заголовок"
+        sysname: "Системное имя"
+        description: "Описание"
+        content: "Содержание"
+        imagebv: "Картинка 408x611"
+        imagebh: "Картинка 500x300"
+        imagemv: "Картинка 96x96"
+        imagemh: "Картинка 200x300"

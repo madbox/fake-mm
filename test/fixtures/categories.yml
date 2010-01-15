@@ -1,4 +1,12 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 system:
-  name: System
+  sysname: "system"
+  public: false
+news:
+  sysname: "news"
+  public: true
+features:
+  sysname: "features"
+  public: true
+review:
+  sysname: "review"
+  public: true

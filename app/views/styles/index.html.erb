@@ -1,0 +1,22 @@
+<h1>Listing styles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Template</th>
+  </tr>
+
+<% @styles.each do |style| %>
+  <tr>
+    <td><%=h style.name %></td>
+    <td><%=h style.template %></td>
+    <td><%= link_to 'Show', style %></td>
+    <td><%= link_to 'Edit', edit_style_path(style) %></td>
+    <td><%= link_to 'Destroy', style, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New style', new_style_path %>

@@ -1,5 +1,5 @@
 class FrontController < ApplicationController
   def index
-    @article = Article.last
+    @article = Article.news.last
   end
 end

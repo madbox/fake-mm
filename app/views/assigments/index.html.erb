@@ -1,0 +1,22 @@
+<h1>Listing assigments</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Role</th>
+  </tr>
+
+<% @assigments.each do |assigment| %>
+  <tr>
+    <td><%=h assigment.user_id %></td>
+    <td><%=h assigment.role_id %></td>
+    <td><%= link_to 'Show', assigment %></td>
+    <td><%= link_to 'Edit', edit_assigment_path(assigment) %></td>
+    <td><%= link_to 'Destroy', assigment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New assigment', new_assigment_path %>
