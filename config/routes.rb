@@ -1,12 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
-  map.review '/review'    , :controller => 'categories', :action => 'review'
-  map.features '/features', :controller => 'categories', :action => 'features'
-  map.news '/news'        , :controller => 'categories', :action => 'news'
-  map.resources :roles
+  map.review '/review'    , :controller => 'categories', :action => 'show', :sysname => 'review'
+  map.features '/features', :controller => 'categories', :action => 'show', :sysname => 'features'
+  map.news '/news'        , :controller => 'categories', :action => 'show', :sysname => 'news'
+  map.connect '/categories/index_all', :controller => 'categories', :action => 'index_all'
+  map.resources :categories
 
+  map.resources :roles
   map.resources :assigments
   map.resources :styles
-  map.resources :categories
 
   map.resource :user_sessions
   map.resource :profile, :controller => 'users'

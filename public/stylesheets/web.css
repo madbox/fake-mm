@@ -1,7 +1,7 @@
 html,body{ padding: 0px; margin: 0px; background-color: black; color: white; }
 * { font-family: Arial, Helvetica, sans-serif; font-weight: lighter; }
 a { text-decoration: none; }
-
+p { font-size: 10pt; }
 *.clear { clear: both;}
 
 #header, #footer { 
@@ -77,11 +77,18 @@ a { text-decoration: none; }
 	}
 .box h1 a {color: white; width: 100%; display: block; }
 .box h2 { font-size: 20pt; font-weight: 100; margin-top: 0.2em; }
-.box p { margin-bottom: 3em; font-size: 10pt;}
+.box p { margin-bottom: 3em;}
 
-div.h500 { position: relative; min-height: 500px; }
-div.h200 { position: relative; min-height: 200px; }
+div.h500 { min-height: 500px; _height: 500px; }
+div.h200 { min-height: 200px; _height: 200px; }
+div.h150 { min-height: 150px; _height: 150px; }
+div.h172 { min-height: 172px; _height: 172px; }
+div.h98 { min-height: 98px; _height: 98px; }
+
+.column-wrap { position: relative; float: left; display: inline;}
+
 *.box-footer { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 20pt; position: absolute; bottom: 0px; right: 0px; width: 100%; }
+*.box-footer-plain { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 20pt; width: 100%; }
 
 #news-of-the-day { width: 408px; margin: 8px 0px 0px 8px; float:left; display: inline; }
 #announcement { width: 408px; margin: 8px 8px 0px 8px; float:left; display: inline; }
@@ -107,3 +114,11 @@ div.h200 { position: relative; min-height: 200px; }
 #article-simple img {float: right;  padding-left: 8px; margin-bottom: 8px; }
 #article-simple.box h1 { width: 408px; }
 #article-simple .box-footer { position: relative; }
+
+/* category show (list) */
+.category ul {margin: 8px 0px 8px 8px; padding: 0px; }
+.category li {display: block; float: left; width: 408px; height: 150px; margin-right: 8px; margin-bottom: 8px; }
+.category li .list-pic { margin-right: 8px; width: 96px; height: 96px; text-align: center; }
+.category li .list-pic-footer {background-color: #f1f1f1; margin-top: 8px; height: 27px; font-size: 8pt; padding: 4px 0px 0px 1px; position: absolute; bottom: 0px; right: 0px; width: 100%; line-height: 25px; }
+.category li h2 { color: black; background-color: #E1E1E1; font-size: 12pt; height: 44px; width: 300px; margin: 0px; padding: 2px; font-weight: bold; }
+.category hr{ border: 0px; border-bottom: 1px solid black; margin: 0px; padding: 0px;}

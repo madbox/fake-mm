@@ -14,6 +14,6 @@ authorization do
   end
   
   role :admin do
-    has_permission_on [:articles, :comments, :categories, :users, :user_sessions], :to => [:index, :new, :show, :create, :edit, :update, :destroy]
+    has_permission_on [:articles, :comments, :categories, :users, :user_sessions], :to => [:index, :new, :show, :create, :edit, :update, :destroy, :index_all]
   end
 end

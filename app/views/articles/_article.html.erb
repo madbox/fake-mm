@@ -25,4 +25,19 @@
 
 <li><%= article.title -%> | <%= link_to t('actions.show'), article -%></li>
 
+<% elsif type == :category_list_item %>
+
+<li>
+  <div class="h150 column-wrap list-pic">
+    <%= image_tag article.imagemv.url %>
+    <div class="list-pic-footer"><%= article.updated_at.to_s(:short) -%><hr/></div>
+  </div>
+  <div class="column-wrap h150">
+    <h2><%=h article.title -%></h2>
+    <p><%=h article.description -%></p>
+    <div class="box-footer"><%= link_to t('actions.read_next'), article -%></div>
+    <div class="clear"></div>
+  </div>
+</li>
+
 <% end %>

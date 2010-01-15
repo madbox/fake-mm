@@ -4,8 +4,7 @@ class User < ActiveRecord::Base
 
   has_many :articles
   has_many :comments, :through => :articles
-  has_many :assignments
-  has_many :roles,    :through => :assignments
+  has_and_belongs_to_many :roles, :join_table => "assigments"
 
   has_attached_file :avatar, :styles => {:normal => "300x200"}, :default_style => :normal
 
@@ -19,6 +18,6 @@ class User < ActiveRecord::Base
 
   def role_symbols
     # TODO: нориальные роли надо сделать
-    @role_symbols ||= ( email == 'admin@admin.ad' ? [:guest, :customer, :admin] : [:guest, :customer] )
+    @role_symbols ||= ( roles.map{|r|r.sysname.to_sym} << :guest )
   end
 end

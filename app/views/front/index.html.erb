@@ -1,5 +1,5 @@
 <div>
-  <div id="news-of-the-day" class="box h500">
+  <div id="news-of-the-day" class="box column-wrap h500">
     <% if @article %>
     <%= render @article, :type => :news_of_the_day %>
     <% else %>
@@ -7,7 +7,7 @@
     <% end %>
   </div>
 
-  <div id="announcement" class="box h500">
+  <div id="announcement" class="box column-wrap h500">
     <h1><%= t 'titles.announcement' -%></h1>
     <p>Какой-то контент, очень длинный , очень длинный...</p>
     <div class="box-footer">Вся афиша</div>
@@ -15,32 +15,34 @@
 
   <div class="clear"></div>
 
-  <div id="features" class=" box h200">
-    <h1><%= t 'titles.features' -%></h1>
-    <div class="feature box first">
+  <div id="features" class=" box column-wrap h200">
+    <h1><%= link_to t('titles.features'), features_path -%></h1>
+    <div class="feature column-wrap first h172">
       <img src="" />
       <p>Какой-то контент, очень длинный , очень длинный...</p>
-      <div class="box-footer">10 янв 09</div>
+      <div class="box-footer">11 янв 09</div>
       <div class="clear"></div>
     </div>
-    <div class="feature box">
+    <div class="feature column-wrap h172">
       <img src="" />
       <p>Какой-то контент, очень длинный , очень длинный...</p>
       <div class="box-footer">10 янв 09</div>
       <div class="clear"></div>
     </div>
   </div>
-  <div id="reviews" class="box h200">
-    <h1><%= link_to t('titles.reviews'), rewiew_path -%></h1>
+
+  <div id="reviews" class="box column-wrap h200">
+    <h1><%= link_to t('titles.reviews'), review_path -%></h1>
     <p>Какой-то контент, очень длинный , очень длинный...</p>
     <div class="box-footer">10 янв 09</div>
-      <div class="clear"></div>
+    <div class="clear"></div>
   </div>
-  <div id="categories" class="box h200">
+
+  <div id="categories" class="box column-wrap h200">
     <h1><%= link_to t('titles.categories'), categories_path -%></h1>
     <p>Какой-то контент, очень длинный , очень длинный...</p>
     <div class="box-footer">10 янв 09</div>
-      <div class="clear"></div>
+    <div class="clear"></div>
   </div>
 
   <div class="clear"></div>

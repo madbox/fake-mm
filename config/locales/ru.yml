@@ -14,6 +14,7 @@ ru:
     show_news_of_the_day: "Новость дня"
     new_comment: "Добавить коментарий"
     update: "Сохранить"
+    read_next: "Читать далее..."
   titles:
     new_article: "Создание статья"
     edit_article: "Редактирование статьи"
