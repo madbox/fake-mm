@@ -152,7 +152,7 @@ div.h98 { min-height: 98px; _height: 98px; }
 .category li .list-content {width: 200px;}
 .category li h2 { color: black; background-color: #E1E1E1; font-size: 12pt; height: 44px; margin: 0px; padding: 2px; font-weight: bold; }
 .category hr{ border: 0px; border-bottom: 1px solid black; margin: 0px; padding: 0px;}
-
+.category li .list-content p { max-height: 30px; overflow: hidden; }
 /* category index */
 
 .category-item { margin-bottom: 8px; } 
