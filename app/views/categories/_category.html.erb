@@ -1,0 +1,19 @@
+<div class="category-item">
+  <div class="category-image">
+    <%= link_to image_tag( category.imagemh.url ), category %>
+  </div>
+  <div class="category-info">
+    <h2><%= link_to category.name, category -%></h2>
+    <p><%= link_to category.description, category -%></p>
+    <div class="category-info-footer">
+      <div class="category-item-info-footer-source">
+	<div><%= t 'activerecord.attributes.category.author'-%> : <%= category.author -%></div>
+	<div><%= t 'activerecord.attributes.category.photographer'-%> : <%= category.created_at.to_s(:short) -%></div>
+      </div>
+      <div class="category-info-footer-attributes">
+	<div><%= t 'activerecord.attributes.created_at'-%> : <%= category.created_at.to_s(:short) -%></div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
