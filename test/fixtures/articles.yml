@@ -7,7 +7,6 @@ first_article:
   category: news
   user: admin
   style: simple
-  imagebv_file_name: "about.jpg"
 about:
   title: "О журнале"
   sysname: "about"
@@ -22,7 +21,6 @@ rules:
   category: system
   user: admin 
   style: simple
-  imagebv_file_name: "about.jpg"
 contacts:
   title: "Контакты"
   sysname: "contacts"
@@ -30,4 +28,3 @@ contacts:
   category: system
   user: admin
   style: simple
-  imagebv_file_name: "about.jpg"

@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.review '/review'    , :controller => 'categories', :action => 'show', :sysname => 'review'
-  map.features '/features', :controller => 'categories', :action => 'show', :sysname => 'features'
-  map.news '/news'        , :controller => 'categories', :action => 'show', :sysname => 'news'
+  #map.review '/review'    , :controller => 'categories', :action => 'show', :sysname => 'review'
+  #map.features '/features', :controller => 'categories', :action => 'show', :sysname => 'features'
+  #map.news '/news'        , :controller => 'categories', :action => 'show', :sysname => 'news'
   map.connect '/categories/index_all', :controller => 'categories', :action => 'index_all'
   map.resources :categories
 
@@ -19,6 +19,8 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources :comments
+  map.article_editor '/articles/editor', :controller => 'articles', :action => 'editor'
+  map.drafts '/articles/drafts', :controller => 'articles', :action => 'drafts'
   map.resources :articles, :has_many => :comments
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -63,7 +65,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.login  '/login',  :controller => 'user_sessions', :action => 'new'
   map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
-
+  
   map.register '/signup', :controller => 'users', :action => 'new'
 
   map.connect ':controller/:action/:id'

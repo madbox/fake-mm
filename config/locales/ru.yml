@@ -1,21 +1,30 @@
 ru:
   actions:
     login: "Войти"
+    logout: "Выйти"
     edit: "Изменить"
     show: "Показать"
     destroy: "Удалить"
     create: "Готово"
+    article_editor: Редакция
+    show_drafts: Черновики
     show_comments: "Комментарии"
     show_my_comments: "Мои комментарии"
     show_categories: "Рубрики"
-    show_articles: "Статьи"
+    show_articles: "Все статьи"
     show_my_articles: "Мои статьи"
+    show_profile: "Профиль"
     new_article: "Новая статья"
     show_news_of_the_day: "Новость дня"
     new_comment: "Добавить коментарий"
     update: "Сохранить"
     read_next: "Читать далее..."
+    new_user: Зарегистрироваться
+    new_category: "Новая рубрика"
+    edit_profile: Настройки
   titles:
+    editor: "Редакция"
+    user_menu: "Меню"
     new_article: "Создание статья"
     edit_article: "Редактирование статьи"
     no_articles: "Нет статей"
@@ -23,8 +32,16 @@ ru:
     reviews: "Рецензии"
     features: "Features"
     categories: "Рубрики"
+    articles: "Статьи"
+    new_category: "Новая рубрика"
   misc:
+    author_unknown: "Неизвестный"
     unknown_user: "Неизвестный"
+    created_at: Создана
+    updated_at: Отредактирована
+    published_at: Опубликована
+    answer_no: Нет
+    answer_yes: Да
   categories:
     system: "Системная"
     features: "Features"
@@ -42,17 +59,59 @@ ru:
       users: "Пользователи"
       article: "Статья"
       articles: "Статьи"
+      category: "Рубрика"
+      user_session: "Авторизация"
+      "user session": "Авторизация"
     attributes:
+      created_at: "Дата создания"
+      updated_at: "Дата изменения"
       user:
         email: "Почта"
         password: "Пароль"
+        password_confirmation: "Подтверждение"
         roles: "Роли"
+        nick: Ник
+        age: Возраст
       article:
         title: "Заголовок"
         sysname: "Системное имя"
         description: "Описание"
         content: "Содержание"
-        imagebv: "Картинка 408x611"
-        imagebh: "Картинка 500x300"
-        imagemv: "Картинка 96x96"
-        imagemh: "Картинка 200x300"
+        category: "Рубрика"
+        author: "Автор"
+        photographer: "Фотограф"
+        publish_date: "Опубликована"
+        importance: "Важность"
+        imagebv: "Вертикальная 408x611"
+        imagebh: "Горизонтальная 616x411"
+        imagemv: "Превью 96x96"
+        imagemh: "Превью 200x300"
+        imagemm: "Превью 408x272"
+      user_session:
+        password: "Пароль"
+        email: "Почта"
+      category:
+        imagemh: "Превью 200x300"
+        author: "Автор"
+        photographer: "Фотограф"
+        name: "Название"
+        sysname: "Системное имя(англ. без пробелов и спец символов)"
+  authlogic:
+    error_messages:
+      login_blank: не должен быть пустым
+      login_not_found: не найден
+      login_invalid: should use only letters, numbers, spaces, and .-_@ please.
+      consecutive_failed_logins_limit_exceeded: Consecutive failed logins limit exceeded, account is disabled.
+      email_invalid: должна быть похожа на почтовый адрес.
+      password_blank: не должен быть пустым
+      password_invalid: не правильный
+      not_active: Ваш профиль отключен
+      no_authentication_details: Вы не ввели данных для авторизации
+    models:
+      user_session: UserSession
+    attributes:
+      user_session: 
+      login: login
+      email: Почта
+      password: пароль
+      remember_me: remember me

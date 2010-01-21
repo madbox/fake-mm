@@ -1,9 +1,16 @@
-html,body{ padding: 0px; margin: 0px; background-color: black; color: white; }
+html,body{ 
+    padding: 0px; 
+    margin: 0px; 
+    background-color: black; 
+    color: white; 
+    min-width: 900px; 
+}
 * { font-family: Arial, Helvetica, sans-serif; font-weight: lighter; }
 a { text-decoration: none; }
 p { font-size: 10pt; }
 *.clear { clear: both;}
-
+li { list-style-type: none; }
+img { border: none; }
 #header, #footer { 
     height: 70px;
     background-color: black;
@@ -19,10 +26,13 @@ p { font-size: 10pt; }
     font-size: 30pt;
 }
 #header #entrance {
-    line-height: 70px;
-    font-size: 10pt;
+    margin-top: 20px;
+    text-align: right;
+    line-height: 10pt;
+    font-size: 8pt;
     float: right;
 }
+#header #entrance a { line-height: 1.2em; }
 
 #middle-wrap {
     background-color: white;
@@ -32,7 +42,7 @@ p { font-size: 10pt; }
 
 .width-wrap {
     margin: auto;
-    width: 842px;
+    width: 840px;
 }
 
 #middle {
@@ -51,10 +61,10 @@ p { font-size: 10pt; }
 
 #copyright { text-align: center; font-size: 10pt; padding: 20px; }
 
-#footer { font-size: 8pt; }
-#footer #left   { width: 321px; float:left; text-align: right; }
-#footer #center { width: 200px; float:left; text-align: center; }
-#footer #right  { width: 321px; float:left; text-align: left; }
+#footer p { font-size: 8pt; }
+#footer #left   { width: 321px; float:left; text-align: right;}
+#footer #center { width: 198px; float:left; text-align: center; }
+#footer #right  { width: 321px; float:right; text-align: left; }
 
 /* Registration page: Users/new */
 #big-title { text-align: center;  margin: 90px 0px 40px 0px; }
@@ -64,7 +74,7 @@ p { font-size: 10pt; }
 
 #register-form { width: 420px; margin: 0px auto; }
 
-#content { width: 840px; }
+#content { width: 840px; margin-top: 8px; background-color: white; border-bottom: 1px solid black; padding-bottom: 8px;}
 /* Main page boxes */
 
 .box h1 { margin: 0px 0px 8px 0px; 
@@ -83,6 +93,7 @@ div.h500 { min-height: 500px; _height: 500px; }
 div.h200 { min-height: 200px; _height: 200px; }
 div.h150 { min-height: 150px; _height: 150px; }
 div.h172 { min-height: 172px; _height: 172px; }
+div.h135 { min-height: 135px; _height: 135px; }
 div.h98 { min-height: 98px; _height: 98px; }
 
 .column-wrap { position: relative; float: left; display: inline;}
@@ -99,26 +110,77 @@ div.h98 { min-height: 98px; _height: 98px; }
 #reviews { width: 200px; margin: 8px; margin-right: 0px; float:left; display: inline; }
 #categories { width: 200px; margin: 8px; float:left; display: inline; }
 
-/* Logged in menu */
-#user-menu { border: 1px solid black; }
+/* Logged in markup */
+#user-sidebar { float: left; width: 200px; margin-right: 8px; margin-bottom: 8px; }
+#user-content { width: 632px; float: left; display: inline; }
+#user-content .box-footer-plain { border: none; }
+#user-content .box-footer { border: none; }
+#user-content form p { margin: 0.5em 0px; }
+
+/* profile page */
+#user-nav ul {margin: 0px 0px 8px 0px; padding: 0px 0px 0px 8px; }
+#user-nav li { font-size: 10pt;  }
+#user-avatar { float: left; margin-right: 8px; width: 200px; height:300px; }
+#user-info {margin-left: 208px;}
+#user-name { border-bottom: 1px solid black; margin-bottom: 0.5em; }
+#user-name h2 { margin: 0px; padding: 0px; }
+#user-info p { margin: 0px 0px 0px 2em; }
+#user-name p { margin: 0px; padding: 0px; line-height: 14pt;}
 
 /* comments */
 .comment { margin: 0.5em; border: 1px solid black; }
 
 /* flash */
-#flash { margin: 0.5em 0px; padding: 0.5em; }
-#flash.error { background-color: #F88;}
+#flash { position: absolute; width: 100%; margin: 0.5em 0px; padding: 0.5em;}
+#flash * { font-weight: 900; }
+#flash.error { background-color: #bb0000;}
+#flash.notice { background-color: #0000bb;}
+#flash.loading { background-color: #00bb00;}
+#flash div {width: 882px; margin: auto; }
 
 /* articles */
-#article-simple {margin: 8px; }
-#article-simple img {float: right;  padding-left: 8px; margin-bottom: 8px; }
+/* #article-simple {margin: 8px; } */
+#article-simple img {float: right;  padding-left: 8px; margin-bottom: 8px; display: inline; }
 #article-simple.box h1 { width: 408px; }
-#article-simple .box-footer { position: relative; }
+#article-simple .box-footer { position: relative;}
 
-/* category show (list) */
+/* category show (list of articles) */
 .category ul {margin: 8px 0px 8px 8px; padding: 0px; }
-.category li {display: block; float: left; width: 408px; height: 150px; margin-right: 8px; margin-bottom: 8px; }
+.category li {display: block; float: left; width: 304px; height: 136px; margin-right: 8px; margin-bottom: 8px; }
 .category li .list-pic { margin-right: 8px; width: 96px; height: 96px; text-align: center; }
 .category li .list-pic-footer {background-color: #f1f1f1; margin-top: 8px; height: 27px; font-size: 8pt; padding: 4px 0px 0px 1px; position: absolute; bottom: 0px; right: 0px; width: 100%; line-height: 25px; }
-.category li h2 { color: black; background-color: #E1E1E1; font-size: 12pt; height: 44px; width: 300px; margin: 0px; padding: 2px; font-weight: bold; }
+.category li .list-content {width: 200px;}
+.category li h2 { color: black; background-color: #E1E1E1; font-size: 12pt; height: 44px; margin: 0px; padding: 2px; font-weight: bold; }
 .category hr{ border: 0px; border-bottom: 1px solid black; margin: 0px; padding: 0px;}
+
+/* category index */
+
+.category-item { margin-bottom: 8px; } 
+.category-item h2 { margin: 0px; }
+.category-image { float: left; margin-right: 8px; }
+.category-info { height: 300px; position: relative; margin-left: 208px; }
+.category-info-footer { text-align: right; width: 100%; position: absolute; bottom: 0px; right: 0px; font-size: 8pt; border-bottom: 1px solid black; padding-bottom: 8px; }
+.category-info-footer-attributes {  background-color: #eee; line-height: 2.5em; margin-top: 8px; }
+
+/* article editor */
+
+.editor ul { margin: 0px; padding: 0px; }
+.editor li { margin: 0px; padding: 0px; }
+.editor-item { border: 1px solid gray; padding: 0px; margin: 0px 0px 8px 0px; background-color: white;}
+.editor-item-title { border-bottom: 1px solid gray; background-color: #eee; padding: 0px 0.5em; }
+.editor-item-title id { float: right; }
+.editor-item-content { margin: 0px; height: 112px; border-bottom: 1px solid gray; }
+.editor-item-content img { margin: 8px; }
+.editor-item-info { padding: 0px 0px 0px 8px; height: 112px; width: 175px; float: right; border-left: 1px solid gray; border-bottom: 1px solid gray; background-color: white; margin: 0px; }
+.editor-item-info p { margin: 0px; }
+.editor-item-footer { font-size: 8pt; background-color: white; padding: 0px 0px 0px 8px; margin: 0px; }
+.editor-item-options { padding-left: 8px; float: right; width: 175px; border-left: 1px solid gray; }
+
+/* errors */
+
+#errorExplanation { background-color: #fbb; border: 1px solid #b00; padding: 0.5em; margin-bottom: 8px; }
+.fieldWithErrors input { background-color: #fbb; }
+
+/* std edit fields */
+.field_label { font-size: 10pt; }
+.field { margin-bottom: 8px; }

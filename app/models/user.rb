@@ -3,10 +3,11 @@ class User < ActiveRecord::Base
   using_access_control
 
   has_many :articles
+  has_many :categories
   has_many :comments, :through => :articles
   has_and_belongs_to_many :roles, :join_table => "assigments"
 
-  has_attached_file :avatar, :styles => {:normal => "300x200"}, :default_style => :normal
+  has_attached_file :avatar, :styles => {:normal => "200x300"}, :default_style => :normal, :default_url => "/images/missing_:class_:attachment_:style.jpg"
 
   def name
     if (str = [lname, fname].join(' ')).blank?

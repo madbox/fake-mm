@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
+    @user.roles << Role.find_by_sysname('customer')
     if @user.save
       flash[:notice] = "Account registered!"
       redirect_to root_url

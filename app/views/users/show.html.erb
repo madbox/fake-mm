@@ -1,23 +1,16 @@
 <h1><%= t('activerecord.models.user') -%></h1>
-
-<div id="user-menu">
-  <ul>
-    <li><%= link_to t('actions.show_articles'), articles_path -%></li>
-    <li><%= link_to t('actions.show_my_articles'), user_articles_path(@user) -%></li>
-    <li><%= link_to t('actions.show_comments'), comments_path -%></li>
-    <li><%= link_to t('actions.show_my_comments'), user_comments_path(@user) -%></li>
-    <li><%= link_to t('actions.show_categories'), categories_path -%></li>
-  </ul>
+<div id="user-avatar">
+  <%= image_tag @user.avatar.url -%>
 </div>
-
-<p>
-  <b><%=t 'activerecord.attributes.user.email' -%></b>:
-  <%=h @user.email %>
-</p>
-
-<p>
-  <b><%=t 'activerecord.attributes.user.roles' -%></b>:
-  <%=h @user.role_symbols.map{|s| t("roles.#{s}")}.join(', ') %>
-</p>
-
-<%= link_to t('actions.edit'), edit_user_path(@user) %>
+<div id="user-info">
+  <div id="user-name"> 
+    <h2><%= @user.name -%></h2>
+    <p><%= (@user.role_symbols - [:guest]).map{|s| t("roles.#{s}")}.join(', ') -%></p>
+  </div>
+  
+  <%= styled_field 'text', @user, :nick %>
+  <%= styled_field 'text', @user, :age %>
+  <%= styled_field 'text', @user, :email %>
+  
+  <div class="clear"></div>
+</div>

@@ -3,14 +3,34 @@
 <% form_for(@article, :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
 
-  <%= styled_field 'edit', @article, :title, f, :text_field %>
-  <%= styled_field 'edit', @article, :sysname, f, :text_field %>
-  <%= styled_field 'edit', @article, :description, f, :text_area %>
-  <%= styled_field 'edit', @article, :content, f, :text_area %>
-  <%= styled_field 'edit', @article, :imagebv, f, :file_field %>
-  <%= styled_field 'edit', @article, :imagebh, f, :file_field %>
-  <%= styled_field 'edit', @article, :imagemv, f, :file_field %>
-  <%= styled_field 'edit', @article, :imagemh, f, :file_field %>
+  <%= styled_field 'edit', @article, :title, f, :text_field -%>
+  <%= styled_field 'edit', @article, :description, f, :text_area -%>
+  <%= styled_field 'edit', @article, :content, f, :text_area -%>
+  <%= styled_field 'edit', @article, :sysname, f, :text_field -%>
+  <%= styled_field 'edit', @article, :custom_author, f, :text_field -%>
+  <%= styled_field 'edit', @article, :custom_author_link, f, :text_field -%>
+  <%= styled_field 'edit', @article, :photographer, f, :text_field -%>
+  <%= styled_field 'edit', @article, :photographer_link, f, :text_field -%>
+  <%= styled_field 'edit', @article, :source, f, :text_field -%>
+  <%= styled_field 'edit', @article, :source_link, f, :text_field -%>
+  <%= styled_field 'edit', @article, :photographer_link, f, :text_field -%>
+
+  <div class="field_label"><%= f.label :category -%></div>
+  <div class="field"><%= f.select :category_id, options_for_select( @categories.map{|c|[c.name, c.id]} ) %></div>
+
+  <div class="field_label"><%= f.label :style -%></div>
+  <div class="field"><%= f.select :style_id, options_for_select( Style.all.map{|c|[c.name, c.id]} ) %></div>
+
+  <%= styled_field 'edit', @article, :importance, f, :text_field -%>
+
+  <%= styled_field 'edit', @article, :meta_keywords, f, :text_field -%>
+  <%= styled_field 'edit', @article, :meta_description, f, :text_field -%>
+
+  <%= styled_field 'edit', @article, :imagebv, f, :file_field -%>
+  <%= styled_field 'edit', @article, :imagebh, f, :file_field -%>
+  <%= styled_field 'edit', @article, :imagemv, f, :file_field -%>
+  <%= styled_field 'edit', @article, :imagemh, f, :file_field -%>
+  <%= styled_field 'edit', @article, :imagemm, f, :file_field -%>
 
   <p>
     <%= f.submit t('actions.update') %>

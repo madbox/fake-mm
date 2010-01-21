@@ -48,6 +48,11 @@ class CreateArticles < ActiveRecord::Migration
       t.integer :imagemv_file_size
       t.datetime :imagemv_updated_at
 
+      t.string :imagemm_file_name
+      t.string :imagemm_content_type
+      t.integer :imagemm_file_size
+      t.datetime :imagemm_updated_at
+
     end
   end
 

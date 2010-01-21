@@ -1,12 +1,12 @@
-<% if type == :news_of_the_day %>
+<% if type == :news_of_the_day -%>
 
 <h1><%= link_to t('actions.show_news_of_the_day'), article_path(article) -%></h1>
-<img src="<%= article.imagebv.url -%>" />
+<img src="<%= article.imagemm.url -%>" />
 <h2><%= article.title -%></h2>
 <p><%= article.content -%></p>
 <div class="box-footer">Корреспондент: <%= link_to article.user.name, user_path(article.user) -%></div>
 
-<% elsif type == :plain %>
+<% elsif type == :plain -%>
 
 <h2><%= article.title -%></h2>
 <p><%= article.content -%></p>
@@ -21,18 +21,19 @@
   </ul>
 </div>
 
-<% elsif type == :list_item %>
+<% elsif type == :list_item -%>
 
 <li><%= article.title -%> | <%= link_to t('actions.show'), article -%></li>
 
-<% elsif type == :category_list_item %>
+<% elsif type == :category_list_item -%>
 
 <li>
-  <div class="h150 column-wrap list-pic">
+  <div class="h135 column-wrap list-pic">
     <%= image_tag article.imagemv.url %>
     <div class="list-pic-footer"><%= article.updated_at.to_s(:short) -%><hr/></div>
+    <div class="clear"></div>
   </div>
-  <div class="column-wrap h150">
+  <div class="column-wrap h135 list-content">
     <h2><%=h article.title -%></h2>
     <p><%=h article.description -%></p>
     <div class="box-footer"><%= link_to t('actions.read_next'), article -%></div>
@@ -40,4 +41,39 @@
   </div>
 </li>
 
-<% end %>
+<% elsif type == :editor_item -%>
+
+<div class="editor-item">
+  <div class="editor-item-title"><%= link_to article.title, article_path(article) -%><id><%= article.id -%></id></div>
+  <div class="editor-item-info">
+    <p><b><%= t('activerecord.attributes.article.category')-%></b>:
+      <%= t("categories.#{article.category.sysname}") -%></p>
+    <p><b><%= t('activerecord.attributes.article.publish_date')-%></b>:
+      <%= article.publish_date ? article.publish_date.to_s(:short) : t('misc.answer_no') -%></p>
+    <p><b><%= t('activerecord.attributes.article.importance')-%></b>:
+      <%= article.importance -%></p>
+  </div>
+  <div class="editor-item-content">
+    <%= image_tag article.imagemv.url %>
+    <%= article.internal_comment %>
+  </div>
+  <div class="clear"></div>
+  <div class="editor-item-footer">
+    <div class="editor-item-options">
+      <%= link_to t( 'actions.edit' ), edit_article_path( article ) -%> |
+      <%= link_to t( 'actions.destroy' ), article_path( article, :method => :delete ) -%>
+    </div>
+    <%= t('misc.created_at') -%>:
+    <%= article.created_at.to_s(:short) -%> |
+    <%= t('misc.updated_at') -%>:
+    <%= article.updated_at.to_s(:short) -%> |
+    <%= t('misc.published_at') -%>:
+    <%= article.publish_date.to_s(:short) if article.publish_date -%> 
+  </div>
+</div>
+
+<% else -%>
+
+<p>Unknown template type: <%= type -%> for article</p>
+
+<% end -%>

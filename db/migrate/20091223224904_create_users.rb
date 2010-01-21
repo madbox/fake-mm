@@ -23,6 +23,7 @@ class CreateUsers < ActiveRecord::Migration
 
 
       t.string    :nick
+      t.integer   :age
       t.string    :fname
       t.string    :lname
       t.string    :sname

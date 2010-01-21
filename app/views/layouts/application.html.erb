@@ -10,15 +10,22 @@
   </head>
   <body>
     
+    <% if flash.has_key? :error %>
+    <div id="flash" class="error"><div><%= flash[:error] -%></div></div>
+    <% end %>
+    <% if flash.has_key? :notice %>
+    <div id="flash" class="notice"><div><%= flash[:notice] -%></div></div>
+    <% end %>
+
     <div id="header">
       <div class="width-wrap">
 	<div id="entrance">
 	  <% unless current_user %>
-  	    <%= link_to 'Вход', login_path -%>
-	    <%= link_to 'Регистрация', register_path -%>
+  	    <%= link_to t('actions.login'), login_path -%><br />
+	    <%= link_to t('actions.new_user'), register_path -%>
 	  <% else %>
-	    <%= link_to 'Профиль', profile_path -%>
-  	    <%= link_to 'Выход', logout_path -%>
+	    <%= link_to t('actions.show_profile'), profile_path -%><br />
+  	    <%= link_to t('actions.logout'), logout_path -%>
 	  <% end %>
 	</div>
 	<h1><%= link_to 'FAKE-MUSICAL MAGAZINE', root_path -%></h1>
@@ -28,10 +35,6 @@
     <div id="middle-wrap">
       <div id="middle" class="width-wrap">
 	
-	<% if flash.has_key? :error %>
-	<div id="flash" class="error"><%= flash[:error] -%></div>
-	<% end %>
-
 	<div id="nav">
 	  <div id="top-menu" class="menu">
 	    <ul>
@@ -39,8 +42,8 @@
 	      <li><%= link_to 'О журнале', Article.find_by_sysname('about') -%></li>
 	      <li><%= link_to 'Поиск', '#' -%></li>
 	      <li><%= link_to 'Правила пользования', Article.find_by_sysname('rules') -%></li>
-	      <li><%= link_to 'Статистика', '' -%></li>
-	      <li class="last"><%= link_to 'Обратная связь', '' -%></li>
+	      <!-- <li><%= link_to 'Статистика', '' -%></li> -->
+	      <!-- <li class="last"><%= link_to 'Обратная связь', '' -%></li> -->
 	    </ul>
 	  </div>
 	  <div class="menu-header">Главная</div>
@@ -54,14 +57,42 @@
 	      <li><%= link_to 'Интерактив', '' -%></li>
 	      <li><%= link_to 'Classifields', '' -%></li>
 	      <li><%= link_to 'Lists', '' -%></li>
-	      <li><%= link_to 'Афиша', '' -%></li>
-	      <li class="last"><%= link_to 'Фотоальбом', '' -%></li>
+	      <!-- <li><%= link_to 'Афиша', '' -%></li> -->
+	      <!-- <li class="last"><%= link_to 'Фотоальбом', '' -%></li> -->
 	    </ul>
 	  </div>
 	</div>
 
 	<div id="content">
-	  <%= yield %>
+	  <% unless current_user %>
+	    <%= yield %>
+	  <% else %>
+	    <div id="user-sidebar">
+	      <div id="user-nav" class="box">
+		<h1><%= t('titles.user_menu') -%></h1>
+		<ul>
+		  <li><%= link_to t('actions.show_articles'), articles_path -%></li>
+		  <li><%= link_to t('actions.show_my_articles'), user_articles_path(current_user) -%></li>
+		  <li><%= link_to t('actions.show_comments'), comments_path -%></li>
+		  <li><%= link_to t('actions.show_my_comments'), user_comments_path(current_user) -%></li>
+		  <li><%= link_to t('actions.show_categories'), categories_path -%></li>
+		  <li><%= link_to t('actions.edit_profile'), edit_user_path(current_user) %></li>
+		</ul>
+		<ul>
+		  <li><%= link_to t('actions.article_editor'), article_editor_path -%></li>
+		  <li><%= link_to t('actions.new_article'), new_article_path -%></li>
+		  <li><%= link_to t('actions.new_category'), new_category_path -%></li>
+		  <li><%= link_to t('actions.show_drafts'), drafts_path -%></li>
+		</ul>
+	      </div>
+	      <div id="user-adversticement" class="box">
+	      </div>
+	    </div>
+	    <div id="user-content" class="box">
+	      <%= yield %>
+	    </div>
+	    <% end %>
+	    <div class="clear"></div>
 	</div>
 
       </div>
@@ -75,7 +106,7 @@
 	  <p>www.art-shot.ru www.alba-studio.ru www.givana-studio.ru</p>
  	</div>
 	<div id="center">
-	  <img src="/images/logo.jpg" width='200px' alt='logo' title='logo' />
+	  <img src="/images/logo.jpg" width='190px' alt='logo' title='logo' />
 	</div>
 	<div id="right">
 	  <p>Наши партнёры:</p>

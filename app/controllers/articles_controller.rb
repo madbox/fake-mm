@@ -1,11 +1,29 @@
 class ArticlesController < ApplicationController
-  filter_resource_access
+  filter_access_to :all
 
   # GET /articles
   # GET /articles.xml
   def index
-    @articles = Article.all
+    @articles = Article.published
 
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @articles }
+    end
+  end
+
+  def editor
+    @articles = Article.all
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @articles }
+    end
+  end
+
+  def drafts
+    @articles = Article.drafts
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @articles }
@@ -28,6 +46,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.xml
   def new
     @article = Article.new
+    @categories = Category.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,13 +57,15 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    @categories = Category.all
   end
 
   # POST /articles
   # POST /articles.xml
   def create
-    @article = Article.new(params[:article])
-    
+    @article = Article.new(params[:article]) 
+    @categories = Category.all
+   
     @article.user = current_user
     
     respond_to do |format|

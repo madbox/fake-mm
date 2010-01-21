@@ -1,5 +1,5 @@
 <div>
-  <div id="<%= @category.sysname -%>" class="category box">
+  <div class="category box">
     <h1><%= link_to @category.name, categories_path -%></h1>
     
     <ul>
@@ -11,7 +11,4 @@
   </div>
 
   <div class="clear"></div>
-  <div class="box-footer-plain"></div>
 </div>
-<% # link_to 'Edit', edit_category_path(@category) %> |
-<% # link_to 'Back', categories_path %>

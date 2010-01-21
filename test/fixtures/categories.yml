@@ -1,12 +1,16 @@
 system:
   sysname: "system"
+  name: "Системная"
   public: false
 news:
   sysname: "news"
+  name: "Новости"
   public: true
 features:
   sysname: "features"
+  name: "Features"
   public: true
 review:
   sysname: "review"
+  name: "Рецензии"
   public: true

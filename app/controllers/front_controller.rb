@@ -1,5 +1,6 @@
 class FrontController < ApplicationController
   def index
-    @article = Article.news.last
+    redirect_to current_user if current_user
+    @article = Article.news.most_important.first
   end
 end
