@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   filter_access_to :all
+  before_filter :prepare_news
 
   # GET /articles
   # GET /articles.xml
@@ -25,7 +26,7 @@ class ArticlesController < ApplicationController
     @articles = Article.drafts
     
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render 'editor' }# index.html.erb
       format.xml  { render :xml => @articles }
     end
   end
@@ -33,7 +34,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.xml
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find_by_sysname(params[:id])
     @article.update_attribute( :views_count, @article.views_count + 1 )
 
     respond_to do |format|
@@ -56,7 +57,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    @article = Article.find(params[:id])
+    @article = Article.find_by_sysname(params[:id])
     @categories = Category.all
   end
 
@@ -82,8 +83,10 @@ class ArticlesController < ApplicationController
 
   # PUT /articles/1
   # PUT /articles/1.xml
+    @categories = Category.all
   def update
-    @article = Article.find(params[:id])
+    @article = Article.find_by_sysname(params[:id])
+    @categories = Category.all
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
@@ -100,11 +103,73 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.xml
   def destroy
-    @article = Article.find(params[:id])
+    @article = Article.find_by_sysname(params[:id])
     @article.destroy
 
     respond_to do |format|
       format.html { redirect_to(articles_url) }
+      format.xml  { head :ok }
+    end
+  end
+
+  def undraft
+    @article = Article.find_by_sysname(params[:id])
+
+    if @article.undraft
+      flash[:notice] = I18n.t('notice.article_undrafted')
+    else
+      flash[:notice] = I18n.t('error.article_undrafting_failed')
+    end
+
+    respond_to do |format|
+      format.html { redirect_to(:back) }
+      format.js 
+      format.xml  { head :ok }
+    end
+  end
+
+  def to_drafts
+    @article = Article.find_by_sysname(params[:id])
+
+    if @article.make_draft
+      flash[:notice] = I18n.t('notice.article_drafted')
+    else
+      flash[:notice] = I18n.t('error.article_drafting_failed')
+    end
+
+    respond_to do |format|
+      format.html { redirect_to(:back) }
+      format.js 
+      format.xml  { head :ok }
+    end
+  end
+
+  def publish
+    @article = Article.find_by_sysname(params[:id])
+    if @article.publish
+      flash[:notice] = I18n.t('notice.article_published')
+    else
+      flash[:notice] = I18n.t('else.article_publishing_failed')
+    end
+
+    respond_to do |format|
+      format.html { redirect_to(:back) }
+      format.js 
+      format.xml  { head :ok }
+    end
+  end
+
+  def unpublish
+    @article = Article.find_by_sysname(params[:id])
+    if @article.unpublish
+      flash[:notice] = I18n.t('notice.article_unpublished')
+    else
+      flash[:notice] = I18n.t('else.article_unpublishing_failed')
+    end
+
+    respond_to do |format|
+      format.html { redirect_to(:back) }
+      format.js 
       format.xml  { head :ok }
     end
   end

@@ -4,6 +4,7 @@
     <%= render @article, :type => :news_of_the_day %>
     <% else %>
     <h1><%= t 'titles.no_articles' -%></h1>
+    <div class="box-footer"></div>
     <% end %>
   </div>
 
@@ -15,32 +16,54 @@
 
   <div class="clear"></div>
 
+  <%= render 'articles/news_line', :news => @news %>
+
   <div id="features" class=" box column-wrap h200">
     <h1><%= link_to t('titles.features'), category_path('features') -%></h1>
     <div class="feature column-wrap first h172">
-      <img src="" />
-      <p>Какой-то контент, очень длинный , очень длинный...</p>
-      <div class="box-footer">11 янв 09</div>
+      <% if @feature0 %>
+        <%= image_tag @feature0.imagemh.url %>
+	<h2><%= @feature0.title -%></h2>
+        <p><%= @feature0.description -%></p>
+        <div class="box-footer"><%= @feature0.publish_date.to_s(:short) -%></div>
+      <% else %>
+        <%= t 'misc.no_feature' -%>
+	<div class="box-footer"></div>
+      <% end %>
       <div class="clear"></div>
     </div>
     <div class="feature column-wrap h172">
-      <img src="" />
-      <p>Какой-то контент, очень длинный , очень длинный...</p>
-      <div class="box-footer">10 янв 09</div>
+      <% if @feature1 %>
+        <%= image_tag @feature1.imagemh.url %>
+        <p><%= @feature1.description -%></p>
+        <div class="box-footer"><%= @feature1.publish_date.to_s(:short) -%></div>
+      <% else %>
+        <%= t 'misc.no_feature' -%>
+	<div class="box-footer"></div>
+      <% end %>
       <div class="clear"></div>
     </div>
   </div>
 
   <div id="reviews" class="box column-wrap h200">
     <h1><%= link_to t('titles.reviews'), category_path('review') -%></h1>
-    <p>Какой-то контент, очень длинный , очень длинный...</p>
-    <div class="box-footer">10 янв 09</div>
+    <% if @review %>
+      <%= image_tag @review.imagemh.url %>
+      <h2><%= @review.title -%></h2>
+      <p><%= @review.description -%></p>
+      <div class="box-footer"><%= @review.publish_date.to_s(:short) -%></div>
+    <% else %>
+      <%= t 'misc.no_review' -%>
+      <div class="box-footer"></div>
+    <% end %>
     <div class="clear"></div>
   </div>
 
   <div id="categories" class="box column-wrap h200">
-    <h1><%= link_to t('titles.categories'), categories_path -%></h1>
-    <p>Какой-то контент, очень длинный , очень длинный...</p>
+    <a href="<%= categories_path -%>">
+      <h1><%= t('titles.categories') -%></h1>
+      <p>Какой-то контент, очень длинный , очень длинный...</p>
+    </a>
     <div class="box-footer">10 янв 09</div>
     <div class="clear"></div>
   </div>

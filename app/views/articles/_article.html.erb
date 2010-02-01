@@ -3,7 +3,7 @@
 <h1><%= link_to t('actions.show_news_of_the_day'), article_path(article) -%></h1>
 <img src="<%= article.imagemm.url -%>" />
 <h2><%= article.title -%></h2>
-<p><%= article.content -%></p>
+<p><%= article.description -%></p>
 <div class="box-footer">Корреспондент: <%= link_to article.user.name, user_path(article.user) -%></div>
 
 <% elsif type == :plain -%>
@@ -48,8 +48,18 @@
   <div class="editor-item-info">
     <p><b><%= t('activerecord.attributes.article.category')-%></b>:
       <%= t("categories.#{article.category.sysname}") -%></p>
-    <p><b><%= t('activerecord.attributes.article.publish_date')-%></b>:
-      <%= article.publish_date ? article.publish_date.to_s(:short) : t('misc.answer_no') -%></p>
+    <p><b><%= t('activerecord.attributes.article.published')-%></b>:
+      <% if article.published? %>
+        <%= link_to article.publish_date.to_s(:short), article_unpublish_path(article) %>
+      <% else %>
+        <%= link_to t('misc.answer_no'), article_publish_path(article) %>
+      <% end %>
+    <p><b><%= t('activerecord.attributes.article.draft')-%></b>:
+      <% if article.draft? %>
+        <%= link_to t('misc.answer_yes'), article_undraft_path(article) %>
+      <% else %>
+        <%= link_to t('misc.answer_no'), article_make_draft_path(article) %>
+      <% end %>
     <p><b><%= t('activerecord.attributes.article.importance')-%></b>:
       <%= article.importance -%></p>
   </div>

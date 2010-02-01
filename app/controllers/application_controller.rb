@@ -18,8 +18,20 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  protected
+
+  def prepare_news
+    news_count = (current_user ? 6 : 8)
+    @news = Article.published.news.find(:all, :limit => news_count)
+    if @news.size < news_count
+      (news_count - @news.size).times do
+        @news << Article.new( :title => 'no article' )
+      end
+    end
+  end
 
   private
+
   
   def current_user_session
     return @current_user_session if defined?(@current_user_session)

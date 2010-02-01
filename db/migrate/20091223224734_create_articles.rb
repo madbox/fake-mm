@@ -25,6 +25,8 @@ class CreateArticles < ActiveRecord::Migration
       t.integer :importance, :default => 0
 
       t.timestamps
+      t.boolean :published, :default => false
+      t.boolean :draft, :default => true
       t.datetime :publish_date
 
       # paperclip

@@ -34,7 +34,10 @@ ru:
     categories: "Рубрики"
     articles: "Статьи"
     new_category: "Новая рубрика"
+    news: "Новости"
   misc:
+    no_review: "Нет рецензий"
+    no_feature: "Нет features"
     author_unknown: "Неизвестный"
     unknown_user: "Неизвестный"
     created_at: Создана
@@ -53,6 +56,11 @@ ru:
     admin: "Администратор"
   errors:
     authorization_failed: "Не достаточно прав для выполнения операции"
+    article_publishing_failed: "Ошибка при публикации статьи"
+    article_publishing_failed: "Ошибка при снятии публикации статьи"
+  notice:
+    article_published: "Статья опубликована"
+    article_unpublished: "Статья снята с публикации"
   activerecord:
     models:
       user: "Профиль"
@@ -80,7 +88,8 @@ ru:
         category: "Рубрика"
         author: "Автор"
         photographer: "Фотограф"
-        publish_date: "Опубликована"
+        published: "Опубликована"
+        draft: "Черновик"
         importance: "Важность"
         imagebv: "Вертикальная 408x611"
         imagebh: "Горизонтальная 616x411"

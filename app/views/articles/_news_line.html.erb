@@ -1,0 +1,20 @@
+<div id="news-line" class="box">
+  <h1><%= t('titles.news') -%></h1>
+  <ul>
+    <% i = 1 ; for article in news do %>
+    <li class="column-wrap news-item<%= i == news.size ? ' last' : '' -%>">
+      <% if article.new_record? %>
+	<div><%= image_tag article.imagemv.url %></div>
+	<p><%= article.title -%></p>
+      <% else %>
+        <a href="<%= article_url(article) -%>">
+          <div><%= image_tag article.imagemv.url %></div>
+          <p><%= article.title -%></p>
+        </a>
+      <% end %>
+      <div class="news-box-footer">&nbsp;<%= article.publish_date.to_s(:short) if article.published? -%></div>
+    </li>
+    <% i += 1; end %>
+  </ul>
+  <div class="clear"></div>
+</div>

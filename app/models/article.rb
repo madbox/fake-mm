@@ -9,6 +9,7 @@ class Article < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :content
   validates_presence_of :sysname
+  validates_uniqueness_of :sysname
 
   validates_presence_of :category
   
@@ -16,7 +17,7 @@ class Article < ActiveRecord::Base
 
   has_attached_file :imagebv, :styles => {:normal => "408x611"}, :default_style => :normal, :default_url => "/images/missing_:class_:attachment_:style.jpg"
   has_attached_file :imagebh, :styles => {:normal => "616x411"}, :default_style => :normal, :default_url => "/images/missing_:class_:attachment_:style.jpg"
-  has_attached_file :imagemv, :styles => {:normal => "96x96"}, :default_style => :normal, :default_url => "/images/missing_:class_:attachment_:style.jpg"
+  has_attached_file :imagemv, :styles => {:normal => "96x96"},   :default_style => :normal, :default_url => "/images/missing_:class_:attachment_:style.jpg"
   has_attached_file :imagemh, :styles => {:normal => "200x300"}, :default_style => :normal, :default_url => "/images/missing_:class_:attachment_:style.jpg"
   has_attached_file :imagemm, :styles => {:normal => "408x272"}, :default_style => :normal, :default_url => "/images/missing_:class_:attachment_:style.jpg"
 
@@ -26,9 +27,37 @@ class Article < ActiveRecord::Base
   validates_presence_of :imagemh
   validates_presence_of :imagemm
 
-  named_scope :news, :joins => :category, :conditions => ['categories.sysname = ?', 'news']
-  named_scope :published, :conditions => ['publish_date != ?', nil]
-  named_scope :drafts, :conditions => ['publish_date = ?', nil]
+  named_scope :news, :joins => :category, :conditions => ["categories.sysname = ?", 'news']
+  named_scope :published, :conditions => {:published => false}
+  named_scope :drafts, :conditions => {:draft => true} 
 
   named_scope :most_important, :order => 'importance DESC'
+
+  def unpublish
+    self.published = false
+    self.publish_date = nil
+    self.save
+  end
+
+  def publish
+    self.published = true
+    self.publish_date = Time.now
+    self.save
+  end
+
+  def make_draft
+    self.published = false
+    self.publish_date = nil
+    self.draft = true
+    self.save
+  end
+
+  def undraft
+    self.draft = false
+    self.save
+  end
+
+  def to_param
+    sysname || id
+  end
 end

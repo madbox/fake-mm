@@ -7,6 +7,9 @@ first_article:
   category: news
   user: admin
   style: simple
+  publish_date: <%= Time.now %>
+  published: true
+  draft: false
 about:
   title: "О журнале"
   sysname: "about"
@@ -14,6 +17,9 @@ about:
   category: system
   user: admin 
   style: simple
+  publish_date: <%= Time.now %>
+  published: true
+  draft: false
 rules:
   title: "Правила пользования"
   sysname: "rules"
@@ -21,6 +27,9 @@ rules:
   category: system
   user: admin 
   style: simple
+  publish_date: <%= Time.now %>
+  published: true
+  draft: false
 contacts:
   title: "Контакты"
   sysname: "contacts"

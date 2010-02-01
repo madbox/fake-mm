@@ -59,7 +59,7 @@ img { border: none; }
 #nav a { color: black; }
 #nav a:hover { border-bottom: 1px dashed black; }
 
-#copyright { text-align: center; font-size: 10pt; padding: 20px; }
+#copyright { text-align: center; font-size: 10pt; padding: 20px; margin-top: 16px;  border-top: 1px solid black; }
 
 #footer p { font-size: 8pt; }
 #footer #left   { width: 321px; float:left; text-align: right;}
@@ -74,7 +74,7 @@ img { border: none; }
 
 #register-form { width: 420px; margin: 0px auto; }
 
-#content { width: 840px; margin-top: 8px; background-color: white; border-bottom: 1px solid black; padding-bottom: 8px;}
+#content { width: 840px; margin-top: 8px; background-color: white;}
 /* Main page boxes */
 
 .box h1 { margin: 0px 0px 8px 0px; 
@@ -104,11 +104,11 @@ div.h98 { min-height: 98px; _height: 98px; }
 #news-of-the-day { width: 408px; margin: 8px 0px 0px 8px; float:left; display: inline; }
 #announcement { width: 408px; margin: 8px 8px 0px 8px; float:left; display: inline; }
 
-#features { width: 408px; margin: 8px; margin-right: 0px; float:left; display: inline; }
+#features { width: 408px; margin: 8px; margin-right: 0px; float:left; display: inline; padding-top: 16px; border-top: 1px solid black; }
 #features .feature{ float:left; display: inline; width: 200px; margin: 0px; }
 #features *.first { margin-right: 8px; }
-#reviews { width: 200px; margin: 8px; margin-right: 0px; float:left; display: inline; }
-#categories { width: 200px; margin: 8px; float:left; display: inline; }
+#reviews { width: 200px; margin: 8px; margin-right: 0px; float:left; display: inline; padding-top: 16px; border-top: 1px solid black; }
+#categories { width: 200px; margin: 8px; float:left; display: inline; padding-top: 16px; border-top: 1px solid black; }
 
 /* Logged in markup */
 #user-sidebar { float: left; width: 200px; margin-right: 8px; margin-bottom: 8px; }
@@ -131,7 +131,7 @@ div.h98 { min-height: 98px; _height: 98px; }
 .comment { margin: 0.5em; border: 1px solid black; }
 
 /* flash */
-#flash { position: absolute; width: 100%; margin: 0.5em 0px; padding: 0.5em;}
+#flash { position: absolute; width: 100%; margin: 0.5em 0px; line-height: 30pt;}
 #flash * { font-weight: 900; }
 #flash.error { background-color: #bb0000;}
 #flash.notice { background-color: #0000bb;}
@@ -140,8 +140,8 @@ div.h98 { min-height: 98px; _height: 98px; }
 
 /* articles */
 /* #article-simple {margin: 8px; } */
-#article-simple img {float: right;  padding-left: 8px; margin-bottom: 8px; display: inline; }
-#article-simple.box h1 { width: 408px; }
+#article-simple img {float: right; margin: 0px 0px 8px 8px; display: inline; }
+#article-simple.box h1 { width: 424px; }
 #article-simple .box-footer { position: relative;}
 
 /* category show (list of articles) */
@@ -184,3 +184,12 @@ div.h98 { min-height: 98px; _height: 98px; }
 /* std edit fields */
 .field_label { font-size: 10pt; }
 .field { margin-bottom: 8px; }
+
+/* news line */
+
+#news-line { margin: 16px 8px 8px 8px;; padding: 0px; }
+#news-line ul { margin: 0px; padding: 0px;}
+#news-line .news-item { width: 96px; height: 140px; margin: 0px 8px 0px 0px; }
+#news-line .last { margin: 0px; }
+#news-line .news-item p { margin: 0px; }
+*.news-box-footer { text-align: right; font-size: 8pt; border-top: 1px solid black; line-height: 10pt; position: absolute; bottom: 0px; right: 0px; width: 100%; }

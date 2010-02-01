@@ -1,5 +1,11 @@
 authorization do
+  role :author do
+    includes :customer
+    has_permission_on [:articles, :comments], :to => [ :manage, :editor, :drafts ]
+  end
+
   role :customer do
+    includes :guest
     has_permission_on [:comments], :to => [:new, :create]
     has_permission_on [:users, :comments], :to => [:edit, :update] do
       if_attribute :user => is { user }
@@ -14,14 +20,14 @@ authorization do
   end
   
   role :admin do
+    includes :author
     has_permission_on [:comments, :categories, :users, :user_sessions], :to => [ :manage, :index_all]
-    has_permission_on [:articles], :to => [ :manage, :editor, :drafts ]
   end
 end
 
 privileges do
   privilege :manage do
-    includes :create, :read, :update, :destroy, :new, :edit
+    includes :create, :read, :update, :destroy, :new, :edit, :publish, :unpublish, :make_draft, :undraft
   end
 
   privilege :read do

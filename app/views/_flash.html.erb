@@ -1,0 +1,6 @@
+    <% if flash.has_key? :error %>
+    <div id="flash" class="error" onclick="$(this).fadeOut('fast');"><div><%= flash[:error] -%></div></div>
+    <% end %>
+    <% if flash.has_key? :notice %>
+    <div id="flash" class="notice" onclick="$(this).fadeOut('fast');"><div><%= flash[:notice] -%></div></div>
+    <% end %>

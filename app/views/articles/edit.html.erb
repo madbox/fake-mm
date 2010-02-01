@@ -16,10 +16,10 @@
   <%= styled_field 'edit', @article, :photographer_link, f, :text_field -%>
 
   <div class="field_label"><%= f.label :category -%></div>
-  <div class="field"><%= f.select :category_id, options_for_select( @categories.map{|c|[c.name, c.id]} ) %></div>
+  <div class="field"><%= f.select :category_id, options_from_collection_for_select( @categories, 'id', 'name', (@article.category ? @article.category.id : nil) ) %></div>
 
   <div class="field_label"><%= f.label :style -%></div>
-  <div class="field"><%= f.select :style_id, options_for_select( Style.all.map{|c|[c.name, c.id]} ) %></div>
+  <div class="field"><%= f.select :style_id, options_from_collection_for_select( Style.all, 'id', 'name', (@article.style ? @article.style.id : nil) ) %></div>
 
   <%= styled_field 'edit', @article, :importance, f, :text_field -%>
 
@@ -36,5 +36,3 @@
     <%= f.submit t('actions.update') %>
   </p>
 <% end %>
-
-<%= link_to t('actions.show'), @article %>

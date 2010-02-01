@@ -6,16 +6,11 @@
     <meta name="description" content="" />
     <meta name="keywords" content=""/>
     <%= stylesheet_link_tag 'web' %>
-    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'jquery-1.4.min' %>
   </head>
   <body>
     
-    <% if flash.has_key? :error %>
-    <div id="flash" class="error"><div><%= flash[:error] -%></div></div>
-    <% end %>
-    <% if flash.has_key? :notice %>
-    <div id="flash" class="notice"><div><%= flash[:notice] -%></div></div>
-    <% end %>
+    <%= render :partial => '/flash', :locals => {:flash => flash} %>
 
     <div id="header">
       <div class="width-wrap">
@@ -49,14 +44,14 @@
 	  <div class="menu-header">Главная</div>
 	  <div id="main-menu" class="menu">
 	    <ul>
-	      <li class="first"><%= link_to 'Cover', '' -%></li>
-	      <li><%= link_to 'Новости', '' -%></li>
-	      <li><%= link_to 'Features', '' -%></li>
-	      <li><%= link_to 'Рубрики', '' -%></li>
-	      <li><%= link_to 'Рецензии', '' -%></li>
-	      <li><%= link_to 'Интерактив', '' -%></li>
-	      <li><%= link_to 'Classifields', '' -%></li>
-	      <li><%= link_to 'Lists', '' -%></li>
+	      <li class="first"><%= link_to 'Cover', covers_path -%></li>
+	      <li><%= link_to 'Новости', news_path -%></li>
+	      <li><%= link_to 'Features', features_path -%></li>
+	      <li><%= link_to 'Рубрики', categories_path -%></li>
+	      <li><%= link_to 'Рецензии', reviews_path -%></li>
+	      <li><%= link_to 'Интерактив', interactive_path -%></li>
+	      <li><%= link_to 'Classifields', classifields_path -%></li>
+	      <!-- <li><%= link_to 'Lists', '' -%></li> -->
 	      <!-- <li><%= link_to 'Афиша', '' -%></li> -->
 	      <!-- <li class="last"><%= link_to 'Фотоальбом', '' -%></li> -->
 	    </ul>
@@ -94,9 +89,8 @@
 	    <% end %>
 	    <div class="clear"></div>
 	</div>
-
+	<div id="copyright">FAKE-MM © 2007-2009</div>
       </div>
-      <div id="copyright">FAKE-MM © 2007-2009</div>
     </div>
     
     <div id="footer">

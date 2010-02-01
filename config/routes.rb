@@ -1,7 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
-  #map.review '/review'    , :controller => 'categories', :action => 'show', :sysname => 'review'
-  #map.features '/features', :controller => 'categories', :action => 'show', :sysname => 'features'
-  #map.news '/news'        , :controller => 'categories', :action => 'show', :sysname => 'news'
+  map.reviews '/reviews'    , :controller => 'categories', :action => 'show', :sysname => 'review'
+  map.covers '/covers'    , :controller => 'categories', :action => 'show', :sysname => 'review'
+  map.interactive '/interactive'    , :controller => 'categories', :action => 'show', :sysname => 'interactive'
+  map.classifields '/classifields'    , :controller => 'categories', :action => 'show', :sysname => 'classifields'
+  map.features '/features', :controller => 'categories', :action => 'show', :sysname => 'features'
+  map.news '/news'        , :controller => 'categories', :action => 'show', :sysname => 'news'
+
   map.connect '/categories/index_all', :controller => 'categories', :action => 'index_all'
   map.resources :categories
 
@@ -19,6 +23,10 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources :comments
+  map.article_publish '/articles/:id/publish', :controller => 'articles', :action => 'publish'
+  map.article_unpublish '/articles/:id/unpublish', :controller => 'articles', :action => 'unpublish'
+  map.article_make_draft '/articles/:id/make_draft', :controller => 'articles', :action => 'make_draft'
+  map.article_undraft '/articles/:id/undraft', :controller => 'articles', :action => 'undraft'
   map.article_editor '/articles/editor', :controller => 'articles', :action => 'editor'
   map.drafts '/articles/drafts', :controller => 'articles', :action => 'drafts'
   map.resources :articles, :has_many => :comments

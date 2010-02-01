@@ -1,6 +1,20 @@
+<% unless current_user %>
+
 <div id="article-simple" class="box">
   <%= image_tag @article.imagebv.url %>
   <h1><%=h @article.title %></h1>
   <p><%=h @article.content %></p>
-  <div class="clear box-footer"></div>
+  <div class="clear article-footer"></div>
 </div>
+
+<% else %>
+
+<div id="article-simple" class="box">
+  <%= image_tag @article.imagebv.url %>
+  <h1><%=h @article.title %></h1>
+  <p><%=h @article.content %></p>
+  <div class="clear article-footer"></div>
+</div>
+
+<% end %>
+<%= render 'news_line', :news => @news %>

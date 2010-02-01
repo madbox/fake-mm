@@ -14,3 +14,15 @@ review:
   sysname: "review"
   name: "Рецензии"
   public: true
+cover:
+  sysname: "cover"
+  name: "Cover"
+  public: true
+interactive:
+  sysname: "interactive"
+  name: "Интерактив"
+  public: true
+classifields:
+  sysname: "classifields"
+  name: "Classifields"
+  public: true
