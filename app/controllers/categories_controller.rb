@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find( :last, :conditions => ['id = ? OR sysname = ? ', params[:id], params[:id]] )
+    @category = Category.find( :last, :conditions => ['id = ? OR sysname = ? ', params[:id], params[:sysname]] )
 
     respond_to do |format|
       format.html # show.html.erb

@@ -37,6 +37,8 @@ class ArticlesController < ApplicationController
     @article = Article.find_by_sysname(params[:id])
     @article.update_attribute( :views_count, @article.views_count + 1 )
 
+    @comment = Comment.new
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @article }

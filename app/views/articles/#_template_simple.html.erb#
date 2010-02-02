@@ -1,6 +1,0 @@
-<div id=" class="box">
-  <%= image_tag @article.imagebv.url %>
-  <h1><%=h @article.title %></h1>
-  <p><%=h @article.content %></p>
-  <div class="box-footer"></div>
-</div>

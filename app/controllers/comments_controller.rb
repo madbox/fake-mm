@@ -45,7 +45,7 @@ class CommentsController < ApplicationController
   # POST /comments.xml
   def create
     @comment = Comment.new(params[:comment])
-    @comment.article = Article.find(params[:article_id])
+    @comment.article = Article.find(params[:comment][:article_id].to_i)
 
     respond_to do |format|
       if @comment.save

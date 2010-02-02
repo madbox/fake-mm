@@ -42,7 +42,7 @@ img { border: none; }
 
 .width-wrap {
     margin: auto;
-    width: 840px;
+    width: 824px;
 }
 
 #middle {
@@ -74,7 +74,7 @@ img { border: none; }
 
 #register-form { width: 420px; margin: 0px auto; }
 
-#content { width: 840px; margin-top: 8px; background-color: white;}
+#content { width: 824px; margin-top: 8px; background-color: white;}
 /* Main page boxes */
 
 .box h1 { margin: 0px 0px 8px 0px; 
@@ -112,14 +112,14 @@ div.h98 { min-height: 98px; _height: 98px; }
 
 /* Logged in markup */
 #user-sidebar { float: left; width: 200px; margin-right: 8px; margin-bottom: 8px; }
-#user-content { width: 632px; float: left; display: inline; }
+#user-content { width: 616px; float: left; display: inline; }
 #user-content .box-footer-plain { border: none; }
-#user-content .box-footer { border: none; }
+/* #user-content .box-footer { border: none; } */
 #user-content form p { margin: 0.5em 0px; }
 
 /* profile page */
-#user-nav ul {margin: 0px 0px 8px 0px; padding: 0px 0px 0px 8px; }
-#user-nav li { font-size: 10pt;  }
+#user-nav ul {margin: 16px 0px 16px 0px; padding: 0px 0px 0px 8px; }
+#user-nav li { font-size: 10pt; margin-bottom: 4px;  }
 #user-avatar { float: left; margin-right: 8px; width: 200px; height:300px; }
 #user-info {margin-left: 208px;}
 #user-name { border-bottom: 1px solid black; margin-bottom: 0.5em; }
@@ -143,6 +143,8 @@ div.h98 { min-height: 98px; _height: 98px; }
 #article-simple img {float: right; margin: 0px 0px 8px 8px; display: inline; }
 #article-simple.box h1 { width: 424px; }
 #article-simple .box-footer { position: relative;}
+/* #article-simple-authorized */
+#article-simple-authorized h2{ margin-top: 1em; }
 
 /* category show (list of articles) */
 .category ul {margin: 8px 0px 8px 8px; padding: 0px; }
@@ -150,7 +152,7 @@ div.h98 { min-height: 98px; _height: 98px; }
 .category li .list-pic { margin-right: 8px; width: 96px; height: 96px; text-align: center; }
 .category li .list-pic-footer {background-color: #f1f1f1; margin-top: 8px; height: 27px; font-size: 8pt; padding: 4px 0px 0px 1px; position: absolute; bottom: 0px; right: 0px; width: 100%; line-height: 25px; }
 .category li .list-content {width: 200px;}
-.category li h2 { color: black; background-color: #E1E1E1; font-size: 12pt; height: 44px; margin: 0px; padding: 2px; font-weight: bold; }
+.category li h2 { color: black; background-color: #E1E1E1; font-size: 12pt; margin: 0px; padding: 2px; font-weight: bold; }
 .category hr{ border: 0px; border-bottom: 1px solid black; margin: 0px; padding: 0px;}
 .category li .list-content p { max-height: 30px; overflow: hidden; }
 /* category index */
@@ -193,3 +195,8 @@ div.h98 { min-height: 98px; _height: 98px; }
 #news-line .last { margin: 0px; }
 #news-line .news-item p { margin: 0px; }
 *.news-box-footer { text-align: right; font-size: 8pt; border-top: 1px solid black; line-height: 10pt; position: absolute; bottom: 0px; right: 0px; width: 100%; }
+
+/* commets */
+.comments ul { padding: 0px; margin: 0px; }
+.comments ul li { border-bottom: 1px solid black; margin: 8px 0px 8px 0px;}
+.comments ul li img { float: left; }
