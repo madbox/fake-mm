@@ -2,7 +2,7 @@
   <h1><%= t('titles.news') -%></h1>
   <ul>
     <% i = 1 ; for article in news do %>
-    <li class="column-wrap news-item<%= i == news.size ? ' last' : '' -%>">
+    <li class="column-wrap news-item<%= i == news.size ? ' last' : ' right-margin' -%>">
       <% if article.new_record? %>
 	<div><%= image_tag article.imagemv.url %></div>
 	<p><%= article.title -%></p>

@@ -4,7 +4,7 @@
     
     <ul>
       <% for article in @category.articles do %>
-      <%= render article, :type => :category_list_item %>
+      <%= render article, :type => :category_list_item, :odd => cycle( :true, :false ) %>
       <% end %>
     </ul>
 

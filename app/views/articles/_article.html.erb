@@ -27,7 +27,7 @@
 
 <% elsif type == :category_list_item -%>
 
-<li>
+<li<%= (odd == 'true' ? ' class="odd"' : '' )-%>>
   <div class="h135 column-wrap list-pic">
     <%= image_tag article.imagemv.url %>
     <div class="list-pic-footer"><%= article.updated_at.to_s(:short) -%><hr/></div>

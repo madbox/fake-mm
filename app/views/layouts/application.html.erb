@@ -58,7 +58,7 @@
 	  </div>
 	</div>
 
-	<div id="content">
+	<div id="content" class="<%= current_user ? 'authorized' : 'not-authorized' -%>">
 	  <% unless current_user %>
 	    <%= yield %>
 	  <% else %>

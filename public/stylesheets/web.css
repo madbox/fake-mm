@@ -101,14 +101,14 @@ div.h98 { min-height: 98px; _height: 98px; }
 *.box-footer { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 20pt; position: absolute; bottom: 0px; right: 0px; width: 100%; }
 *.box-footer-plain { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 20pt; width: 100%; }
 
-#news-of-the-day { width: 408px; margin: 8px 0px 0px 8px; float:left; display: inline; }
-#announcement { width: 408px; margin: 8px 8px 0px 8px; float:left; display: inline; }
+#news-of-the-day { width: 408px; margin: 8px 8px 0px 0px; float:left; display: inline; }
+#announcement { width: 408px; margin: 8px 0px 0px 0px; float:left; display: inline; }
 
-#features { width: 408px; margin: 8px; margin-right: 0px; float:left; display: inline; padding-top: 16px; border-top: 1px solid black; }
+#features { width: 408px; margin: 8px; margin: 0px 8px 0px 0px; float:left; display: inline; padding-top: 16px; border-top: 1px solid black; }
 #features .feature{ float:left; display: inline; width: 200px; margin: 0px; }
 #features *.first { margin-right: 8px; }
-#reviews { width: 200px; margin: 8px; margin-right: 0px; float:left; display: inline; padding-top: 16px; border-top: 1px solid black; }
-#categories { width: 200px; margin: 8px; float:left; display: inline; padding-top: 16px; border-top: 1px solid black; }
+#reviews { width: 200px; margin: 0px 8px 0px 0px; float:left; display: inline; padding-top: 16px; border-top: 1px solid black; }
+#categories { width: 200px; margin: 0px; float:left; display: inline; padding-top: 16px; border-top: 1px solid black; }
 
 /* Logged in markup */
 #user-sidebar { float: left; width: 200px; margin-right: 8px; margin-bottom: 8px; }
@@ -140,18 +140,22 @@ div.h98 { min-height: 98px; _height: 98px; }
 
 /* articles */
 /* #article-simple {margin: 8px; } */
-#article-simple img {float: right; margin: 0px 0px 8px 8px; display: inline; }
-#article-simple.box h1 { width: 424px; }
-#article-simple .box-footer { position: relative;}
-/* #article-simple-authorized */
-#article-simple-authorized h2{ margin-top: 1em; }
+.not-authorized #article-simple img {float: right; margin: 0px 0px 8px 8px; display: inline; }
+.not-authorized #article-simple.box h1 { width: 406px; }
+.not-authorized #article-simple .box-footer { position: relative;}
+/* .authorized #article-simple */
+.authorized #article-simple h2{ margin-top: 1em; }
 
 /* category show (list of articles) */
-.category ul {margin: 8px 0px 8px 8px; padding: 0px; }
-.category li {display: block; float: left; width: 304px; height: 136px; margin-right: 8px; margin-bottom: 8px; }
+.category ul { margin: 8px 0px 8px 0px; padding: 0px; }
+.category .odd {  margin-right: 8px; }
+.category li {display: block; float: left; height: 136px; margin-bottom: 8px; }
+.authorized .category li { width: 304px; }
+.not-authorized .category li { width: 408px; }
 .category li .list-pic { margin-right: 8px; width: 96px; height: 96px; text-align: center; }
 .category li .list-pic-footer {background-color: #f1f1f1; margin-top: 8px; height: 27px; font-size: 8pt; padding: 4px 0px 0px 1px; position: absolute; bottom: 0px; right: 0px; width: 100%; line-height: 25px; }
-.category li .list-content {width: 200px;}
+.authorized .category li .list-content {width: 200px;}
+.not-authorized .category li .list-content {width: 304px;}
 .category li h2 { color: black; background-color: #E1E1E1; font-size: 12pt; margin: 0px; padding: 2px; font-weight: bold; }
 .category hr{ border: 0px; border-bottom: 1px solid black; margin: 0px; padding: 0px;}
 .category li .list-content p { max-height: 30px; overflow: hidden; }
@@ -189,10 +193,11 @@ div.h98 { min-height: 98px; _height: 98px; }
 
 /* news line */
 
-#news-line { margin: 16px 8px 8px 8px;; padding: 0px; }
+#news-line { margin: 16px 0px 8px 0px;; padding: 0px; }
 #news-line ul { margin: 0px; padding: 0px;}
-#news-line .news-item { width: 96px; height: 140px; margin: 0px 8px 0px 0px; }
+#news-line .news-item { width: 96px; height: 140px; margin: 0px; }
 #news-line .last { margin: 0px; }
+#news-line .right-margin { margin-right: 8px; }
 #news-line .news-item p { margin: 0px; }
 *.news-box-footer { text-align: right; font-size: 8pt; border-top: 1px solid black; line-height: 10pt; position: absolute; bottom: 0px; right: 0px; width: 100%; }
 
