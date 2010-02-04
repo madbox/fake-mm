@@ -1,22 +1,6 @@
-<h1>Listing users</h1>
-
-<table>
-  <tr>
-    <th>Login</th>
-    <th>Password</th>
-  </tr>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%=h user.login %></td>
-    <td><%=h user.password %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New user', new_user_path %>
+<div id="users-list">
+  <h1><%=t 'titles.users' %></h1>
+  <ul>
+    <%= render :partial => "user", :collection => @users %>
+  </ul>
+</div>

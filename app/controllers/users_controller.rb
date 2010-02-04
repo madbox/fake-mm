@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   filter_access_to :all
 
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
   end
