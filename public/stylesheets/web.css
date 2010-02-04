@@ -140,9 +140,8 @@ div.h98 { min-height: 98px; _height: 98px; }
 
 /* articles */
 /* #article-simple {margin: 8px; } */
-.not-authorized #article-simple img {float: right; margin: 0px 0px 8px 8px; display: inline; }
+.not-authorized #article-simple img.main-image {float: right; margin: 0px 0px 8px 8px; display: inline; }
 .not-authorized #article-simple.box h1 { width: 406px; }
-.not-authorized #article-simple .box-footer { position: relative;}
 /* .authorized #article-simple */
 .authorized #article-simple h2{ margin-top: 1em; }
 
@@ -201,12 +200,18 @@ div.h98 { min-height: 98px; _height: 98px; }
 #news-line .news-item p { margin: 0px; font-size: 8pt; }
 *.news-box-footer { text-align: right; font-size: 8pt; border-top: 1px solid black; line-height: 10pt; position: absolute; bottom: 0px; right: 0px; width: 100%; }
 
-/* commets */
+/* commets in article-simple */
 .comments ul { padding: 0px; margin: 0px; height: 112px; }
-.comments ul li { margin: 8px 0px 8px 0px;}
+.comments ul li { margin: 8px 0px 8px 0px; }
+.not-authorized .comments ul li { width: 824px;}
 .comments ul li img { float: left; margin: 8px; }
-.comments ul li .content { float: left; height: 96px; width: 496px; margin: 8px 0px; }
+.comments ul li .content { float: left; height: 96px; margin: 8px 0px; }
+.not-authorized .comments ul li .content { width: 706px; }
+.authorized .comments ul li .content { width: 496px; }
 
-/* new-comment */
+/* new-comment article-simple  */
 div.new-comment { padding: 8px; }
 .new-comment textarea { width: 600px; height: 100px; border: 1px solid black; display: block; margin-bottom: 8px; }
+
+/* user-list */
+#users-list ul li { border-bottom: 1px solid black; margin-bottom: 8px; }
