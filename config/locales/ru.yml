@@ -21,7 +21,8 @@ ru:
     read_next: "Читать далее..."
     new_user: Зарегистрироваться
     new_category: "Новая рубрика"
-    edit_profile: Настройки
+    edit_profile: "Настройки"
+    edit_article: "Редактировать статью"
   titles:
     editor: "Редакция"
     user_menu: "Меню"
