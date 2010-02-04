@@ -1,46 +1,39 @@
-<% unless current_user %>
-
 <div id="article-simple" class="box">
-  <%= image_tag @article.imagebv.url %>
-  <h1><%=h @article.title %></h1>
-  <p><%=h @article.content %></p>
-  <div class="clear article-footer"></div>
-</div>
-
-<% else %>
-
-<div id="article-simple" class="box">
-  <h1><%=h @article.title %></h1>
-  <%= image_tag @article.imagebh.url %>
-  <h2><%=h @article.title %></h2>
-
-  <p><%= @article.content %></p>
-  <div class="clear article-footer"></div>
-  <div class="comments">
-    <% if @article.comments.size > 0 -%>
-    <ul>
-      <% for comment in @article.comments do -%>
-      <li>
-	<%= image_tag comment.user.avatar.url(:small) %>
-	<div class="content column-wrap">
-	  <%= comment.user.name -%> : <%=h comment.content -%>
-	  <div class="box-footer"><%= comment.updated_at.to_s(:short) -%>qwe</div>
-	  <div class="clear"></div>
-	</div>
-      </li>
-      <% end -%>
-    </ul>
+  <% unless current_user %>
+    <%= image_tag @article.imagebv.url, :class => 'main-image' %>
+    <h1><%=h @article.title %></h1>
+    <p><%=h @article.content %></p>
+    <div class="clear article-footer"></div>
+    <div class="comments">
+      <% if @article.comments.size > 0 -%>
+      <ul>
+	<%= render :partial => "comments/comment", :collection => @article.comments %>
+      </ul>
       <div class="clear"></div>
-    <% end -%>
-    <div class="new-comment">
-      <% form_for  @comment do |f| -%>
-        <%= f.hidden_field :article_id, :value => @article.id %>
-        <%= f.text_area :content %>
-	<%= f.submit t('actions.new_comment') %>
       <% end -%>
     </div>
-  </div>
-</div>
+  <% else %>
+    <h1><%=h @article.title %></h1>
+    <%= image_tag @article.imagebh.url, :class => 'main-image' %>
+    <h2><%=h @article.title %></h2>
 
-<% end %>
+    <p><%= @article.content %></p>
+    <div class="clear article-footer"></div>
+    <div class="comments">
+      <% if @article.comments.size > 0 -%>
+      <ul>
+	<%= render :partial => "comments/comment", :collection => @article.comments %>
+      </ul>
+      <div class="clear"></div>
+      <% end -%>
+      <div class="new-comment">
+	<% form_for  @comment do |f| -%>
+	<%= f.hidden_field :article_id, :value => @article.id %>
+	<%= f.text_area :content %>
+	<%= f.submit t('actions.new_comment') %>
+	<% end -%>
+      </div>
+    </div>
+  <% end %>
+</div>
 <%= render 'news_line', :news => @news %>
