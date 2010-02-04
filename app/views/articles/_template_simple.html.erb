@@ -9,7 +9,7 @@
 
 <% else %>
 
-<div id="article-simple-authorized" class="box">
+<div id="article-simple" class="box">
   <h1><%=h @article.title %></h1>
   <%= image_tag @article.imagebh.url %>
   <h2><%=h @article.title %></h2>
@@ -22,18 +22,21 @@
       <% for comment in @article.comments do -%>
       <li>
 	<%= image_tag comment.user.avatar.url(:small) %>
-	<%= comment.user.name -%> : <%=h comment.content -%>
-	<div class="box-footer-plain"><%= comment.updated_at.to_s(:short) -%></div>
-	
+	<div class="content column-wrap">
+	  <%= comment.user.name -%> : <%=h comment.content -%>
+	  <div class="box-footer"><%= comment.updated_at.to_s(:short) -%>qwe</div>
+	  <div class="clear"></div>
+	</div>
       </li>
       <% end -%>
     </ul>
+      <div class="clear"></div>
     <% end -%>
     <div class="new-comment">
       <% form_for  @comment do |f| -%>
         <%= f.hidden_field :article_id, :value => @article.id %>
         <%= f.text_area :content %>
-	<%= f.submit %>
+	<%= f.submit t('actions.new_comment') %>
       <% end -%>
     </div>
   </div>
