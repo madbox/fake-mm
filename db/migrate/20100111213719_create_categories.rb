@@ -8,7 +8,7 @@ class CreateCategories < ActiveRecord::Migration
 
       t.text :description, :default => '', :null => false
 
-      t.integer :user_id, :default => :null
+      t.integer :user_id, :default => nil
 
       t.string :custom_author, :default => ''
       t.string :custom_author_link, :default => ''
