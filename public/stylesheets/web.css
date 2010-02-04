@@ -62,9 +62,9 @@ img { border: none; }
 #copyright { text-align: center; font-size: 10pt; padding: 20px; margin-top: 16px;  border-top: 1px solid black; }
 
 #footer p { font-size: 8pt; }
-#footer #left   { width: 321px; float:left; text-align: right;}
+#footer #left   { width: 313px; float:left; text-align: right;}
 #footer #center { width: 198px; float:left; text-align: center; }
-#footer #right  { width: 321px; float:right; text-align: left; }
+#footer #right  { width: 313px; float:right; text-align: left; }
 
 /* Registration page: Users/new */
 #big-title { text-align: center;  margin: 90px 0px 40px 0px; }
