@@ -1,10 +1,11 @@
 <div class="category-item">
+  <a href="<%= category_path(category) -%>">
   <div class="category-image">
-    <%= link_to image_tag( category.imagemh.url ), category %>
+    <%= image_tag( category.imagemh.url ) %>
   </div>
   <div class="category-info">
-    <h2><%= link_to category.name, category -%></h2>
-    <p><%= link_to category.description, category -%></p>
+    <h2><%= category.name -%></h2>
+    <p><%= category.description -%></p>
     <div class="category-info-footer">
       <div class="category-item-info-footer-source">
 	<div><%= t 'activerecord.attributes.category.author'-%> : <%= category.author -%></div>
@@ -16,4 +17,5 @@
     </div>
   </div>
   <div class="clear"></div>
+  </a>
 </div>
