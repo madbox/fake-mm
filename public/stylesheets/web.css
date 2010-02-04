@@ -75,6 +75,7 @@ img { border: none; }
 #register-form { width: 420px; margin: 0px auto; }
 
 #content { width: 824px; margin-top: 8px; background-color: white;}
+#content a {color: black;}
 /* Main page boxes */
 
 .box h1 { margin: 0px 0px 8px 0px; 
@@ -120,6 +121,7 @@ div.h98 { min-height: 98px; _height: 98px; }
 /* profile page */
 #user-nav ul {margin: 16px 0px 16px 0px; padding: 0px 0px 0px 8px; }
 #user-nav li { font-size: 10pt; margin-bottom: 4px;  }
+#user-nav li a:hover { text-decoration: underline; }
 #user-avatar { float: left; margin-right: 8px; width: 200px; height:300px; }
 #user-info {margin-left: 208px;}
 #user-name { border-bottom: 1px solid black; margin-bottom: 0.5em; }
