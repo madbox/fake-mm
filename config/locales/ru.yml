@@ -1,5 +1,7 @@
 ru:
   actions:
+    recover_password: "Забыли пароль?"
+    reset_password: "Сбросить пароль"
     login: "Войти"
     logout: "Выйти"
     edit: "Изменить"
@@ -60,10 +62,12 @@ ru:
     authorization_failed: "Не достаточно прав для выполнения операции"
     article_publishing_failed: "Ошибка при публикации статьи"
     article_publishing_failed: "Ошибка при снятии публикации статьи"
+    user_save_failed: "Ошибка при сохранении профиля"
   notice:
     article_published: "Статья опубликована"
     article_unpublished: "Статья снята с публикации"
     user_registered: "Пользователь зарегистрирован"
+    password_recovered: "Вам выслано письмо с новым паролем"
   activerecord:
     models:
       user: "Профиль"

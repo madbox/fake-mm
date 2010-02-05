@@ -1,4 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+  map.recover_password '/recover_password', :controller => 'users', :action => 'recover_password'
+  map.reset_password '/reset_password', :controller => 'users', :action => 'reset_password'
+
   map.reviews '/reviews'    , :controller => 'categories', :action => 'show', :sysname => 'review'
   map.covers '/covers'    , :controller => 'categories', :action => 'show', :sysname => 'review'
   map.interactive '/interactive'    , :controller => 'categories', :action => 'show', :sysname => 'interactive'

@@ -22,4 +22,13 @@ class User < ActiveRecord::Base
     # TODO: реальные роли надо сделать
     @role_symbols ||= ( roles.map{|r|r.sysname.to_sym} << :guest )
   end
+
+  def self.generate_password( p_length = 8 )
+    chars = '1234567890QWERTYUIOPLKJHGFDSAZXCVBNMqwertyuioplkjhgfdsazxcvbnm'
+    new_pass = ''
+    p_length.times do
+      new_pass << chars[rand(chars.length)].chr
+    end
+    new_pass
+  end
 end

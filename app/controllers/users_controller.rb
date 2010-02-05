@@ -42,4 +42,28 @@ class UsersController < ApplicationController
       render :action => :edit
     end
   end
+
+  def recover_password
+    @user = User.new
+  end
+
+  def reset_password
+    @user = User.find_by_email(params[:user][:email])
+
+    if @user
+      @user.password_confirmation = @user.password = User.generate_password
+      if @user.save_without_session_maintenance 
+        Notifications.deliver_recover_password( @user, @user.password )
+        
+        flash[:notice] = I18n.t('notice.password_recovered')
+        redirect_to login_url
+      else
+        flash[:error] = I18n.t('errors.user_save_failed')
+        redirect_to root_url
+      end
+    else
+      flash[:error] = I18n.t('errors.user_not_found')
+      redirect_to recover_password_path
+    end
+  end
 end
