@@ -1,12 +1,19 @@
-<h1>Editing user</h1>
+<h1><%= t('titles.edit_user') %></h1>
 
-<% form_for(@user) do |f| %>
+<% form_for(@user, :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
+<%= styled_field 'edit', @user, :email, f, 'text_field' %>
+<%= styled_field 'edit', @user, :password, f, 'text_field' %>
+<%= styled_field 'edit', @user, :password_confirmation, f, 'text_field' %>
+<%= styled_field 'edit', @user, :nick, f, 'text_field' %>
+<%= styled_field 'edit', @user, :age, f, 'text_field' %>
+<%= styled_field 'edit', @user, :fname, f, 'text_field' %>
+<%= styled_field 'edit', @user, :lname, f, 'text_field' %>
+<%= styled_field 'edit', @user, :sname, f, 'text_field' %>
+<%= styled_field 'edit', @user, :avatar, f, :file_field -%>
+
+
   <p>
     <%= f.submit t('actions.update') %>
   </p>

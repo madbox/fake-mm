@@ -68,6 +68,7 @@ ru:
     article_unpublished: "Статья снята с публикации"
     user_registered: "Пользователь зарегистрирован"
     password_recovered: "Вам выслано письмо с новым паролем"
+    logged_in: "Авторизация успешна"
   activerecord:
     models:
       user: "Профиль"

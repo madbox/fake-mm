@@ -76,8 +76,8 @@
 		<ul>
 		  <li><%= link_to t('actions.article_editor'), article_editor_path -%></li>
 		  <li><%= link_to t('actions.new_article'), new_article_path -%></li>	
-		  <% if @article -%>		  
-		    <li><%= link_to t('actions.edit_article'), edit_article_path -%></li>
+		  <% if @article && !@article.new_record? -%>		  
+		    <li><%= link_to t('actions.edit_article'), edit_article_path( @article ) -%></li>
 		  <% end -%>
 		  <li><%= link_to t('actions.new_category'), new_category_path -%></li>
 		  <li><%= link_to t('actions.show_drafts'), drafts_path -%></li>
