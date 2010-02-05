@@ -63,6 +63,7 @@ ru:
   notice:
     article_published: "Статья опубликована"
     article_unpublished: "Статья снята с публикации"
+    user_registered: "Пользователь зарегистрирован"
   activerecord:
     models:
       user: "Профиль"

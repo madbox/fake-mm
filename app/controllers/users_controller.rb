@@ -13,7 +13,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.roles << Role.find_by_sysname('customer')
     if @user.save
-      flash[:notice] = "Account registered!"
+      flash[:notice] = I18n.t('notice.user_registered')
+      Notifications.deliver_signup( @user, params[:user][:password] )
       redirect_to root_url
     else
       render :action => :new
