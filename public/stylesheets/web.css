@@ -99,7 +99,7 @@ div.h98 { min-height: 98px; _height: 98px; }
 
 .column-wrap { position: relative; float: left; display: inline;}
 
-*.box-footer { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 20pt; position: absolute; bottom: 0px; right: 0px; width: 100%; }
+*.box-footer { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 1.3em; position: absolute; bottom: 0px; right: 0px; width: 100%; background-color: white; }
 *.box-footer-plain { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 20pt; width: 100%; }
 
 #news-of-the-day { width: 408px; margin: 8px 8px 0px 0px; float:left; display: inline; }
@@ -115,7 +115,6 @@ div.h98 { min-height: 98px; _height: 98px; }
 #user-sidebar { float: left; width: 200px; margin-right: 8px; margin-bottom: 8px; }
 #user-content { width: 616px; float: left; display: inline; }
 #user-content .box-footer-plain { border: none; }
-/* #user-content .box-footer { border: none; } */
 #user-content form p { margin: 0.5em 0px; }
 
 /* profile page */
@@ -129,8 +128,6 @@ div.h98 { min-height: 98px; _height: 98px; }
 #user-info p { margin: 0px 0px 0px 2em; }
 #user-name p { margin: 0px; padding: 0px; line-height: 14pt;}
 
-/* comments */
-.comment { margin: 0.5em; border: 1px solid black; }
 
 /* flash */
 #flash { position: absolute; width: 100%; margin: 0.5em 0px; line-height: 30pt;}
@@ -205,11 +202,15 @@ div.h98 { min-height: 98px; _height: 98px; }
 /* commets in article-simple */
 .comments ul { padding: 0px; margin: 0px; height: 112px; }
 .comments ul li { margin: 8px 0px 8px 0px; }
-.not-authorized .comments ul li { width: 824px;}
+.not-authorized .comments ul li { width: 824px; }
 .comments ul li img { float: left; margin: 8px; }
-.comments ul li .content { float: left; height: 96px; margin: 8px 0px; }
+.comments ul li .content { float: left; height: 96px; margin: 8px 0px 30px ; overflow: hidden; }
 .not-authorized .comments ul li .content { width: 706px; }
 .authorized .comments ul li .content { width: 496px; }
+
+/* comments */
+.comment { margin: 0.5em; border: 1px solid black; }
+
 
 /* new-comment article-simple  */
 div.new-comment { padding: 8px; }

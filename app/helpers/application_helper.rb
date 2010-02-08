@@ -14,4 +14,14 @@ module ApplicationHelper
     end
   end
 
+  def expand_comment( string, *opts )
+    options = opts.extract_options!.stringify_keys
+    options[:truncate_to] ||= 200
+    options[:expand_to_height] ||= 196
+    if string.length > options[:truncate_to]
+      ERB::Util.h( string.mb_chars[1..options[:truncate_to] - 5] ) + %Q{ <a href="#" onclick="e = $(this).parent(); e.html('#{ ERB::Util.h(string.gsub(/\s/, " ") ) }'); e.parent().animate({ height: #{options[:expand_to_height]}}); return false">...</a> }
+    else
+      string
+    end
+  end
 end

@@ -1,7 +1,7 @@
 <li>
   <%= image_tag comment.user.avatar.url(:small) %>
   <div class="content column-wrap">
-    <%= comment.user.name -%> : <%=h comment.content -%>
+    <div class="text"><%= comment.user.name -%> : <%= expand_comment( comment.content ) -%></div>
     <div class="box-footer"><%= comment.updated_at.to_s(:short) -%>qwe</div>
   </div>
   <div class="clear"></div>
