@@ -100,7 +100,7 @@ div.h98 { min-height: 98px; _height: 98px; }
 .column-wrap { position: relative; float: left; display: inline;}
 
 *.box-footer { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 1.3em; position: absolute; bottom: 0px; right: 0px; width: 100%; background-color: white; }
-*.box-footer-plain { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 20pt; width: 100%; }
+*.box-footer-plain { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 1.3em; width: 100%; }
 
 #news-of-the-day { width: 408px; margin: 8px 8px 0px 0px; float:left; display: inline; }
 #announcement { width: 408px; margin: 8px 0px 0px 0px; float:left; display: inline; }
@@ -143,6 +143,7 @@ div.h98 { min-height: 98px; _height: 98px; }
 .not-authorized #article-simple.box h1 { width: 406px; }
 /* .authorized #article-simple */
 .authorized #article-simple h2{ margin-top: 1em; }
+#article-simple .box-footer-plain { margin-bottom: 1em; border-bottom: 1px solid black; }
 
 /* category show (list of articles) */
 .category ul { margin: 8px 0px 8px 0px; padding: 0px; }

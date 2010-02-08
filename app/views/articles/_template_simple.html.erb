@@ -18,8 +18,9 @@
     <h2><%=h @article.title %></h2>
 
     <p><%= @article.content %></p>
-    <div class="clear article-footer"></div>
+    <div class="clear article-footer box-footer-plain">Убей всех людей<br /><%= @article.imagebh.url %></div>
     <div class="comments">
+      <h1>Коментарии</h1>
       <% if @article.comments.size > 0 -%>
       <ul>
 	<%= render :partial => "comments/comment", :collection => @article.comments %>

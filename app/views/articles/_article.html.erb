@@ -58,7 +58,7 @@
       <% if article.draft? %>
         <%= link_to t('misc.answer_yes'), article_undraft_path(article) %>
       <% else %>
-        <%= link_to t('misc.answer_no'), article_make_draft_path(article) %>
+        <%= link_to t('misc.answer_no'), article_to_drafts_path(article) %>
       <% end %>
     <p><b><%= t('activerecord.attributes.article.importance')-%></b>:
       <%= article.importance -%></p>

@@ -28,7 +28,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :comments
   map.article_publish '/articles/:id/publish', :controller => 'articles', :action => 'publish'
   map.article_unpublish '/articles/:id/unpublish', :controller => 'articles', :action => 'unpublish'
-  map.article_make_draft '/articles/:id/make_draft', :controller => 'articles', :action => 'make_draft'
+  map.article_to_drafts '/articles/:id/to_drafts', :controller => 'articles', :action => 'to_drafts'
   map.article_undraft '/articles/:id/undraft', :controller => 'articles', :action => 'undraft'
   map.article_editor '/articles/editor', :controller => 'articles', :action => 'editor'
   map.drafts '/articles/drafts', :controller => 'articles', :action => 'drafts'

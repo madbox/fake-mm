@@ -120,7 +120,7 @@ class ArticlesController < ApplicationController
     if @article.undraft
       flash[:notice] = I18n.t('notice.article_undrafted')
     else
-      flash[:notice] = I18n.t('error.article_undrafting_failed')
+      flash[:notice] = I18n.t('errors.article_undrafting_failed')
     end
 
     respond_to do |format|
@@ -136,7 +136,7 @@ class ArticlesController < ApplicationController
     if @article.make_draft
       flash[:notice] = I18n.t('notice.article_drafted')
     else
-      flash[:notice] = I18n.t('error.article_drafting_failed')
+      flash[:notice] = I18n.t('errors.article_drafting_failed')
     end
 
     respond_to do |format|

@@ -27,7 +27,7 @@ end
 
 privileges do
   privilege :manage do
-    includes :create, :read, :update, :destroy, :new, :edit, :publish, :unpublish, :make_draft, :undraft
+    includes :create, :read, :update, :destroy, :new, :edit, :publish, :unpublish, :to_drafts, :undraft
   end
 
   privilege :read do
