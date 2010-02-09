@@ -69,6 +69,7 @@ ru:
     article_published: "Статья опубликована"
     article_unpublished: "Статья снята с публикации"
     article_drafted: "Статья переведена в черновики"
+    article_undrafted: "Статья теперь не черновик"
     user_registered: "Пользователь зарегистрирован"
     password_recovered: "Вам выслано письмо с новым паролем"
     logged_in: "Авторизация успешна"
