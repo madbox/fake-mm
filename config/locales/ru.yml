@@ -40,6 +40,7 @@ ru:
     new_category: "Новая рубрика"
     news: "Новости"
   misc:
+    comments: "Коментариев"
     no_review: "Нет рецензий"
     no_feature: "Нет features"
     author_unknown: "Неизвестный"

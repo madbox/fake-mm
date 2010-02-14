@@ -1,3 +1,4 @@
+# -*- coding: undecided -*-
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
@@ -23,5 +24,10 @@ module ApplicationHelper
     else
       string
     end
+  end
+
+  def comment_count_string( number )
+    raise ArgumentError, "Numeric expected" unless number.kind_of? Numeric
+    
   end
 end

@@ -77,7 +77,8 @@ img { border: none; }
 #register-form { width: 420px; margin: 0px auto; }
 
 #content { width: 824px; margin-top: 8px; background-color: white;}
-#content a {color: black;}
+#content a { color: black; }
+#content .box h1 a { color: white; }
 /* Main page boxes */
 
 .box h1 { margin: 0px 0px 8px 0px; 
@@ -108,11 +109,9 @@ div.h98 { min-height: 98px; _height: 98px; }
 #announcement { width: 408px; margin: 8px 0px 0px 0px; float:left; display: inline; }
 
 #features { width: 408px; margin: 8px; margin: 0px 8px 0px 0px; float:left; display: inline; padding-top: 16px; }
-#features h1 a { color: white; }
 #features .feature{ float:left; display: inline; width: 200px; margin: 0px; }
 #features *.first { margin-right: 8px; }
 #reviews { width: 200px; margin: 0px 8px 0px 0px; float:left; display: inline; padding-top: 16px; }
-#reviews h1 a { color: white; }
 #categories { width: 200px; margin: 0px; float:left; display: inline; padding-top: 16px; }
 
 /* Logged in markup */
@@ -205,13 +204,13 @@ div.h98 { min-height: 98px; _height: 98px; }
 *.news-box-footer { text-align: right; font-size: 8pt; border-top: 1px solid black; line-height: 10pt; position: absolute; bottom: 0px; right: 0px; width: 100%; }
 
 /* commets in article-simple */
-.comments ul { padding: 0px; margin: 0px; height: 112px; }
-.comments ul li { margin: 8px 0px 8px 0px; }
-.not-authorized .comments ul li { width: 824px; }
-.comments ul li img { float: left; margin: 8px; }
-.comments ul li .content { float: left; height: 96px; margin: 8px 0px 30px ; overflow: hidden; }
-.not-authorized .comments ul li .content { width: 706px; }
-.authorized .comments ul li .content { width: 496px; }
+#comments ul { padding: 0px; margin: 0px; height: 112px; }
+#comments ul li { margin: 8px 0px 8px 0px; }
+.not-authorized #comments ul li { width: 824px; }
+#comments ul li img { float: left; margin: 8px; }
+#comments ul li .content { float: left; height: 96px; margin: 8px 0px 30px ; overflow: hidden; }
+.not-authorized #comments ul li .content { width: 706px; }
+.authorized #comments ul li .content { width: 496px; }
 
 /* comments */
 .comment { margin: 0.5em; border: 1px solid black; }

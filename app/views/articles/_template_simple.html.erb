@@ -19,7 +19,7 @@
 
     <p><%= @article.content %></p>
     <div class="clear article-footer box-footer-plain">Убей всех людей<br /><%= @article.imagebh.url %></div>
-    <div class="comments">
+    <div id="comments">
       <h1>Коментарии</h1>
       <% if @article.comments.size > 0 -%>
       <ul>

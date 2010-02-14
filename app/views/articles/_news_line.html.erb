@@ -12,7 +12,14 @@
           <p><%= article.title -%></p>
         </a>
       <% end %>
-      <div class="news-box-footer">&nbsp;<%= article.publish_date.to_s(:short) if article.published? -%></div>
+      <div class="news-box-footer">
+	<% unless article.new_record? %>
+	<%= link_to "#{article.comments.count} #{Russian.p( article.comments.count, 'коментарий', 'коментарии', 'коментариев' )}",
+	            article_path(article, :anchor => 'comments') -%>
+	<% else %>
+	&nbsp;
+	<% end %>
+      </div>
     </li>
     <% i += 1; end %>
   </ul>
