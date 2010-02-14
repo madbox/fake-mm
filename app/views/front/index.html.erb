@@ -38,6 +38,7 @@
       <% if @feature1 %>
         <a href="<%= article_path(@feature1) %>">
           <%= image_tag @feature1.imagemh.url %>
+	  <h2><%= @feature1.title -%></h2>
           <p><%= @feature1.description -%></p>
           <div class="box-footer"><%= @feature1.publish_date.to_s(:short) -%></div>
 	</a>
