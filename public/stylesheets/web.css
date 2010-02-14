@@ -114,6 +114,7 @@ div.h98 { min-height: 98px; _height: 98px; }
 #features .feature{ float:left; display: inline; width: 200px; margin: 0px; }
 #features *.first { margin-right: 8px; }
 #reviews { width: 200px; margin: 0px 8px 0px 0px; float:left; display: inline; padding-top: 16px; }
+#reviews h2 { font-size: 16pt; }
 #categories { width: 200px; margin: 0px; float:left; display: inline; padding-top: 16px; }
 
 /* Logged in markup */
