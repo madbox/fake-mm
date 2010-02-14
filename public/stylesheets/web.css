@@ -59,7 +59,9 @@ img { border: none; }
 #nav a { color: black; }
 #nav a:hover { border-bottom: 1px dashed black; }
 
-#copyright { text-align: center; font-size: 10pt; padding: 20px; margin-top: 16px;  border-top: 1px solid black; }
+#copyright { text-align: center; font-size: 10pt; padding: 20px; margin-top: 16px; 
+	     /* border-top: 1px solid black; */
+	   }
 
 #footer p { font-size: 8pt; }
 #footer #left   { width: 313px; float:left; text-align: right;}
@@ -105,11 +107,13 @@ div.h98 { min-height: 98px; _height: 98px; }
 #news-of-the-day { width: 408px; margin: 8px 8px 0px 0px; float:left; display: inline; }
 #announcement { width: 408px; margin: 8px 0px 0px 0px; float:left; display: inline; }
 
-#features { width: 408px; margin: 8px; margin: 0px 8px 0px 0px; float:left; display: inline; padding-top: 16px; border-top: 1px solid black; }
+#features { width: 408px; margin: 8px; margin: 0px 8px 0px 0px; float:left; display: inline; padding-top: 16px; }
+#features h1 a { color: white; }
 #features .feature{ float:left; display: inline; width: 200px; margin: 0px; }
 #features *.first { margin-right: 8px; }
-#reviews { width: 200px; margin: 0px 8px 0px 0px; float:left; display: inline; padding-top: 16px; border-top: 1px solid black; }
-#categories { width: 200px; margin: 0px; float:left; display: inline; padding-top: 16px; border-top: 1px solid black; }
+#reviews { width: 200px; margin: 0px 8px 0px 0px; float:left; display: inline; padding-top: 16px; }
+#reviews h1 a { color: white; }
+#categories { width: 200px; margin: 0px; float:left; display: inline; padding-top: 16px; }
 
 /* Logged in markup */
 #user-sidebar { float: left; width: 200px; margin-right: 8px; margin-bottom: 8px; }

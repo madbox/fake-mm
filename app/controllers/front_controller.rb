@@ -2,7 +2,7 @@ class FrontController < ApplicationController
   before_filter :prepare_news
 
   def index
-    redirect_to current_user if current_user
+#    redirect_to current_user if current_user
     @article = Article.published.news.most_important.first
     
     if cat = Category.find_by_sysname('features')
