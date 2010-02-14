@@ -1,8 +1,10 @@
 <li>
-  <%= image_tag comment.user.avatar.url(:small) %>
+  <%= link_to image_tag( comment.user.avatar.url(:small) ), comment.user %>
   <div class="content column-wrap">
-    <div class="text"><%= comment.user.name -%> : <%= expand_comment( comment.content ) -%></div>
-    <div class="box-footer"><%= comment.updated_at.to_s(:short) -%>qwe</div>
+    <div class="text"><h3><%= comment.user.name -%></h3><p><%= expand_comment( comment.content ) -%></p></div>
+    <div class="box-footer">
+      <%= link_to t('actions.destroy'), comment_path( comment ), :method => :delete %>
+      <%= comment.updated_at.to_s(:short) -%></div>
   </div>
   <div class="clear"></div>
 </li>

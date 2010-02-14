@@ -59,7 +59,7 @@
 	</div>
 
 	<div id="content" class="<%= current_user ? 'authorized' : 'not-authorized' -%>">
-	  <% unless current_user %>
+	  <% unless current_user && ! @hide_user_sidebar %>
 	    <%= yield %>
 	  <% else %>
 	    <div id="user-sidebar">
@@ -95,6 +95,11 @@
 	    </div>
 	    <% end %>
 	    <div class="clear"></div>
+
+	    <% unless @hide_news_line %>
+	    <%= render 'articles/news_line', :news => @news %>
+	    <% end %>
+
 	</div>
 	<div id="copyright">FAKE-MM © 2007-2009</div>
       </div>

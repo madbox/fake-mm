@@ -67,7 +67,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
         flash[:notice] = 'Comment was successfully updated.'
-        format.html { redirect_to(@comment) }
+        format.html { redirect_to(@comment.article) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -83,7 +83,7 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to(comments_url) }
+      format.html { redirect_to(@comment.article) }
       format.xml  { head :ok }
     end
   end

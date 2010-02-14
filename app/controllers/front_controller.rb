@@ -15,5 +15,8 @@ class FrontController < ApplicationController
     if cat = Category.find_by_sysname('review')
       @review = Article.published.scoped_by_category_id( cat.id ).first
     end
+
+    @hide_news_line = true
+    @hide_user_sidebar = true
   end
 end

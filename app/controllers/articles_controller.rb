@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
   filter_access_to :all
-  before_filter :prepare_news
 
   # GET /articles
   # GET /articles.xml

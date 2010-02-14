@@ -2,6 +2,8 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  before_filter :prepare_news
+
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
@@ -21,7 +23,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def prepare_news
-    news_count = (current_user ? 6 : 8)
+    news_count = 8
     @news = Article.published.news.find(:all, :limit => news_count)
     if @news.size < news_count
       (news_count - @news.size).times do

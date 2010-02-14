@@ -22,10 +22,12 @@
     <h1><%= link_to t('titles.features'), category_path('features') -%></h1>
     <div class="feature column-wrap first h172">
       <% if @feature0 %>
-        <%= image_tag @feature0.imagemh.url %>
-	<h2><%= @feature0.title -%></h2>
-        <p><%= @feature0.description -%></p>
-        <div class="box-footer"><%= @feature0.publish_date.to_s(:short) -%></div>
+        <a href="<%= article_path(@feature0) %>">
+          <%= image_tag @feature0.imagemh.url %>
+	  <h2><%= @feature0.title -%></h2>
+          <p><%= @feature0.description -%></p>
+          <div class="box-footer"><%= @feature0.publish_date.to_s(:short) -%></div>
+	</a>
       <% else %>
         <%= t 'misc.no_feature' -%>
 	<div class="box-footer"></div>
@@ -34,9 +36,11 @@
     </div>
     <div class="feature column-wrap h172">
       <% if @feature1 %>
-        <%= image_tag @feature1.imagemh.url %>
-        <p><%= @feature1.description -%></p>
-        <div class="box-footer"><%= @feature1.publish_date.to_s(:short) -%></div>
+        <a href="<%= article_path(@feature1) %>">
+          <%= image_tag @feature1.imagemh.url %>
+          <p><%= @feature1.description -%></p>
+          <div class="box-footer"><%= @feature1.publish_date.to_s(:short) -%></div>
+	</a>
       <% else %>
         <%= t 'misc.no_feature' -%>
 	<div class="box-footer"></div>

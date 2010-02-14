@@ -14,7 +14,7 @@
       <% end %>
       <div class="news-box-footer">
 	<% unless article.new_record? %>
-	<%= link_to "#{article.comments.count} #{Russian.p( article.comments.count, 'коментарий', 'коментарии', 'коментариев' )}",
+	<%= link_to "#{article.comments.count} #{Russian.p( article.comments.count, 'коментарий', 'коментария', 'коментариев' )}",
 	            article_path(article, :anchor => 'comments') -%>
 	<% else %>
 	&nbsp;
