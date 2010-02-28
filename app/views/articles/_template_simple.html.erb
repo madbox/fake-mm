@@ -5,36 +5,18 @@
     <p class="description"><%= @article.description %></p>
     <p><%= @article.content %></p>
     <div class="clear article-footer"></div>
-    <div class="comments">
-      <% if @article.comments.size > 0 -%>
-      <ul>
-	<%= render :partial => "comments/comment", :collection => @article.comments %>
-      </ul>
-      <div class="clear"></div>
-      <% end -%>
-    </div>
+
+
   <% else %>
     <h1><%=h @article.title %></h1>
     <%= image_tag @article.imagebh.url, :class => 'main-image' %>
+ 
     <h2><%=h @article.title %></h2>
     <p class="description"><%= @article.description %></p>
     <p><%= @article.content %></p>
     <div class="clear article-footer box-footer-plain"><%= article_footer @article -%></div>
-    <div id="comments">
-      <h1>Коментарии</h1>
-      <% if @article.comments.size > 0 -%>
-      <ul>
-	<%= render :partial => "comments/comment", :collection => @article.comments %>
-      </ul>
-      <div class="clear"></div>
-      <% end -%>
-      <div class="new-comment">
-	<% form_for  @comment do |f| -%>
-	<%= f.hidden_field :article_id, :value => @article.id %>
-	<%= f.text_area :content %>
-	<%= f.submit t('actions.new_comment') %>
-	<% end -%>
-      </div>
-    </div>
+
   <% end %>
 </div>
+
+<%= render :partial => 'simple_article_comments' %>

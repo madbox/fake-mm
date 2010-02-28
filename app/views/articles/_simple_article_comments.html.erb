@@ -1,0 +1,16 @@
+    <div id="comments">
+      <h1>Коментарии</h1>
+      <% if @article.comments.size > 0 -%>
+      <ul>
+	<%= render :partial => "comments/comment", :collection => @article.comments %>
+      </ul>
+      <div class="clear"></div>
+      <% end -%>
+      <div class="new-comment">
+	<% form_for  @comment do |f| -%>
+	<%= f.hidden_field :article_id, :value => @article.id %>
+	<%= f.text_area :content %>
+	<%= f.submit t('actions.new_comment') %>
+	<% end -%>
+      </div>
+    </div>
