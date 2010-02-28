@@ -1,9 +1,11 @@
 <% if type == :news_of_the_day -%>
 
-<h1><%= link_to t('actions.show_news_of_the_day'), article_path(article) -%></h1>
-<img src="<%= article.imagemm.url -%>" />
-<h2><%= article.title -%></h2>
-<p><%= article.description -%></p>
+<a href="<%= article_path(article) -%>">
+  <h1><%= t('actions.show_news_of_the_day') -%></h1>
+  <img src="<%= article.imagemm.url -%>" />
+  <h2><%= article.title -%></h2>
+  <p><%= article.description -%></p>
+</a>
 <div class="box-footer">Корреспондент: <%= link_to article.user.name, user_path(article.user) -%></div>
 
 <% elsif type == :plain -%>
