@@ -111,10 +111,12 @@ div.h98 { min-height: 98px; _height: 98px; }
 
 #features { width: 408px; margin: 8px; margin: 0px 8px 0px 0px; float:left; display: inline; padding-top: 16px; }
 #features h2 { font-size: 16pt; }
-#features .feature{ float:left; display: inline; width: 200px; margin: 0px; }
+#features .feature{ float:left; display: inline; width: 200px; margin: 0px; height: 522px; overflow: hidden; }
 #features *.first { margin-right: 8px; }
 #reviews { width: 200px; margin: 0px 8px 0px 0px; float:left; display: inline; padding-top: 16px; }
 #reviews h2 { font-size: 16pt; }
+#reviews.box {height: 550px; overflow: hidden;}
+#categories.box {height: 550px; overflow: hidden;}
 #categories { width: 200px; margin: 0px; float:left; display: inline; padding-top: 16px; }
 
 /* Logged in markup */
@@ -210,16 +212,16 @@ div.h98 { min-height: 98px; _height: 98px; }
 /* commets in article-simple */
 #comments .text h3 { margin: 0px; font-size: 12pt; font-weight: 900; }
 #comments .text p { margin-top: 0px; }
-#comments ul { padding: 0px; margin: 0px; height: 112px; }
-#comments ul li { margin: 8px 0px 8px 0px; }
+#comments ul { padding: 0px; margin: 0px; height: 104px; }
+#comments ul li { margin: 0px 0px 0px 0px; }
 .not-authorized #comments ul li { width: 824px; }
-#comments ul li img { float: left; margin: 8px; }
-#comments ul li .content { float: left; height: 96px; margin: 8px 0px 30px ; overflow: hidden; }
-.not-authorized #comments ul li .content { width: 706px; }
-.authorized #comments ul li .content { width: 496px; }
+#comments ul li img { float: left; margin: 4px 8px 0px 0px }
+#comments ul li .content { float: left; height: 96px; margin: 4px 0px 4px ; overflow: hidden; }
+.not-authorized #comments ul li .content { width: 710px; }
+.authorized #comments ul li .content { width: 512px; }
 
 /* comments */
-.comment { margin: 0.5em; border: 1px solid black; }
+.comment { border: 1px solid black; }
 
 
 /* new-comment article-simple  */

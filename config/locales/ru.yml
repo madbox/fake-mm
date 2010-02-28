@@ -101,6 +101,7 @@ ru:
         category: "Рубрика"
         author: "Автор"
         photographer: "Фотограф"
+        source: "Источник"
         published: "Опубликована"
         draft: "Черновик"
         importance: "Важность"
