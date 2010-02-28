@@ -53,10 +53,12 @@
   <div id="reviews" class="box column-wrap h200">
     <h1><%= link_to t('titles.reviews'), category_path('review') -%></h1>
     <% if @review %>
-      <%= image_tag @review.imagemh.url %>
-      <h2><%= @review.title -%></h2>
-      <p><%= @review.description -%></p>
-      <div class="box-footer"><%= @review.publish_date.to_s(:short) -%></div>
+      <a href="<%= article_path @review -%>">
+	<%= image_tag @review.imagemh.url %>
+	<h2><%= @review.title -%></h2>
+	<p><%= @review.description -%></p>
+	<div class="box-footer"><%= @review.publish_date.to_s(:short) -%></div>
+      </a>
     <% else %>
       <%= t 'misc.no_review' -%>
       <div class="box-footer"></div>
