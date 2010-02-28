@@ -2,7 +2,7 @@
   <% unless current_user %>
     <%= image_tag @article.imagebv.url, :class => 'main-image' %>
     <h1><%=h @article.title %></h1>
-    <p><%= @article.description %></p>
+    <p class="description"><%= @article.description %></p>
     <p><%= @article.content %></p>
     <div class="clear article-footer"></div>
     <div class="comments">
@@ -17,7 +17,7 @@
     <h1><%=h @article.title %></h1>
     <%= image_tag @article.imagebh.url, :class => 'main-image' %>
     <h2><%=h @article.title %></h2>
-
+    <p class="description"><%= @article.description %></p>
     <p><%= @article.content %></p>
     <div class="clear article-footer box-footer-plain"><%= article_footer @article -%></div>
     <div id="comments">

@@ -3,8 +3,8 @@ module ArticlesHelper
   def article_author_link( article )
     string = 
     unless article.custom_author.blank?
-      if article.author_link.blank?
-        %Q{<a href="#{article.author_link}">#{article.custom_author}</a>}
+      unless article.custom_author_link.blank?
+        %Q{<a href="#{article.custom_author_link}">#{article.custom_author}</a>}
       else
         article.custom_author
       end

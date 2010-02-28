@@ -152,7 +152,9 @@ div.h98 { min-height: 98px; _height: 98px; }
 /* .authorized #article-simple */
 .authorized #article-simple h2{ margin-top: 1em; }
 #article-simple .box-footer-plain { margin-bottom: 1em; border-bottom: 1px solid black; }
-#article-simple p { text-align: justify; }
+#article-simple p.description { font-weight: 900; }
+#article-simple p { text-align: justify; margin: 1em 0px; }
+#article-simple p:first-letter{ margin-left: 1ex;}
 
 /* category show (list of articles) */
 .category ul { margin: 8px 0px 8px 0px; padding: 0px; }
