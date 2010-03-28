@@ -6,7 +6,7 @@
   <h2><%= article.title -%></h2>
   <p><%= article.description -%></p>
 </a>
-<div class="box-footer">Корреспондент: <%= link_to article.user.name, user_path(article.user) -%></div>
+<div class="box-footer">Корреспондент: <%= article_author_link( @article ) -%></div>
 
 <% elsif type == :plain -%>
 
