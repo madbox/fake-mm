@@ -21,7 +21,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find( :last, :conditions => ['id = ? OR sysname = ? ', params[:id], params[:sysname]] )
+    @category = Category.find( :last, :conditions => ['id = ? OR sysname = ? ', params[:id], params[:id]] )
+
+    raise ActiveRecord::RecordNotFound, "Category with id or sysname #{params[:id].inspect}" unless @category
 
     respond_to do |format|
       format.html # show.html.erb
