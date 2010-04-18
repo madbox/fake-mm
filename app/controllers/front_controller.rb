@@ -7,7 +7,7 @@ class FrontController < ApplicationController
     
     if cat = Category.find_by_sysname('features')
 #      raise Article.published.scoped_by_category_id( cat.id ).find(:all, :limit => 2).inspect
-      @feature0, @feature1 = *(Article.published.scoped_by_category_id( cat.id ).find(:all, :limit => 2))
+      @feature0, @feature1 = *(Article.published.scoped_by_category_id( cat.id ).find(:all, :limit => 2, :order => 'publish_date DESC'))
       # @feature0 = cat.articles.first  if cat.articles.size > 0
       # @feature1 = cat.articles.second if cat.articles.size > 1
     end

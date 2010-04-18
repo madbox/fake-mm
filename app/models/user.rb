@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   has_many :articles
   has_many :categories
-  has_many :comments, :through => :articles
+  has_many :comments
   has_and_belongs_to_many :roles, :join_table => "assigments"
 
   has_attached_file :avatar, :styles => {:normal => "200x300", :small => "96x96" }, :default_style => :normal, :default_url => "/images/missing_:class_:attachment_:style.jpg"

@@ -45,6 +45,7 @@ class CommentsController < ApplicationController
   # POST /comments.xml
   def create
     @comment = Comment.new(params[:comment])
+    @comment.user = current_user
     @comment.article = Article.find(params[:comment][:article_id].to_i)
 
     respond_to do |format|

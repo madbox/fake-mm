@@ -1,3 +1,4 @@
 one:
   article: first_article
   content: "Тестовый комент"
+  user: user1
