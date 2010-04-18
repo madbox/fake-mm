@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
   # GET /comments/1/edit
   def edit
     @comment = Comment.find(params[:id])
-    @comment.article = Article.find(params[:article_id])
+    @comment.article = Article.find(params[:article_id]) unless @comment.article
   end
 
   # POST /comments

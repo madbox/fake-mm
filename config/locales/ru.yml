@@ -13,6 +13,7 @@ ru:
     show_comments: "Комментарии"
     show_my_comments: "Мои комментарии"
     show_categories: "Рубрики"
+    show_all_categories: "Все рубрики"
     show_articles: "Все статьи"
     show_my_articles: "Мои статьи"
     show_profile: "Профиль"
@@ -27,6 +28,7 @@ ru:
     edit_profile: "Настройки"
     edit_article: "Редактировать статью"
   titles:
+    users: "Пользователи"
     editor: "Редакция"
     user_menu: "Меню"
     new_article: "Создание статья"

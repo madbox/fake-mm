@@ -28,6 +28,6 @@ module ApplicationHelper
 
   def comment_count_string( number )
     raise ArgumentError, "Numeric expected" unless number.kind_of? Numeric
-    
   end
+
 end

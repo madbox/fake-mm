@@ -1,20 +1,12 @@
-<h1>Editing comment</h1>
+<h1><%= t('title.edit_comment')-%></h1>
 
 <% form_for(@comment) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :content %><br />
     <%= f.text_area :content %>
   </p>
   <p>
-    <%= f.label :article_id %><br />
-    <%= f.text_field :article_id %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit t('actions.update') %>
   </p>
 <% end %>
-
-<%= link_to 'Show', @comment %> |
-<%= link_to 'Back', comments_path %>

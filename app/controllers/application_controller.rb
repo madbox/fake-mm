@@ -4,6 +4,8 @@
 class ApplicationController < ActionController::Base
   before_filter :prepare_news
 
+  include AuthenticatedSystem
+
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
@@ -33,7 +35,6 @@ class ApplicationController < ActionController::Base
   end
 
   private
-
   
   def current_user_session
     return @current_user_session if defined?(@current_user_session)

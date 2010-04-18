@@ -3,7 +3,8 @@
   <div class="content column-wrap">
     <div class="text"><h3><%= link_to comment.user.name, comment.user -%></h3><p><%= expand_comment( comment.content ) -%></p></div>
     <div class="box-footer">
-      <%= link_to t('actions.destroy'), comment_path( comment ), :method => :delete %>
+      <%= link_to t('actions.edit'), edit_comment_path( comment ) -%>
+      <%= link_to t('actions.destroy'), comment_path( comment ), :method => :delete -%>
       <%= comment.updated_at.to_s(:short) -%></div>
   </div>
   <div class="clear"></div>

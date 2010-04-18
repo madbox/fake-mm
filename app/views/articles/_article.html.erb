@@ -30,17 +30,19 @@
 <% elsif type == :category_list_item -%>
 
 <li<%= (defined?(odd) && (odd == 'true' ? ' class="odd"' : '') )-%>>
-  <div class="h135 column-wrap list-pic">
-    <%= image_tag article.imagemv.url %>
-    <div class="list-pic-footer"><%= article.updated_at.to_s(:short) -%><hr/></div>
-    <div class="clear"></div>
-  </div>
-  <div class="column-wrap h135 list-content">
-    <h2><%=h article.title -%></h2>
-    <p><%=h article.description -%></p>
-    <div class="box-footer"><%= link_to t('actions.read_next'), article -%></div>
-    <div class="clear"></div>
-  </div>
+  <a href="<%= article_url( article ) -%>">
+    <div class="h135 column-wrap list-pic">
+      <%= image_tag article.imagemv.url %>
+      <div class="list-pic-footer"><%= article.updated_at.to_s(:short) -%><hr/></div>
+      <div class="clear"></div>
+    </div>
+    <div class="column-wrap h135 list-content">
+      <h2><%=h article.title -%></h2>
+      <p><%=h article.description -%></p>
+      <div class="box-footer"><%= t('actions.read_next') -%></div>
+      <div class="clear"></div>
+    </div>
+  </a>
 </li>
 
 <% elsif type == :editor_item -%>
@@ -54,7 +56,7 @@
       <% if article.published? %>
         <%= link_to article.publish_date.to_s(:short), article_unpublish_path(article) %>
       <% else %>
-        <%= link_to t('misc.answer_no'), article_publish_path(article) %>
+        <%= link_to t('misc.answer_no'), article_publish_path(article), {:class => 'alert'} %>
       <% end %>
     <p><b><%= t('activerecord.attributes.article.draft')-%></b>:
       <% if article.draft? %>
@@ -79,8 +81,6 @@
     <%= article.created_at.to_s(:short) -%> |
     <%= t('misc.updated_at') -%>:
     <%= article.updated_at.to_s(:short) -%> |
-    <%= t('misc.published_at') -%>:
-    <%= article.publish_date.to_s(:short) if article.publish_date -%> 
   </div>
 </div>
 

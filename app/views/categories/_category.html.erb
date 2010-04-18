@@ -18,4 +18,7 @@
   </div>
   <div class="clear"></div>
   </a>
+  <% permitted_to? :edit, :categories do -%>
+  <%= link_to t('actions.edit'), edit_category_url(category) %>
+  <% end -%>
 </div>

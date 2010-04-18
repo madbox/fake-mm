@@ -7,6 +7,7 @@ html,body{
 }
 * { font-family: Arial, Helvetica, sans-serif; font-weight: lighter; }
 a { text-decoration: none; }
+a.alert { color: red !important}
 p { font-size: 9pt; }
 *.clear { clear: both;}
 li { list-style-type: none; }
@@ -166,7 +167,7 @@ div.h98 { min-height: 98px; _height: 98px; }
 .category li .list-pic-footer {background-color: #f1f1f1; margin-top: 8px; height: 27px; font-size: 8pt; padding: 4px 0px 0px 1px; position: absolute; bottom: 0px; right: 0px; width: 100%; line-height: 25px; }
 .authorized .category li .list-content {width: 200px;}
 .not-authorized .category li .list-content {width: 304px;}
-.category li h2 { color: black; background-color: #E1E1E1; font-size: 12pt; margin: 0px; padding: 2px; font-weight: bold; }
+.category li h2 { color: black; font-size: 12pt; margin: 0px; padding: 2px; font-weight: bold; } /* background-color: #E1E1E1; */
 .category hr{ border: 0px; border-bottom: 1px solid black; margin: 0px; padding: 0px;}
 .category li .list-content p { max-height: 30px; overflow: hidden; }
 /* category index */
