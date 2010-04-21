@@ -13,7 +13,7 @@ class FrontController < ApplicationController
     end
 
     if cat = Category.find_by_sysname('review')
-      @review = Article.published.scoped_by_category_id( cat.id ).first
+      @review = Article.published.scoped_by_category_id( cat.id ).find(:first, :order => 'publish_date DESC')
     end
 
     @hide_news_line = true

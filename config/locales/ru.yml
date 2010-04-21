@@ -27,6 +27,10 @@ ru:
     new_category: "Новая рубрика"
     edit_profile: "Настройки"
     edit_article: "Редактировать статью"
+    titles:
+      show_article_editor: "Черновиков/Опубликовано/Всего"
+      show_drafts: "Всего"
+      show_all_categories: "Публичных/Всего"
   titles:
     users: "Пользователи"
     editor: "Редакция"

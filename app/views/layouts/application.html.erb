@@ -76,14 +76,14 @@
 		
 		<% has_role? :admin do -%>
 		<ul>
-		  <li><%= link_to t('actions.article_editor') + " (#{Article.drafts.count}/#{Article.published.count}/#{Article.count})", article_editor_path -%></li>
+		  <li><%= link_to t('actions.article_editor') + " (#{Article.drafts.count}/#{Article.published.count}/#{Article.count})", article_editor_path, :title => t('actions.titles.show_article_editor') -%></li>
 		  <li><%= link_to t('actions.new_article'), new_article_path -%></li>	
 		  <% if @article && !@article.new_record? -%>		  
 		    <li><%= link_to t('actions.edit_article'), edit_article_path( @article ) -%></li>
 		  <% end -%>
 		  <li><%= link_to t('actions.new_category'), new_category_path -%></li>
-		  <li><%= link_to t('actions.show_drafts') + " (#{Article.drafts.count})", drafts_path -%></li>
-		  <li><%= link_to t('actions.show_all_categories') + " (#{Category.public.count}/#{Category.count})", drafts_path -%></li>
+		  <li><%= link_to t('actions.show_drafts') + " (#{Article.drafts.count})", drafts_path, :title => t('actions.titles.show_drafts') -%></li>
+		  <li><%= link_to t('actions.show_all_categories') + " (#{Category.public.count}/#{Category.count})", categories_path, :title => t('actions.titles.show_all_categories') -%></li>
 		</ul>
 		<ul>
 		  <li><%= link_to t('actions.show_users'), users_path -%></li>
