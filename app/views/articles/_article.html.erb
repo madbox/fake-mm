@@ -74,8 +74,8 @@
   <div class="clear"></div>
   <div class="editor-item-footer">
     <div class="editor-item-options">
-      <%= link_to t( 'actions.edit' ), edit_article_path( article.id ) -%> |
-      <%= link_to t( 'actions.destroy' ), article_path( article.id, :method => :delete ) -%>
+      <%= link_to t( 'actions.edit' ), edit_article_path( article ) -%> |
+      <%= link_to t( 'actions.destroy' ), article_path( article, :method => :delete ) -%>
     </div>
     <%= t('misc.created_at') -%>:
     <%= article.created_at.to_s(:short) -%> |
