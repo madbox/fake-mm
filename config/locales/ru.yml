@@ -101,7 +101,7 @@ ru:
         age: Возраст
       article:
         title: "Заголовок"
-        sysname: "Системное имя"
+        sysname: "Системное имя (Латинские буквы, цифры и '_')"
         description: "Описание"
         content: "Содержание"
         category: "Рубрика"
