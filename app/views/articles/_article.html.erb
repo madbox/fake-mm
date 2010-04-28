@@ -48,7 +48,7 @@
 <% elsif type == :editor_item -%>
 
 <div class="editor-item">
-  <div class="editor-item-title"><%= link_to article.title, article_path(article.id) -%><id><%= article.id -%></id></div>
+  <div class="editor-item-title"><%= link_to article.title, article_path(article) -%><id><%= article.id -%></id></div>
   <div class="editor-item-info">
     <p><b><%= t('activerecord.attributes.article.category')-%></b>:
       <%= t("categories.#{article.category.sysname}") -%></p>
