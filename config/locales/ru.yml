@@ -117,6 +117,7 @@ ru:
         photographer: "Фотограф"
         source: "Источник"
         published: "Опубликована"
+        publish_date: "Дата публикации"
         draft: "Черновик"
         importance: "Важность"
         imagebv: "Вертикальная 408x611"

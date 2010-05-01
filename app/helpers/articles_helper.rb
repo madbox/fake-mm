@@ -61,6 +61,10 @@ module ArticlesHelper
       footer_content.push %Q{#{ I18n.t( 'activerecord.attributes.article.source' ) }: #{ source } }
     end
 
+    if article.publish_date
+      footer_content.push %Q{ #{ I18n.t( 'activerecord.attributes.article.publish_date' ) }: #{ article.publish_date.to_s( :short ) } }
+    end
+
     return footer_content.join('<br />')
   end
 end
