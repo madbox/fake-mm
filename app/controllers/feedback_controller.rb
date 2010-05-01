@@ -6,7 +6,7 @@ class FeedbackController < ApplicationController
                                             fh[:email],
                                             fh[:text] )
     if  fh[:name].blank? ||
-        fh[:email].blank? || !fh[:email].match() ||
+        fh[:email].blank? ||
         fh[:text].blank?
       flash[:error] = I18n.t( 'errors.incorrect_feedback_data' )
       redirect_to(:action => 'new') && return
