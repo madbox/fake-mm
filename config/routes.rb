@@ -12,7 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/categories/index_all', :controller => 'categories', :action => 'index_all'
   map.resources :categories
 
-  map.resources :feedback, :only => [ :new, :create ]
+  map.resource :feedback, :only => [ :new, :create ], :controller => "feedback"
 
   map.resources :roles
   map.resources :assigments

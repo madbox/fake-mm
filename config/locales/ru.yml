@@ -32,6 +32,7 @@ ru:
       show_drafts: "Всего"
       show_all_categories: "Публичных/Всего"
   titles:
+    new_feedback: "Обратная связь"
     users: "Пользователи"
     editor: "Редакция"
     user_menu: "Меню"
@@ -80,6 +81,7 @@ ru:
     user_registered: "Пользователь зарегистрирован"
     password_recovered: "Вам выслано письмо с новым паролем"
     logged_in: "Авторизация успешна"
+    feedback_created: "Ваше сообщение отправлено"
   activerecord:
     models:
       user: "Профиль"
@@ -89,9 +91,14 @@ ru:
       category: "Рубрика"
       user_session: "Авторизация"
       "user session": "Авторизация"
+      feedback: "Обратная связь"
     attributes:
       created_at: "Дата создания"
       updated_at: "Дата изменения"
+      feedback:
+        name: "Имя"
+        email: "Почта"
+        text: "Текст"
       user:
         email: "Почта"
         password: "Пароль"

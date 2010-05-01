@@ -17,4 +17,13 @@ class Notifications < ActionMailer::Base
     
     body       :email => user.email, :password => password
   end
+
+  def feedback_message name, email, text
+    subject 'Fake-mm: Обратная связь'
+    recipients 'info@fake-mm.ru'
+    from email
+    sent_on Time.now
+
+    body :name => name, :email => email, :text => text
+  end
 end
