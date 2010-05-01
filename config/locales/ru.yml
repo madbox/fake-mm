@@ -73,6 +73,7 @@ ru:
     user_save_failed: "Ошибка при сохранении профиля"
     article_drafting_failed: "Ошибка при снятии атрибута <черновик>"
     article_undrafting_failed: "Ошибка при снятии атрибута <черновик>"
+    incorrect_feedback_data: "Заполните пожалуйста все поля"
   notice:
     article_published: "Статья опубликована"
     article_unpublished: "Статья снята с публикации"
