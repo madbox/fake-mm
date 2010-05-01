@@ -1,0 +1,19 @@
+  <% @events.each do |event| -%>
+    <div class="element<%= (defined?( short ) && short) ? " short" : " long"-%>">
+      <% if event.link -%>
+      <a href="<%= event.link -%>">
+      <% end -%>
+	
+	<div class="date"><%=h event.date.to_s(:short) %></div>
+	<div class="text"><%=h event.title %>
+          <%=h event.text %></div>
+	<div class="club"><%=h event.club %></div>
+	<% unless defined?( short ) && short == true -%>
+	<div class="city"><%=h event.city %></div>
+	<div class="price"><%=h number_to_currency(event.price) %></div>
+	<% end -%>
+      <% if event.link -%>
+      </a>
+      <% end -%>
+    </div>
+  <% end -%>

@@ -108,7 +108,7 @@ div.h98 { min-height: 98px; _height: 98px; }
 *.box-footer-plain { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 1.3em; width: 100%; }
 
 #news-of-the-day { width: 408px; margin: 8px 8px 0px 0px; float:left; display: inline; }
-#announcement { width: 408px; margin: 8px 0px 0px 0px; float:left; display: inline; }
+#events.box { width: 408px; margin: 8px 0px 0px 0px; float:left; display: inline; }
 
 #features { width: 408px; margin: 8px; margin: 0px 8px 0px 0px; float:left; display: inline; padding-top: 16px; }
 #features h2 { font-size: 16pt; }
@@ -250,3 +250,22 @@ div.new-comment { padding: 8px; }
 /* feedback */
 #feedback-page input { width: 100%; }
 #feedback-page textarea { width: 100%; height: 7em;}
+
+/* events */
+
+#events .element { border-bottom: 1px solid black;
+		   width: 100%;
+		   height: 5em;
+		 }
+#events .element * { font-size: 10pt;
+}
+#events .element div { float: left }
+#events .element.short div.date {width: 25%}
+#events .element.short div.text {width: 60%}
+#events .element.short div.club {width: 15%}
+
+#events .element.long div.date {width: 20%}
+#events .element.long div.text {width: 50%}
+#events .element.long div.club {width: 10%}
+#events .element.long div.city {width: 10%}
+#events .element.long div.price {width: 10%}

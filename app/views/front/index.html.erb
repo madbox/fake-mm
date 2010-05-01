@@ -8,10 +8,13 @@
     <% end %>
   </div>
 
-  <div id="announcement" class="box column-wrap h500">
-    <h1><%= t 'titles.announcement' -%></h1>
-    <p>Какой-то контент, очень длинный , очень длинный...</p>
-    <div class="box-footer">Вся афиша</div>
+  <div id="events" class="box column-wrap h500">
+
+    <a href="<%= events_path -%>" title="<%= t 'actions.titles.events_index' -%>">
+      <h1><%= t 'titles.announcement' -%></h1>
+      <%= render :partial => '/events/list', :locals => { :short => true } %>
+      <div class="box-footer">Вся афиша</div>
+    </a>
   </div>
 
   <div class="clear"></div>

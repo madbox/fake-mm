@@ -16,6 +16,8 @@ class FrontController < ApplicationController
       @review = Article.published.scoped_by_category_id( cat.id ).find(:first, :order => 'publish_date DESC')
     end
 
+    @events = Event.front_collection
+
     @hide_news_line = true
     @hide_user_sidebar = true
   end

@@ -1,7 +1,7 @@
 authorization do
   role :author do
     includes :customer
-    has_permission_on [:articles, :comments], :to => [ :manage, :editor, :drafts ]
+    has_permission_on [:articles, :comments, :events], :to => [ :manage, :editor, :drafts ]
   end
 
   role :customer do
@@ -17,6 +17,7 @@ authorization do
     has_permission_on [:articles, :comments, :categories, :users], :to => [:index, :show]
     has_permission_on [:user_sessions], :to => [:new, :create]
     has_permission_on [:users], :to => [:index, :show, :update, :new, :create, :recover_password, :reset_password]
+    has_permission_on [:events], :to => [:read]
   end
   
   role :admin do

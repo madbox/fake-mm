@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: 2010-05-01 20:14:35
+  title: MyString
+  text: MyText
+  artist: MyString
+  city: MyString
+  price: 1.5
+  club: MyString
+
+two:
+  date: 2010-05-01 20:14:35
+  title: MyString
+  text: MyText
+  artist: MyString
+  city: MyString
+  price: 1.5
+  club: MyString

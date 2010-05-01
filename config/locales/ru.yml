@@ -25,13 +25,17 @@ ru:
     read_next: "Читать далее..."
     new_user: Зарегистрироваться
     new_category: "Новая рубрика"
+    new_event: "Новое событие"
+    list_events: "События"
     edit_profile: "Настройки"
     edit_article: "Редактировать статью"
     titles:
+      events_index: "Афиша"
       show_article_editor: "Черновиков/Опубликовано/Всего"
       show_drafts: "Всего"
       show_all_categories: "Публичных/Всего"
   titles:
+    events: "Афиша"
     new_feedback: "Обратная связь"
     users: "Пользователи"
     editor: "Редакция"

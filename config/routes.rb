@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :events
+
   map.recover_password '/recover_password', :controller => 'users', :action => 'recover_password'
   map.reset_password '/reset_password', :controller => 'users', :action => 'reset_password'
 

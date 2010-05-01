@@ -1,0 +1,38 @@
+<p>
+  <b>Date:</b>
+  <%=h @event.date %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @event.title %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%=h @event.text %>
+</p>
+
+<p>
+  <b>Artist:</b>
+  <%=h @event.artist %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @event.city %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @event.price %>
+</p>
+
+<p>
+  <b>Club:</b>
+  <%=h @event.club %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

@@ -1,0 +1,11 @@
+<div class="box">
+  <h1><%= t('titles.events') -%></h1>
+  <div id="events">
+    <%= render :partial => 'list' %>
+  </div>
+
+  <% has_role? :admin do -%>
+  <%= link_to t('actions.new_event'), new_event_path %>
+  <% end -%>
+  
+</div>
