@@ -11,7 +11,7 @@ class Article < ActiveRecord::Base
   validates_presence_of :content
   validates_presence_of :sysname
   validates_uniqueness_of :sysname
-  validates_format_of :sysname, :with => /^[a-zA-Z\d_]$/
+  validates_format_of :sysname, :with => /^[a-zA-Z\d_]+$/
 
   validates_presence_of :category
   
