@@ -104,7 +104,17 @@ div.h98 { min-height: 98px; _height: 98px; }
 
 .column-wrap { position: relative; float: left; display: inline;}
 
-*.box-footer { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 1.3em; position: absolute; bottom: 0px; right: 0px; width: 100%; background-color: white; }
+*.box-footer { 
+    text-align: right; 
+    font-size: 10pt; 
+    border-bottom: 1px solid black; 
+    line-height: 1.3em; 
+    position: absolute; 
+    bottom: 0px; 
+    right: 0px; 
+    width: 100%; 
+    background-color: white; 
+}
 *.box-footer-plain { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 1.3em; width: 100%; }
 
 #news-of-the-day { width: 408px; margin: 8px 8px 0px 0px; float:left; display: inline; }
@@ -139,12 +149,12 @@ div.h98 { min-height: 98px; _height: 98px; }
 
 
 /* flash */
-#flash { position: absolute; width: 100%; margin: 0.5em 0px; line-height: 30pt;}
+#flash div.notice, #flash div.error { position: absolute; width: 100%; margin: 0.5em 0px; line-height: 30pt;}
 #flash * { font-weight: 900; }
-#flash.error { background-color: #bb0000;}
-#flash.notice { background-color: #0000bb;}
-#flash.loading { background-color: #00bb00;}
-#flash div {width: 882px; margin: auto; }
+#flash div.error { background-color: #bb0000;}
+#flash div.notice { background-color: #0000bb;}
+#flash div.loading { background-color: #00bb00;}
+#flash div.inner {width: 882px; margin: auto; }
 
 /* articles */
 /* #article-simple {margin: 8px; } */
@@ -164,7 +174,18 @@ div.h98 { min-height: 98px; _height: 98px; }
 .authorized .category li { width: 304px; }
 .not-authorized .category li { width: 408px; }
 .category li .list-pic { margin-right: 8px; width: 96px; height: 96px; text-align: center; }
-.category li .list-pic-footer {background-color: #f1f1f1; margin-top: 8px; height: 27px; font-size: 8pt; padding: 4px 0px 0px 1px; position: absolute; bottom: 0px; right: 0px; width: 100%; line-height: 25px; }
+.category li .list-pic-footer {
+    background-color: #f1f1f1; 
+    margin-top: 8px; 
+    height: 27px; 
+    font-size: 8pt; 
+    padding: 4px 0px 0px 1px; 
+    position: absolute; 
+    bottom: 0px; 
+    right: 0px; 
+    width: 100%; 
+    line-height: 25px; 
+}
 .authorized .category li .list-content {width: 200px;}
 .not-authorized .category li .list-content {width: 304px;}
 .category li h2 { color: black; font-size: 12pt; margin: 0px; padding: 2px; font-weight: bold; } /* background-color: #E1E1E1; */
@@ -176,7 +197,16 @@ div.h98 { min-height: 98px; _height: 98px; }
 .category-item h2 { margin: 0px; }
 .category-image { float: left; margin-right: 8px; }
 .category-info { height: 300px; position: relative; margin-left: 208px; }
-.category-info-footer { text-align: right; width: 100%; position: absolute; bottom: 0px; right: 0px; font-size: 8pt; border-bottom: 1px solid black; padding-bottom: 8px; }
+.category-info-footer { 
+    text-align: right; 
+    width: 100%; 
+    position: absolute; 
+    bottom: 0px; 
+    right: 0px; 
+    font-size: 8pt; 
+    border-bottom: 1px solid black; 
+    padding-bottom: 8px; 
+}
 .category-info-footer-attributes {  background-color: #eee; line-height: 2.5em; margin-top: 8px; }
 
 /* article editor */
@@ -210,7 +240,16 @@ div.h98 { min-height: 98px; _height: 98px; }
 #news-line .last { margin: 0px; }
 #news-line .right-margin { margin-right: 8px; }
 #news-line .news-item p { margin: 0px; font-size: 8pt; }
-*.news-box-footer { text-align: right; font-size: 8pt; border-top: 1px solid black; line-height: 10pt; position: absolute; bottom: 0px; right: 0px; width: 100%; }
+*.news-box-footer { 
+    text-align: right; 
+    font-size: 8pt; 
+    border-top: 1px solid black; 
+    line-height: 10pt; 
+    position: absolute; 
+    bottom: 0px; 
+    right: 0px; 
+    width: 100%; 
+}
 
 /* commets in article-simple */
 #comments h1 { 
@@ -252,20 +291,19 @@ div.new-comment { padding: 8px; }
 #feedback-page textarea { width: 100%; height: 7em;}
 
 /* events */
+#events div.top-line { border-bottom: 1px solid black; }
+#events *.element { border-bottom: 1px solid black;
+		      width: 100%;
+		      height: 5em;
+		    }
+#events .element * { font-size: 10pt; }
+#events .element td { text-align: center; }
+#events .element.short *.date {width: 100px}
+#events .element.short *.text {width: 200px}
+#events .element.short *.club {width: 80px}
 
-#events .element { border-bottom: 1px solid black;
-		   width: 100%;
-		   height: 5em;
-		 }
-#events .element * { font-size: 10pt;
-}
-#events .element div { float: left }
-#events .element.short div.date {width: 25%}
-#events .element.short div.text {width: 60%}
-#events .element.short div.club {width: 15%}
-
-#events .element.long div.date {width: 20%}
-#events .element.long div.text {width: 50%}
-#events .element.long div.club {width: 10%}
-#events .element.long div.city {width: 10%}
-#events .element.long div.price {width: 10%}
+#events .element.long *.date {width: 100px}
+#events .element.long *.text {width: 250px}
+#events .element.long *.club {width: 80px}
+#events .element.long *.city {width: 80px}
+#events .element.long *.price {width: 80px}

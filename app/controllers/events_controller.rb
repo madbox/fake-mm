@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class EventsController < ApplicationController
   filter_access_to :all
 
@@ -5,6 +6,7 @@ class EventsController < ApplicationController
   # GET /events.xml
   def index
     @events = Event.all
+    @event = Event.last
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,11 +46,23 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
 
+    @event.date ||= Time.now
+    @event.artist ||= ''
+    @event.title ||= ''
+    @event.text ||= ''
+    @event.city ||= 'Москва'
+    @event.price ||= 0.0
+
     respond_to do |format|
       if @event.save
         flash[:notice] = 'Event was successfully created.'
         format.html { redirect_to(@event) }
         format.xml  { render :xml => @event, :status => :created, :location => @event }
+        if params.has_key? :next_action
+          format.js   { render :action => "update_#{params[:next_action]}" }
+        else
+          format.js   { render :action => 'update_save' }
+        end
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
@@ -66,6 +80,11 @@ class EventsController < ApplicationController
         flash[:notice] = 'Event was successfully updated.'
         format.html { redirect_to(@event) }
         format.xml  { head :ok }
+        if params.has_key? :next_action
+          format.js   { render :action => "update_#{params[:next_action]}" }
+        else
+          format.js   { render :action => 'update_save' }
+        end
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }

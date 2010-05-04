@@ -1,5 +1,12 @@
 <div class="box">
   <h1><%= t('titles.events') -%></h1>
+
+  <% has_role? :admin do -%>
+  <div id="event_editor">
+  <%= render :partial => 'edit', :locals => { :event => @event } %>
+  </div>
+  <% end -%>
+
   <div id="events">
     <%= render :partial => 'list' %>
   </div>

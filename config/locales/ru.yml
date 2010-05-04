@@ -1,5 +1,8 @@
 ru:
   actions:
+    new: "Создать"
+    next: "Вперед"
+    prev: "Назад"
     recover_password: "Забыли пароль?"
     reset_password: "Сбросить пароль"
     login: "Войти"
