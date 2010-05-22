@@ -1,11 +1,11 @@
   <div class="top-line"></div>
-  <% @events.each do |event| -%>
+  <% events.each do |event| -%>
     <% if event.link -%>
     <a href="<%= event.link -%>">
     <% end -%>
     <table class="element<%= (defined?( short ) && short) ? " short" : " long"-%><%=  -%>">
       <tr id="event_<%= event.id -%>" <%= event == @event ? %Q{class="active"} : "" -%>>
-      <%= render :partial => 'list_element', :locals => { :event => event } %>
+      <%= render :partial => '/events/list_element', :locals => { :event => event } %>
       </tr>
     </table>
     <% if event.link -%>

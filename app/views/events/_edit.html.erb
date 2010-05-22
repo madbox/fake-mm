@@ -6,10 +6,11 @@
     <%= f.text_field :club -%>
     <%= f.text_field :price -%>
     <%= f.hidden_field :id %>
-    <%= hidden_field_tag 'next_action', '' %>
+    <%= hidden_field_tag 'submit_button', '' %>
 </div>
-    <%= f.submit t("actions.new"),    { :onclick => %Q{ $('#next_action').val('new')    }} %>
-    <%= f.submit t("actions.update"), { :onclick => %Q{ $('#next_action').val('save') }} %>
-    <%= f.submit t("actions.prev"),   { :onclick => %Q{ $('#next_action').val('prev')   }} %>
-    <%= f.submit t("actions.next"),   { :onclick => %Q{ $('#next_action').val('next')   }} %>
+    <%= f.submit t("actions.new"),    { :onclick => %Q{ $('#submit_button').val('new')    }} %>
+    <%= f.submit t("actions.update"), { :onclick => %Q{ $('#submit_button').val('save') }} %>
+    <%= f.submit t("actions.prev"),   { :onclick => %Q{ $('#submit_button').val('prev')   }} %>
+    <%= f.submit t("actions.next"),   { :onclick => %Q{ $('#submit_button').val('fwd')   }} %>
+    <%= button_to_remote t("actions.destroy"), :url => event_path(event, :method => 'delete' ) %>
   <% end %>

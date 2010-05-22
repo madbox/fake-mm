@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.find(:all, :order => "created_at DESC")
+    @events = Event.all
     @event = Event.last
 
     respond_to do |format|
@@ -78,10 +78,20 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
+
+        @event = case params[:submit_button]
+                 when "fwd" then
+                   Event.next @event
+                 when "prev" then
+                   Event.prev @event
+                 else
+                   @event
+                 end
+        
         flash[:notice] = 'Event was successfully updated.'
         format.html { redirect_to(@event) }
         format.xml  { head :ok }
-        format.js
+        format.js   { render :action => "show", :id => @event.id }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }

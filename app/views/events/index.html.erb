@@ -8,7 +8,7 @@
   <% end -%>
 
   <div id="events">
-    <%= render :partial => 'list' %>
+    <%= render :partial => 'list', :locals => { :events => @events } %>
   </div>
 
   <% has_role? :admin do -%>
