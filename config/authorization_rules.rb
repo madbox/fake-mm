@@ -22,7 +22,7 @@ authorization do
   
   role :admin do
     includes :author
-    has_permission_on [:comments, :categories, :users, :user_sessions], :to => [ :manage, :index_all]
+    has_permission_on [:comments, :categories, :users, :user_sessions, :events], :to => [ :manage, :index_all]
   end
 end
 

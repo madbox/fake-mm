@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.all
+    @events = Event.find(:all, :order => "created_at DESC")
     @event = Event.last
 
     respond_to do |format|
@@ -22,6 +22,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @event }
+      format.js
     end
   end
 
@@ -80,11 +81,7 @@ class EventsController < ApplicationController
         flash[:notice] = 'Event was successfully updated.'
         format.html { redirect_to(@event) }
         format.xml  { head :ok }
-        if params.has_key? :next_action
-          format.js   { render :action => "update_#{params[:next_action]}" }
-        else
-          format.js   { render :action => 'update_save' }
-        end
+        format.js
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }

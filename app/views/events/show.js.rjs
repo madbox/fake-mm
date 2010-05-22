@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+# обновить flash
+
+# обновить редактор, если мы админ
+page.replace_html "#event_editor", :partial => 'edit', :locals => { :event => @event }
+# подсветить строку
+page << %Q{ $("#events .element tr").removeClass('active') }
+page << %Q{ $("#events #event_#{@event.id}").addClass('active') }

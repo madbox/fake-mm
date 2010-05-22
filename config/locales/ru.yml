@@ -54,6 +54,7 @@ ru:
     new_category: "Новая рубрика"
     news: "Новости"
   misc:
+    loading: "Загрузка..."
     comments: "Коментариев"
     no_review: "Нет рецензий"
     no_feature: "Нет features"
@@ -103,6 +104,15 @@ ru:
     attributes:
       created_at: "Дата создания"
       updated_at: "Дата изменения"
+      event:
+        title: Название
+        text: Описание
+        artist: Исполнитель
+        city: Город
+        price: Цена
+        club: Клуб
+        link: Ссылка
+        date: Дата
       feedback:
         name: "Имя"
         email: "Почта"

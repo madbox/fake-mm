@@ -1,0 +1,10 @@
+	<td class="date">
+	  <%= link_to_remote event.date.to_s(:short), :url => event_path(event.id),
+	                                              :method => 'get' %>
+	</td>
+	<td class="text"><%= link_to h( event.title ) + ' ' + h( event.text ), event_path(event) %></td>
+	<td class="club"><%=h event.club %></td>
+	<% unless defined?( short ) && short == true -%>
+	<td class="city"><%=h event.city %></td>
+	<td class="price"><%=h number_to_currency(event.price) %></td>
+	<% end -%>

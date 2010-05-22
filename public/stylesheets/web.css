@@ -156,6 +156,19 @@ div.h98 { min-height: 98px; _height: 98px; }
 #flash div.loading { background-color: #00bb00;}
 #flash div.inner {width: 882px; margin: auto; }
 
+/* global-progress indicator */
+#global-progress{ 
+    display: none;
+    position: fixed; 
+    top: 2em; 
+    right: 2em; 
+    border: 1px solid green; 
+    background-color: #afa;
+    padding: 0.5em 1.5em;
+    color: green;
+    -moz-border-radius: 5px; -khtml-border-radius: 5px; -webkit-border-radius: 5px;
+}
+
 /* articles */
 /* #article-simple {margin: 8px; } */
 .not-authorized #article-simple img.main-image {float: right; margin: 0px 0px 8px 8px; display: inline; }
@@ -297,7 +310,7 @@ div.new-comment { padding: 8px; }
 		      height: 5em;
 		    }
 #events .element * { font-size: 10pt; }
-#events .element td { text-align: center; }
+#events .element td { text-align: center; padding: 0px; }
 #events .element.short *.date {width: 100px}
 #events .element.short *.text {width: 200px}
 #events .element.short *.club {width: 80px}
@@ -307,3 +320,5 @@ div.new-comment { padding: 8px; }
 #events .element.long *.club {width: 80px}
 #events .element.long *.city {width: 80px}
 #events .element.long *.price {width: 80px}
+
+#events .element .active { background-color: red; }

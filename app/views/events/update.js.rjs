@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+# обновить flash
+
+# обновить элемент списка
+page.replace_html "#events #event_#{@event.id}", :partial => 'list_element', :locals => { :event => @event }
+# подсветить строку
+page << %Q{ $("#events .element tr").removeClass('active') }
+page << %Q{ $("#events #event_#{@event.id}").addClass('active') }

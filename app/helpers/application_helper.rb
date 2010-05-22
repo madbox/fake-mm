@@ -30,4 +30,12 @@ module ApplicationHelper
     raise ArgumentError, "Numeric expected" unless number.kind_of? Numeric
   end
 
+  def small_form_item model, prop_name, value 
+    returning '' do |text|
+      text << %Q{<div><p>#{I18n.t("activerecord.attributes.#{model}.#{prop_name}")}</p>}
+      text << %Q{<span>#{I18n.t("activerecord.tips.#{model}.#{prop_name}")}</span>} if I18n.t("activerecord.tips")[model.to_sym] && I18n.t("activerecord.tips")[model.to_sym][prop_name.to_sym]
+      text << %Q{<span>#{value}</span></div>}
+    end
+  end
+
 end
