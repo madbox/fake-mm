@@ -3,16 +3,10 @@
 
   <% has_role? :admin do -%>
   <div id="event_editor">
-  <%= render :partial => 'edit', :locals => { :event => @event } %>
+    <%= render( :partial => 'edit', :locals => { :event => @event } ) %>
   </div>
-  <% end -%>
-
+  <% end %>
   <div id="events">
-    <%= render :partial => 'list', :locals => { :events => @events } %>
+    <%= render( :partial => 'list', :locals => { :events => @events } ) %>
   </div>
-
-  <% has_role? :admin do -%>
-  <%= link_to t('actions.new_event'), new_event_path %>
-  <% end -%>
-  
 </div>

@@ -8,9 +8,8 @@
     <%= f.hidden_field :id %>
     <%= hidden_field_tag 'submit_button', '' %>
 </div>
-    <%= f.submit t("actions.new"),    { :onclick => %Q{ $('#submit_button').val('new')    }} %>
     <%= f.submit t("actions.update"), { :onclick => %Q{ $('#submit_button').val('save') }} %>
     <%= f.submit t("actions.prev"),   { :onclick => %Q{ $('#submit_button').val('prev')   }} %>
     <%= f.submit t("actions.next"),   { :onclick => %Q{ $('#submit_button').val('fwd')   }} %>
-    <%= button_to_remote t("actions.destroy"), :url => event_path(event, :method => 'delete' ) %>
+    <%= button_to_remote t("actions.destroy"), :url => event_path(event), :method => :delete  %>
   <% end %>

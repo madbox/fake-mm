@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   # GET /events.xml
   def index
     @events = Event.all
-    @event = Event.last
+    @event = Event.last || Event.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -102,12 +102,16 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.xml
   def destroy
-    @event = Event.find(params[:id])
-    @event.destroy
+    @event_to_kill = Event.find(params[:id])
+    @event = Event.prev(@event_to_kill)
+
+    @event_to_kill.destroy
+
 
     respond_to do |format|
       format.html { redirect_to(events_url) }
       format.xml  { head :ok }
+      format.js   { render :action => "show", :id => @event.id }
     end
   end
 end

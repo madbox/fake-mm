@@ -321,4 +321,5 @@ div.new-comment { padding: 8px; }
 #events .element.long *.city {width: 80px}
 #events .element.long *.price {width: 80px}
 
-#events .element .active { background-color: red; }
+#events .active { background-color: red; }
+#events a:hover * { background-color: yellow; }

@@ -1,14 +1,7 @@
   <div class="top-line"></div>
   <% events.each do |event| -%>
-    <% if event.link -%>
-    <a href="<%= event.link -%>">
-    <% end -%>
-    <table class="element<%= (defined?( short ) && short) ? " short" : " long"-%><%=  -%>">
-      <tr id="event_<%= event.id -%>" <%= event == @event ? %Q{class="active"} : "" -%>>
-      <%= render :partial => '/events/list_element', :locals => { :event => event } %>
-      </tr>
-    </table>
-    <% if event.link -%>
-    </a>
-    <% end -%>
+    <div id="event_<%= event.id -%>">
+      <%= link_to_remote render( :partial => '/events/list_element', :locals => { :event => event } ), :url => event_path(event.id),
+	                                                                                               :method => 'get' %>
+    </div>
   <% end -%>
