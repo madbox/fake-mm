@@ -91,7 +91,7 @@ class EventsController < ApplicationController
         flash[:notice] = 'Event was successfully updated.'
         format.html { redirect_to(@event) }
         format.xml  { head :ok }
-        format.js   { render :action => "show", :id => @event.id }
+        format.js   { render :action => "show", :id => @event.id, :update_list => true }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }

@@ -1,11 +1,14 @@
   <% remote_form_for event, :with => %Q{btn=$(#) }, :builder => SmallFormBuilder do |f| -%>
 <div>
+    <%= f.text_field :title -%>
+    <%= f.text_area :text, :rows => 3, :cols => 20 -%>
     <%= f.text_field :artist -%>
     <%= f.text_field :city -%>
     <%= f.text_field :date -%>
     <%= f.text_field :club -%>
     <%= f.text_field :price -%>
-    <%= f.hidden_field :id %>
+    <%= f.text_field :id, :disabled => true %>
+    <%= f.text_field :link %>
     <%= hidden_field_tag 'submit_button', '' %>
 </div>
     <%= f.submit t("actions.update"), { :onclick => %Q{ $('#submit_button').val('save') }} %>

@@ -312,14 +312,15 @@ div.new-comment { padding: 8px; }
 #events .element * { font-size: 10pt; }
 #events .element td { text-align: center; padding: 0px; }
 #events .element.short *.date {width: 100px}
-#events .element.short *.text {width: 200px}
-#events .element.short *.club {width: 80px}
+#events .element.short *.text {width: 200px; text-align: left}
+#events .element.short *.club {width: 80px; text-align: right; font-weight: bold; padding-right: 2px;}
 
-#events .element.long *.date {width: 100px}
-#events .element.long *.text {width: 250px}
-#events .element.long *.club {width: 80px}
-#events .element.long *.city {width: 80px}
-#events .element.long *.price {width: 80px}
+#events .element.long *.date {width: 100px; font-weight: bold;}
+#events .element.long *.text {width: 250px; text-align: left}
+#events .element.long *.club {width: 80px; font-weight: bold;}
+#events .element.long *.city {width: 80px; font-weight: bold;}
+#events .element.long *.price {width: 80px; font-weight: bold;}
 
-#events .active { background-color: red; }
-#events a:hover * { background-color: yellow; }
+#events .active { background-color: #d3fcd2; }
+#events .invalid { background-color: #ffd3d4; }
+#events a:hover * { background-color: #f0f0f0; }
