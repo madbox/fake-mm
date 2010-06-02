@@ -1,27 +1,11 @@
-	<table class="element<%= (defined?( short ) && short) ? " short" : " long"-%><%= event == @event ? %Q{ active} : "" -%><%= event.ready? ? "" : %Q{ invalid} -%>">
+	<table class="element long<%= event == @event ? %Q{ active} : "" -%><%= event.ready? ? "" : %Q{ invalid} -%>">
 	  <tr>
 	    <td class="date">
 	      <%= event.date.to_s(:short) -%>
 	    </td>
 	    <td class="text"><%= event.title + ' ' + h( event.text ) %></td>
 	    <td class="club"><%=h event.club %></td>
-	    <% unless defined?( short ) && short == false -%>
-	      <td class="city"><%=h event.city %></td>
-	      <td class="price"><%=h number_to_currency(event.price) %></td>
-	    <% end -%>
+	    <td class="city"><%=h event.city %></td>
+	    <td class="price"><%=h number_to_currency(event.price) %></td>
 	  </tr>
 	</table>
-
-<!--
-<div class="element<%= (defined?( short ) && short) ? " short" : " long"-%><%= event == @event ? %Q{ active} : "" -%>">
-	    <div class="date">
-	      <%= event.date.to_s(:short) -%>
-	    </div>
-	    <div class="text"><%= event.title + ' ' + h( event.text ) %></div>
-	    <div class="club"><%=h event.club %></div>
-	    <% unless defined?( short ) && short == true -%>
-	      <div class="city"><%=h event.city %></div>
-	      <div class="price"><%=h number_to_currency(event.price) %></div>
-	    <% end -%>
-</div>
--->

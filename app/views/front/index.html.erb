@@ -12,7 +12,7 @@
 
     <a href="<%= events_path -%>" title="<%= t 'actions.titles.events_index' -%>">
       <h1><%= t 'titles.announcement' -%></h1>
-      <%= render :partial => '/events/list', :locals => { :short => true, :events => @events } %>
+      <%= render :partial => '/events/short_list', :locals => { :events => @events } %>
       <div class="box-footer">Вся афиша</div>
     </a>
   </div>
