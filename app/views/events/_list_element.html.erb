@@ -1,4 +1,8 @@
+        <% if has_role? :admin %>
 	<table class="element long<%= event == @event ? %Q{ active} : "" -%><%= event.ready? ? "" : %Q{ invalid} -%>">
+	<% else %>
+	<table class="element long">
+	<% end %>
 	  <tr>
 	    <td class="date">
 	      <%= event.date.to_s(:short) -%>

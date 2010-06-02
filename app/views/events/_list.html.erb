@@ -1,7 +1,12 @@
   <div class="top-line"></div>
   <% events.each do |event| -%>
+
     <div id="event_<%= event.id -%>">
-      <%= link_to_remote render( :partial => '/events/list_element', :locals => { :event => event } ), :url => event_path(event.id),
-	                                                                                               :method => 'get' %>
+      <% if has_role? :admin -%>
+	<%= link_to_remote render( :partial => '/events/list_element', :locals => { :event => event } ), :url => event_path(event.id),
+													   :method => 'get' %>
+      <% else %>
+	<%= link_to render( :partial => '/events/list_element', :locals => { :event => event } ), event.link %>
+      <% end -%>
     </div>
   <% end -%>
