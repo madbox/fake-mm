@@ -13,7 +13,7 @@
     <a href="<%= events_path -%>" title="<%= t 'actions.titles.events_index' -%>">
       <h1><%= t 'titles.announcement' -%></h1>
       <%= render :partial => '/events/short_list', :locals => { :events => @events } %>
-      <div class="box-footer">Вся афиша</div>
+      <div class="box-footer"><%= link_to t("actions.show_events"), events_url -%></div>
     </a>
   </div>
 
