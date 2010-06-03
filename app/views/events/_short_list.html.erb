@@ -1,0 +1,6 @@
+  <div class="top-line"></div>
+  <% events.each do |event| -%>
+    <div id="event_<%= event.id -%>">
+      <%= link_to render( :partial => '/events/list_element', :locals => { :event => event } ), events_url %>
+    </div>
+  <% end -%>

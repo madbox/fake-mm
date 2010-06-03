@@ -1,0 +1,9 @@
+	<table class="element short">
+	  <tr>
+	    <td class="date">
+	      <%= event.date.to_s(:short) -%>
+	    </td>
+	    <td class="text"><%= event.title + ' ' + h( event.text ) %></td>
+	    <td class="club"><%=h event.club %></td>
+	  </tr>
+	</table>

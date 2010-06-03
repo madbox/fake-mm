@@ -9,7 +9,8 @@ set :deploy_to, dpath
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-set :branch, "events"
+puts "Setting branch to #{branch = ENV["BRANCH"] || "master"}"
+set :branch, branch
 
 role :web, "locum.ru"                          # Your HTTP server, Apache/etc
 role :app, "locum.ru"                          # This may be the same as your `Web` server
