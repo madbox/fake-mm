@@ -17,4 +17,18 @@ class Event < ActiveRecord::Base
     # TODO: Приделать сюда нормальную проверку. ( Все поля должны быть заполнены )
     true
   end
+
+  def vip? 
+    false
+  end
+
+  def indicator
+    if vip?
+      "vip"
+    elsif date.today?
+      "today"
+    else
+      "main"
+    end
+  end
 end
