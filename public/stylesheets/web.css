@@ -280,7 +280,7 @@ div.h98 { min-height: 98px; _height: 98px; }
 #comments ul { padding: 0px; margin: 0px; height: 104px; }
 #comments ul li { margin: 0px 0px 0px 0px; }
 .not-authorized #comments ul li { width: 824px; }
-#comments ul li img { float: left; margin: 4px 8px 0px 0px }
+#comments ul li img { float: left; margin: 4px 8px 0px 0px; width: 96px; height: 96px; }
 #comments ul li .content { float: left; height: 96px; margin: 4px 0px 4px ; overflow: hidden; }
 .not-authorized #comments ul li .content { width: 710px; }
 .authorized #comments ul li .content { width: 512px; }
