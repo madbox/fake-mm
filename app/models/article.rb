@@ -36,7 +36,7 @@ class Article < ActiveRecord::Base
 
   named_scope :most_important, :order => 'importance DESC'
 
-  named_scope :public_category_last, :include => :category, :conditions => ["categories.public = ?", true]
+  named_scope :public_category_last, :include => :category, :conditions => ["categories.public = ?", true], :order => 'publish_date DESC'
 
   def unpublish
     self.published = false

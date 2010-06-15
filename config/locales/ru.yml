@@ -149,7 +149,7 @@ ru:
         password: "Пароль"
         email: "Почта"
       category:
-        public: "Публичная"
+        public: "Поместить в рубрики"
         imagemh: "Превью 200x300"
         author: "Автор"
         photographer: "Фотограф"
