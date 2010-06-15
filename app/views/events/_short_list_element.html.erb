@@ -1,8 +1,8 @@
 	<table class="element short">
 	  <tr>
-	    <td><%= image_tag "event_#{event.indicator}.png" -%></td>
+	    <td class="icon"><%= image_tag "event_#{event.indicator}.png" -%></td>
 	    <td class="date">
-	      <%= event.date.to_s(:short) -%>
+	      <%= Russian::strftime event.date, "%d %b" -%>
 	    </td>
 	    <td class="text"><%= event.title + ' ' + h( event.text ) %></td>
 	    <td class="club"><%=h event.club %></td>
