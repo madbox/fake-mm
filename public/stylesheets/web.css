@@ -312,8 +312,8 @@ div.new-comment { padding: 8px; }
 #events .element * { font-size: 10pt; }
 #events .element td { text-align: center; padding: 0px; }
 #events .element.short *.icon {width: 30px}
-#events .element.short *.date {width: 80px; font-weight: bold; text-align: left}
-#events .element.short *.text {width: 217px; text-align: left}
+#events .element.short *.date {width: 80px; font-weight: bold; text-align: left;}
+#events .element.short *.text {width: 217px; text-align: left; padding-right: 5px}
 #events .element.short *.club {width: 63px; text-align: right; font-weight: bold; padding-right: 2px;}
 
 #events .element.long *.icon {width: 30px}
