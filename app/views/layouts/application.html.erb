@@ -91,7 +91,7 @@
 		  <% end -%>
 		  <li><%= link_to t('actions.new_category'), new_category_path -%></li>
 		  <li><%= link_to t('actions.show_drafts') + " (#{Article.drafts.count})", drafts_path, :title => t('actions.titles.show_drafts') -%></li>
-		  <li><%= link_to t('actions.show_all_categories') + " (#{Category.public.count}/#{Category.count})", categories_path, :title => t('actions.titles.show_all_categories') -%></li>
+		  <li><%= link_to t('actions.show_all_categories') + " (#{Category.public.count}/#{Category.count})", all_categories_path, :title => t('actions.titles.show_all_categories') -%></li>
 		  <li><%= link_to t('actions.list_events'), events_path, :title => t('actions.titles.events_index') -%></li>
 		</ul>
 		<ul>

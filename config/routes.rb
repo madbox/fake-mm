@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.features '/features', :controller => 'categories', :action => 'show', :id => 'features'
   map.news '/news'        , :controller => 'categories', :action => 'show', :id => 'news'
 
-  map.connect '/categories/index_all', :controller => 'categories', :action => 'index_all'
+  map.all_categories '/categories/index_all', :controller => 'categories', :action => 'index_all'
   map.resources :categories
 
   map.resource :feedback, :only => [ :new, :create ], :controller => "feedback"

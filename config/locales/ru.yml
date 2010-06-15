@@ -54,6 +54,8 @@ ru:
     articles: "Статьи"
     new_category: "Новая рубрика"
     news: "Новости"
+    all_categories: "Все категории"
+    edit_category: "Редктирование категории"
   misc:
     loading: "Загрузка..."
     comments: "Коментариев"
@@ -147,11 +149,13 @@ ru:
         password: "Пароль"
         email: "Почта"
       category:
+        public: "Публичная"
         imagemh: "Превью 200x300"
         author: "Автор"
         photographer: "Фотограф"
         name: "Название"
         sysname: "Системное имя(англ. без пробелов и спец символов)"
+        description: "Описание"
   authlogic:
     error_messages:
       login_blank: не должен быть пустым

@@ -1,19 +1,13 @@
-<h1>Editing category</h1>
+<h1><%=t 'titles.edit_category' -%></h1>
 
-<% form_for(@category) do |f| %>
+<% form_for @category, :html => { :multipart => true }, :builder => SmallFormBuilder do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
+  <%= f.text_field :name %>
+  <%= f.text_area :description %>
+  <%= f.file_field :imagemh %>
 
-  <p>
-    <%= f.label :public %><br />
-    <%= f.check_box :public %>
-  </p>
+  <%= f.check_box :public %>
+  <%= f.submit 'Update' %>
 
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
 <% end %>
