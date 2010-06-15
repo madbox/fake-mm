@@ -20,5 +20,7 @@ class FrontController < ApplicationController
 
     @hide_news_line = true
     @hide_user_sidebar = true
+
+    @public_category_last = Article.public_category_last.first
   end
 end

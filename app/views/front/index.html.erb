@@ -72,9 +72,17 @@
   <div id="categories" class="box column-wrap h200">
     <a href="<%= categories_path -%>">
       <h1><%= t('titles.categories') -%></h1>
-      <p>Какой-то контент, очень длинный , очень длинный...</p>
     </a>
-    <div class="box-footer">10 янв 09</div>
+    <% if @public_category_last -%>
+    <a href="<%= article_path @public_category_last -%>">
+      <%= image_tag @public_category_last.imagemh.url %>
+      <h2><%= @public_category_last.title %></h2>
+      <p><%= @public_category_last.description -%></p>
+      <div class="box-footer"><%= @public_category_last.publish_date.to_s(:short) -%></div>
+    </a>
+    <% else %>
+    <div class="box-footer"></div>
+    <% end %>
     <div class="clear"></div>
   </div>
 
