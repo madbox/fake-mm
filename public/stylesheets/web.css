@@ -129,6 +129,7 @@ div.h98 { min-height: 98px; _height: 98px; }
 #reviews.box {height: 550px; overflow: hidden;}
 #categories.box {height: 550px; overflow: hidden;}
 #categories { width: 200px; margin: 0px; float:left; display: inline; padding-top: 16px; }
+#categories h2 { font-size: 16pt; }
 
 /* Logged in markup */
 #user-sidebar { float: left; width: 200px; margin-right: 8px; margin-bottom: 8px; }
