@@ -311,13 +311,13 @@ div.new-comment { padding: 8px; }
 		    }
 #events .element * { font-size: 10pt; }
 #events .element td { text-align: center; padding: 0px; }
-#events .element.short *.icon {width: 32px}
-#events .element.short *.date {width: 100px; text-align: left}
-#events .element.short *.text {width: 200px; text-align: left}
-#events .element.short *.club {width: 80px; text-align: right; font-weight: bold; padding-right: 2px;}
+#events .element.short *.icon {width: 30px}
+#events .element.short *.date {width: 80px; font-weight: bold; text-align: left}
+#events .element.short *.text {width: 217px; text-align: left}
+#events .element.short *.club {width: 63px; text-align: right; font-weight: bold; padding-right: 2px;}
 
-#events .element.long *.icon {width: 32px}
-#events .element.long *.date {width: 100px; font-weight: bold; text-align: left}
+#events .element.long *.icon {width: 30px}
+#events .element.long *.date {width: 80px; font-weight: bold; text-align: left}
 #events .element.long *.text {width: 250px; text-align: left}
 #events .element.long *.club {width: 80px; font-weight: bold;}
 #events .element.long *.city {width: 80px; font-weight: bold;}
