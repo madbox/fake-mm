@@ -65,6 +65,7 @@ img { border: none; }
 	   }
 
 #footer p { font-size: 8pt; }
+#footer #mostly-left { float: left; }
 #footer #left   { width: 313px; float:left; text-align: right;}
 #footer #center { width: 198px; float:left; text-align: center; }
 #footer #right  { width: 313px; float:right; text-align: left; }
