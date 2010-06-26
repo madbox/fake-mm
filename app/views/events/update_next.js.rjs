@@ -1,5 +1,5 @@
 page.replace_html "flash", :partial => '/flash', :locals => {:flash => flash}
-page << %Q{ alert('next!') }
+# page << %Q{ alert('next!') }
 @event = Event.find(:first, :conditions => ["id > ?", @event.id] )
 @event ||= Event.new
 page.replace_html '#event_editor', :partial => 'edit', :locals => { :event => @event }

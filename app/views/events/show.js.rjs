@@ -4,6 +4,6 @@
 # обновить редактор, если мы админ
 page.replace_html "#event_editor", :partial => 'edit', :locals => { :event => @event }
 # подсветить строку
-page.replace_html "#events", :partial => 'list', :locals => { :events => Event.all }
+page.replace_html "#events", :partial => 'list', :locals => { :events => Event.in_future }
 # page << %Q{ $("#events .element tr").removeClass('active') }
 # page << %Q{ $("#events #event_#{@event.id}").addClass('active') }

@@ -108,6 +108,7 @@ ru:
       created_at: "Дата создания"
       updated_at: "Дата изменения"
       event:
+        id: ID
         title: Название
         text: Описание
         artist: Исполнитель

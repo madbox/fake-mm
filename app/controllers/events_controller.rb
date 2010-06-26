@@ -5,8 +5,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.all
-    @event = Event.last || Event.new
+    @events = Event.in_future
+    @event = @events.last || Event.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -59,11 +59,7 @@ class EventsController < ApplicationController
         flash[:notice] = 'Event was successfully created.'
         format.html { redirect_to(@event) }
         format.xml  { render :xml => @event, :status => :created, :location => @event }
-        if params.has_key? :next_action
-          format.js   { render :action => "update_#{params[:next_action]}" }
-        else
-          format.js   { render :action => 'update_save' }
-        end
+        format.js   { render :action => "show", :id => @event.id }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
@@ -97,6 +93,8 @@ class EventsController < ApplicationController
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
       end
     end
+  rescue ActiveRecord::RecordNotFound
+    @event = Event.in_future.first || @event.new
   end
 
   # DELETE /events/1
@@ -104,6 +102,8 @@ class EventsController < ApplicationController
   def destroy
     @event_to_kill = Event.find(params[:id])
     @event = Event.prev(@event_to_kill)
+
+    @event = Event.new if @event_to_kill == @event
 
     @event_to_kill.destroy
 
@@ -113,5 +113,7 @@ class EventsController < ApplicationController
       format.xml  { head :ok }
       format.js   { render :action => "show", :id => @event.id }
     end
+  rescue ActiveRecord::RecordNotFound
+    @event = Event.in_future.first || @event.new
   end
 end

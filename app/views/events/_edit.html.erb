@@ -12,9 +12,11 @@
     <%= hidden_field_tag 'submit_button', '' %>
 </div>
     <%= f.submit t("actions.update"), { :onclick => %Q{ $('#submit_button').val('save') }} %>
+    <% if Event.in_future.count > 0 %>
     <%= f.submit t("actions.prev"),   { :onclick => %Q{ $('#submit_button').val('prev')   }} %>
     <%= f.submit t("actions.next"),   { :onclick => %Q{ $('#submit_button').val('fwd')   }} %>
-    <% unless event.new_record? -%>
-    <%= button_to_remote t("actions.destroy"), :url => event_path(event), :method => :delete  %>
-    <% end -%>
+      <% unless event.new_record? -%>
+      <%= button_to_remote t("actions.destroy"), :url => event_path(event), :method => :delete  %>
+      <% end -%>
+    <% end %>
   <% end %>
