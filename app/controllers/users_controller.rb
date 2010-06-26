@@ -30,7 +30,11 @@ class UsersController < ApplicationController
   end
  
   def edit
-    @user = current_user
+    unless current_user.has_role? :admin
+      @user = current_user
+    else
+      @user = User.find params[:id]
+    end
   end
   
   def update

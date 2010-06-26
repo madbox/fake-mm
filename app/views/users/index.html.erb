@@ -1,5 +1,6 @@
 <div id="users-list">
   <h1><%=t 'titles.users' %></h1>
+  <p><%=t 'misc.total', :count => User.count -%></p>
   <ul>
     <%= render :partial => "user", :collection => @users %>
   </ul>

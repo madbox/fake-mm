@@ -2,4 +2,5 @@
   <div>
     <%= user.name -%> : <%= user.roles.map(&:name).join(', ') -%>
   </div>
+  <div><%= link_to t('actions.edit'), edit_user_path( user ) -%></div>
 </li>

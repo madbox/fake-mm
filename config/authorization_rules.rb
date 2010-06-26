@@ -16,13 +16,14 @@ authorization do
   role :guest do
     has_permission_on [:articles, :comments, :categories, :users], :to => [:index, :show]
     has_permission_on [:user_sessions], :to => [:new, :create]
-    has_permission_on [:users], :to => [:index, :show, :update, :new, :create, :recover_password, :reset_password]
+    has_permission_on [:users], :to => [:show, :update, :new, :create, :recover_password, :reset_password]
     has_permission_on [:events], :to => [:read]
   end
   
   role :admin do
     includes :author
-    has_permission_on [:comments, :categories, :users, :user_sessions, :events], :to => [ :manage, :index_all]
+    has_permission_on [:comments, :categories, :users, :user_sessions, :events, :assigments], :to => [ :manage, :index_all]
+    has_permission_on [:roles], :to => [:read]
   end
 end
 

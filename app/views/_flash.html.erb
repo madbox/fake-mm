@@ -1,6 +1,10 @@
     <% if flash.has_key? :error %>
-    <div class="error" onclick="$(this).fadeOut('fast');"><div class="inner"><%= flash[:error] -%></div></div>
+    <div class="error" onclick="$(this).fadeOut('fast');">    
+      <div class="flash-tip"><%= t 'misc.click_to_close' -%></div>
+      <div class="inner"><%= flash[:error] -%></div></div>
     <% end %>
     <% if flash.has_key? :notice %>
-    <div class="notice" onclick="$(this).fadeOut('fast');"><div class="inner"><%= flash[:notice] -%></div></div>
+    <div class="notice" onclick="$(this).fadeOut('fast');">
+      <div class="flash-tip"><%= t 'misc.click_to_close' -%></div>
+      <div class="inner"><%= flash[:notice] -%></div></div>
     <% end %>

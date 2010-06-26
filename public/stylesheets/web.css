@@ -151,12 +151,18 @@ div.h98 { min-height: 98px; _height: 98px; }
 
 
 /* flash */
-#flash div.notice, #flash div.error { position: absolute; width: 100%; margin: 0.5em 0px; line-height: 30pt;}
-#flash * { font-weight: 900; }
+#flash div.notice, #flash div.error { 
+    position: absolute; 
+    width: 100%; 
+    margin: 0.5em 0px; 
+    line-height: 30pt;
+}
+#flash * { font-weight: 900; opacity: 0.9; }
 #flash div.error { background-color: #bb0000;}
 #flash div.notice { background-color: #0000bb;}
 #flash div.loading { background-color: #00bb00;}
-#flash div.inner {width: 882px; margin: auto; }
+#flash div.inner { width: 882px; margin: auto; }
+#flash .flash-tip { float: right; font-weight: 100; font-size: 8pt; margin-right: 5em; }
 
 /* global-progress indicator */
 #global-progress{ 

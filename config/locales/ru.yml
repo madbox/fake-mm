@@ -42,6 +42,7 @@ ru:
     events: "Афиша"
     new_feedback: "Обратная связь"
     users: "Пользователи"
+    edit_user: Параметры профиля
     editor: "Редакция"
     user_menu: "Меню"
     new_article: "Создание статья"
@@ -68,6 +69,8 @@ ru:
     published_at: Опубликована
     answer_no: Нет
     answer_yes: Да
+    click_to_close: Кликни, что бы закрыть
+    total: "Всего {{count}}"
   categories:
     system: "Системная"
     features: "Features"
@@ -128,6 +131,8 @@ ru:
         roles: "Роли"
         nick: Ник
         age: Возраст
+        roles : Роли
+        role: Роль
       article:
         title: "Заголовок"
         sysname: "Системное имя (Латинские буквы, цифры и '_')"
