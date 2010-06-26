@@ -9,7 +9,7 @@
       <% else %>
         <a href="<%= article_url(article) -%>">
           <div><%= image_tag article.imagemv.url %></div>
-          <p><%= article.title -%></p>
+          <p><%= truncate( article.title.mb_chars, 25, "...") -%></p>
         </a>
       <% end %>
       <div class="news-box-footer">
