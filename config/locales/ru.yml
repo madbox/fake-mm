@@ -71,6 +71,7 @@ ru:
     answer_yes: Да
     click_to_close: Кликни, что бы закрыть
     total: "Всего {{count}}"
+    pictures: Картинки
   categories:
     system: "Системная"
     features: "Features"

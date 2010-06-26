@@ -75,7 +75,8 @@
   <div class="editor-item-footer">
     <div class="editor-item-options">
       <%= link_to t( 'actions.edit' ), edit_article_path( article ) -%> |
-      <%= link_to t( 'actions.destroy' ), article_path( article, :method => :delete ) -%>
+      <%= link_to t( 'actions.destroy' ), article_path( article, :method => :delete ) -%> |
+      <%= link_to t( 'misc.pictures' ), article_show_pictures_path( article ) -%>
     </div>
     <%= t('misc.created_at') -%>:
     <%= article.created_at.to_s(:short) -%> |
@@ -83,6 +84,8 @@
     <%= article.updated_at.to_s(:short) -%>
   </div>
 </div>
+
+<% else -%>
 
 <p>Unknown template type: <%= type -%> for article</p>
 

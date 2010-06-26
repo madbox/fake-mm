@@ -1,0 +1,15 @@
+<div id="article-simple" class="box">
+    <h1><%=h @article.category.name -%></h1>
+    <h2><%=h @article.title -%> (<%= t('misc.pictures') -%>)</h2>
+    
+    <p><%= t 'activerecord.attributes.article.imagebv' -%></p>
+    <div><%= image_tag @article.imagebv.url -%></div>
+    <p><%= t 'activerecord.attributes.article.imagebh' -%></p>
+    <div><%= image_tag @article.imagebh.url -%></div>
+    <p><%= t 'activerecord.attributes.article.imagemv' -%></p>
+    <div><%= image_tag @article.imagemv.url -%></div>
+    <p><%= t 'activerecord.attributes.article.imagemh' -%></p>
+    <div><%= image_tag @article.imagemh.url -%></div>
+    <p><%= t 'activerecord.attributes.article.imagemm' -%></p>
+    <div><%= image_tag @article.imagemm.url -%></div>
+</div>

@@ -1,4 +1,6 @@
-<% if @article.style %>
+<% if @pictures_only -%>
+  <%= render :partial => "template_pictures_only" %>
+<% elsif @article.style %>
   <%= render :partial => "template_#{@article.style.template}" %>
 <% else %>
 

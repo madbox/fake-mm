@@ -35,6 +35,7 @@ ActionController::Routing::Routes.draw do |map|
   map.article_to_drafts '/articles/:id/to_drafts', :controller => 'articles', :action => 'to_drafts'
   map.article_undraft '/articles/:id/undraft', :controller => 'articles', :action => 'undraft'
   map.article_editor '/articles/editor', :controller => 'articles', :action => 'editor'
+  map.article_show_pictures '/articles/:id/pictures', :controller => 'articles', :action => 'show', :pictures => true
   map.drafts '/articles/drafts', :controller => 'articles', :action => 'drafts'
   map.resources :articles, :has_many => :comments
 
