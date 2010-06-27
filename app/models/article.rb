@@ -30,7 +30,7 @@ class Article < ActiveRecord::Base
   validates_attachment_presence :imagemh, :if => lambda { |a| !a.draft && !a.published }
   validates_attachment_presence :imagemm, :if => lambda { |a| !a.draft && !a.published }
 
-  named_scope :news, :joins => :category, :conditions => ["categories.sysname = ?", 'news']
+  named_scope :news, :joins => :category, :conditions => ["categories.sysname = ?", 'news'], :order => 'publish_date DESC'
   named_scope :published, :conditions => {:published => true}
   named_scope :drafts, :conditions => {:draft => true} 
 
