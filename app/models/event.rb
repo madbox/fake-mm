@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class Event < ActiveRecord::Base
-  named_scope :front_collection, :order => 'date DESC', :limit => 5, :conditions => ["date > ?", Time.now]
-  named_scope :in_future, :order => 'date DESC', :conditions => ["date > ?", Time.now]
+  named_scope :front_collection, :order => 'date', :limit => 5, :conditions => ["date > ?", Time.now]
+  named_scope :in_future, :order => 'date', :conditions => ["date > ?", Time.now]
 
   def initialize *args
     super( *args )
