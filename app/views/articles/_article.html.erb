@@ -33,7 +33,7 @@
   <a href="<%= article_url( article ) -%>">
     <div class="h135 column-wrap list-pic">
       <%= image_tag article.imagemv.url %>
-      <div class="list-pic-footer"><%= Russian::strftime( article.publish_date, "%d %B %Y").split.map{|w|w.mb_chars.capitalize}.join(" ") -%><hr/></div>
+      <div class="list-pic-footer"><%= article.publish_date ? Russian::strftime( article.publish_date, "%d %B %Y").split.map{|w|w.mb_chars.capitalize}.join(" ") : t('misc.article_unpublished') -%><hr/></div>
       <div class="clear"></div>
     </div>
     <div class="column-wrap h135 list-content">

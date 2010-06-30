@@ -72,6 +72,7 @@ ru:
     click_to_close: Кликни, что бы закрыть
     total: "Всего {{count}}"
     pictures: Картинки
+    article_unpublished: Не опубликована
   categories:
     system: "Системная"
     features: "Features"
