@@ -19,7 +19,7 @@ img { border: none; }
 }
 
 #header a, #footer a { color: white; border-bottom: 1px dashed black; text-decoration: none }
-#header a:hover, #footer a:hover { border-bottom: 1px dashed white; }
+#header a:hover, #footer a:hover { /* border-bottom: 1px dashed white; */ }
 
 #header h1{
     line-height: 70px;
@@ -187,6 +187,7 @@ div.h98 { min-height: 98px; _height: 98px; }
 #article-simple p.description { font-weight: 900; }
 #article-simple p { text-align: justify; margin: 1em 0px; }
 #article-simple p:first-letter{ margin-left: 1ex;}
+/* #share-buttons { background-color: red } */
 
 /* category show (list of articles) */
 .category ul { margin: 8px 0px 8px 0px; padding: 0px; }

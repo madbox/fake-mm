@@ -4,13 +4,13 @@ module ArticlesHelper
     string = 
     unless article.custom_author.blank?
       unless article.custom_author_link.blank?
-        %Q{<a href="#{article.custom_author_link}">#{article.custom_author}</a>}
+        %Q{<a href="#{article.custom_author_link}" target="_blank">#{article.custom_author}</a>}
       else
         article.custom_author
       end
     else
       if article.user
-        link_to( article.user.name, article.user )
+        link_to( article.user.name, article.user, :target => '_blank' )
       else
         I18n.t('misc.author_unknown')
       end
@@ -25,7 +25,7 @@ module ArticlesHelper
       if article.photographer_link.blank?
         article.photographer
       else
-        %Q{<a href="#{article.photographer_link}">#{article.photographer}</a>}
+        %Q{<a href="#{article.photographer_link}" , target="_blank">#{article.photographer}</a>}
       end
     else
       ''
@@ -40,7 +40,7 @@ module ArticlesHelper
       if article.source_link.blank?
         article.source
       else
-        %Q{ <a href="#{article.source_link}">#{article.source}</a> }
+        %Q{ <a href="#{article.source_link}" target="_blank">#{article.source}</a> }
       end
     end
     
