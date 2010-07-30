@@ -1,14 +1,14 @@
 html,body{ 
     padding: 0px; 
     margin: 0px; 
-    background-color: black; 
+    background-color: white; 
     color: white; 
     min-width: 900px; 
 }
-* { font-family: Arial, Helvetica, sans-serif; font-weight: lighter; }
+* { font-family: Arial, Helvetica, sans-serif; }
 a { text-decoration: none; }
 a.alert { color: red !important}
-p { font-size: 9pt; }
+p { font-size: 10pt; }
 *.clear { clear: both;}
 li { list-style-type: none; }
 img { border: none; }
@@ -39,6 +39,7 @@ img { border: none; }
     background-color: white;
     color: black;
     background: url(/images/middle-bg.png) center center;
+    background-repeat: repeat-y;
 }
 
 .width-wrap {
@@ -106,16 +107,21 @@ div.h98 { min-height: 98px; _height: 98px; }
 .column-wrap { position: relative; float: left; display: inline;}
 
 *.box-footer { 
-    text-align: right; 
-    font-size: 10pt; 
-    border-bottom: 1px solid black; 
-    line-height: 1.3em; 
-    position: absolute; 
-    bottom: 0px; 
-    right: 0px; 
-    width: 100%; 
-    background-color: white; 
+    text-align: right;
+    font-size: 10pt;
+    /* border-bottom: 1px solid black;  */
+    line-height: 1.3em;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    background-color: transparet;
 }
+
+.category .box-footer {
+    border-bottom: 1px solid black;
+}
+
 *.box-footer-plain { text-align: right; font-size: 10pt; border-bottom: 1px solid black; line-height: 1.3em; width: 100%; }
 
 #news-of-the-day { width: 408px; margin: 8px 8px 0px 0px; float:left; display: inline; }
@@ -139,7 +145,10 @@ div.h98 { min-height: 98px; _height: 98px; }
 #user-content form p { margin: 0.5em 0px; }
 
 /* profile page */
-#user-nav ul {margin: 16px 0px 16px 0px; padding: 0px 0px 0px 8px; }
+#user-nav ul {
+    margin: 16px 0px 16px 0px; 
+    padding: 0px 0px 0px 8px; 
+}
 #user-nav li { font-size: 10pt; margin-bottom: 4px;  }
 /* #user-nav li a:hover { text-decoration: underline; } */
 #user-avatar { float: left; margin-right: 8px; width: 200px; height:300px; }
@@ -235,7 +244,12 @@ div.h98 { min-height: 98px; _height: 98px; }
 
 .editor ul { margin: 0px; padding: 0px; }
 .editor li { margin: 0px; padding: 0px; }
-.editor-item { border: 1px solid gray; padding: 0px; margin: 0px 0px 8px 0px; background-color: white;}
+.editor-item { 
+    border: 1px solid gray; 
+    padding: 0px; 
+    margin: 0px 0px 8px 0px; 
+    background-color: white;
+}
 .editor-item-title { border-bottom: 1px solid gray; background-color: #eee; padding: 0px 0.5em; }
 .editor-item-title id { float: right; }
 .editor-item-content { margin: 0px; height: 112px; border-bottom: 1px solid gray; }
@@ -274,29 +288,17 @@ div.h98 { min-height: 98px; _height: 98px; }
 }
 
 /* commets in article-simple */
-#comments h1 { 
-    margin: 0px 0px 8px 0px; 
-    padding: 2px 0px;; 
-    background-color: black; 
-    color: white; 
-    text-transform: uppercase;
-    font-size: 10pt;
-    text-align: center; }
-#comments h1 a {color: white; width: 100%; display: block; }
-
-#comments .text h3 { margin: 0px; font-size: 12pt; font-weight: 900; }
-#comments .text p { margin-top: 0px; }
-#comments ul { padding: 0px; margin: 0px; height: 104px; }
-#comments ul li { margin: 0px 0px 0px 0px; }
-.not-authorized #comments ul li { width: 824px; }
-#comments ul li img { float: left; margin: 4px 8px 0px 0px; width: 96px; height: 96px; }
-#comments ul li .content { float: left; height: 96px; margin: 4px 0px 4px ; overflow: hidden; }
-.not-authorized #comments ul li .content { width: 710px; }
-.authorized #comments ul li .content { width: 512px; }
-
-/* comments */
-.comment { border: 1px solid black; }
-
+#comments ul { list-style-type: none; padding: 0px; margin: 0px; }
+#comments li.comment { border-bottom: 1px solid black; padding: 18px 0px; }
+#comments .comment { font-size: 10pt; }
+#comments .comment .text strong { text-weight: bold; }
+#comments .comment .image { float: left; margin: 0 18px 1px 0; width: 96px; height: 96px; }
+#comments .comment:hover { background-color: #ededed; }
+#comments .comment:hover .menu .options { display: inline }
+#comments .comment .text { min-height: 85px; }
+#comments .comment .menu { margin-top: 1em; }
+#comments .comment .menu .options { display: none; float: right; margin-right: 18px; }
+#comments .comment .menu .time { display: inline; }
 
 /* new-comment article-simple  */
 div.new-comment { padding: 8px; }

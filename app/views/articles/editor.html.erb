@@ -2,6 +2,9 @@
   <div class="editor box">
     <h1><%= t('titles.editor') -%></h1>
    
+    <%= will_paginate @articles -%>
+    
+
     <ul>
       <% for article in @articles do %>
       <%= render article, :type => :editor_item %>

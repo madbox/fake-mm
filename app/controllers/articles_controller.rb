@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
   end
 
   def editor
-    @articles = Article.all
+    @articles = Article.paginate :page => params[:page], :order => 'updated_at DESC'
     
     respond_to do |format|
       format.html # index.html.erb

@@ -38,6 +38,11 @@ class Article < ActiveRecord::Base
 
   named_scope :public_category_last, :include => :category, :conditions => ["categories.public = ?", true], :order => 'publish_date DESC'
 
+  # for will_paginate
+  def self.per_page
+    10
+  end
+
   def unpublish
     self.published = false
     self.publish_date = nil

@@ -54,7 +54,7 @@
       <%= t("categories.#{article.category.sysname}") -%></p>
     <p><b><%= t('activerecord.attributes.article.published')-%></b>:
       <% if article.published? %>
-        <%= link_to article.publish_date.to_s(:short), article_unpublish_path(article) %>
+        <%= link_to styled_date( article.publish_date ), article_unpublish_path(article) %>
       <% else %>
         <%= link_to t('misc.answer_no'), article_publish_path(article), {:class => 'alert'} %>
       <% end %>

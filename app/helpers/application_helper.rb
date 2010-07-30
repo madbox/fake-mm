@@ -2,6 +2,15 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
+  def styled_date datetime
+    raise ArgumentError, "Kind of DateTime expected, but #{datetime.class} got" unless datetime.kind_of?( Date ) || datetime.nil? || datetime.kind_of?( ActiveSupport::TimeWithZone )
+    if datetime.nil?
+      "---"
+    else
+      Russian::strftime( datetime, "%d %B %Y").split.map{|w|w.mb_chars.capitalize}.join(" ")
+    end
+  end
+  
   def styled_field kind, object, prop_name, *args
     if kind == 'text'
       %Q{ <div class="field_label"><label>#{I18n.t("activerecord.attributes.#{object.class.name.underscore}.#{prop_name.to_s}")}</label>: #{object.send prop_name.to_sym}</div> }
@@ -20,7 +29,7 @@ module ApplicationHelper
     options[:truncate_to] ||= 200
     options[:expand_to_height] ||= 196
     if string.length > options[:truncate_to]
-      ERB::Util.h( string.mb_chars[1..options[:truncate_to] - 5] ) + %Q{ <a href="#" onclick="e = $(this).parent(); e.html('#{ ERB::Util.h(string.gsub(/\s/, " ") ) }'); e.parent().animate({ height: #{options[:expand_to_height]}}); return false">...</a> }
+      ERB::Util.h( string.mb_chars[0..options[:truncate_to] - 5] ) + %Q{ <a href="#" onclick="e = $(this).parent(); e.html('#{ ERB::Util.h(string.gsub(/\s/, " ") ) }'); return false">...</a> }
     else
       string
     end
