@@ -17,16 +17,21 @@
 
   <% end -%>
 </div>
-<!-- under construction -->
-<!--
 <div id="share-buttons">
+  <!-- under construction -->
+  <!--
+     <script type="text/javascript">
+       tweetmeme_url = 'http://yoururl.com';
+       tweetmeme_style = 'compact';
+       tweetmeme_text = 'qwe';
+     </script>
+     <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
+     -->
   <script type="text/javascript">
-    tweetmeme_url = 'http://yoururl.com';
-    tweetmeme_style = 'compact';
-    tweetmeme_text = 'qwe';
+    document.write(VK.Share.button({
+      title: "Статья на Fake-mm.ru",
+      description: "Читаю статью \"<%= @article.title -%>\" на fake-mm.ru"},{type: "round", text: "Поделиться"}));
   </script>
-  <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
 </div>
--->
 
 <%= render :partial => 'simple_article_comments' -%>
