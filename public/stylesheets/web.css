@@ -299,8 +299,8 @@ div.h98 { min-height: 98px; _height: 98px; }
 #comments .comment .image { float: left; margin: 0 18px 1px 0; width: 96px; height: 96px; }
 #comments .comment:hover { background-color: #ededed; }
 #comments .comment:hover .menu .options { display: inline }
-#comments .comment .text { min-height: 70px; }
-#comments .comment .menu { margin-top: 1em; }
+#comments .comment .text { min-height: 73px; }
+#comments .comment .menu { margin-top: 1em; font-size: 8pt; }
 #comments .comment .menu .options { display: none; float: right; margin-right: 18px; }
 #comments .comment .menu .time { margin: 0 0 0 114px;  }
 
