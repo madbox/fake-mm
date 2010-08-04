@@ -5,31 +5,45 @@
 </div>
 <div id="user-info">
   <div id="user-title"> 
-    <div id="user-name"><%= @user.name -%></div>
-    <div id="user-roles"><%= (@user.role_symbols - [:guest]).map{|s| t("roles.#{s}")}.join(', ') -%></div>
+    <div id="user-name" class="editable">
+      <div class="edit-link"><%= link_to t('actions.edit'), edit_user_path(@user) -%></div>
+      <%= @user.name -%>
+    </div>
+    <div id="user-roles" class="editable">
+      <% has_role? :admin do %>
+      <div class="edit-link"><%= link_to t('actions.edit'), edit_user_role_path(@user, @user.roles) -%></div>
+      <% end %>
+      <%= (@user.role_symbols - [:guest]).map{|s| t("roles.#{s}")}.join(', ') -%>
+    </div>
   </div>
-  <div id="user-data">
+  <div id="user-data" class="editable">
+    <div class="edit-link"><%= link_to t('actions.edit'), edit_user_path(@user) -%></div>
     <table>
       <tr>
+        <td><%= t 'activerecord.attributes.user.nick' -%></td>
+        <td><%= @user.nick -%></td>
+      </tr>
+      <tr>
+        <td><%= t 'activerecord.attributes.user.email' -%></td>
+        <td><%= @user.email -%></td>
+      </tr>
+      <tr>
         <td><%= t 'activerecord.attributes.user.city' -%></td>
-        <td></td>
+        <td><%= @user.city -%></td>
       </tr>
       <tr>
         <td><%= t 'activerecord.attributes.user.birthday' -%></td>
-        <td></td>
+        <td><%= @user.birthday -%></td>
       </tr>
       <tr>
         <td><%= t 'activerecord.attributes.user.gender' -%></td>
-        <td></td>
+        <td><%= @user.gender -%></td>
       </tr>
-      <tr>
+      <tr class="about">
         <td><%= t 'activerecord.attributes.user.about' -%></td>
-        <td></td>
+        <td><%= @user.about -%></td>
       </tr>
     </table>
-    <%= styled_field 'text', @user, :nick %>
-    <%= styled_field 'text', @user, :age %>
-    <%= styled_field 'text', @user, :email %>
   </div>
   <div class="clear"></div>
 </div>

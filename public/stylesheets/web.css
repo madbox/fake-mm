@@ -156,10 +156,14 @@ div.h98 { min-height: 98px; _height: 98px; }
 /* #user-nav li a:hover { text-decoration: underline; } */
 #user-avatar { float: left; margin-right: 8px; width: 200px; height:300px; }
 #user-info {margin: 24px 0 16px 200px; height: 268px; background-color: #eee; border-top: 1px solid black }
+.editable .edit-link { float: right; font-size: 8pt; display: none; }
+.editable:hover .edit-link { display: block; }
 #user-name { padding: 0.5em 20px; }
 #user-data { padding: 0.5em 20px; font-size: 10pt; }
 #user-data table, #user-data tr, #user-data td { padding: 0; margin: 0; }
 #user-roles { border-top: 2px solid #999; background-color: #aaa; color: white; font-size: 8pt; padding: 0.5em 20px; }
+#user-roles .edit-link a { color: white; }
+#user-roles .edit-link a:hover { color: #4b0000; }
 #user-info p { margin: 0px 0px 0px 2em; }
 #user-name p { margin: 0px; padding: 0px; line-height: 14pt;}
 
