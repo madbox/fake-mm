@@ -1,16 +1,35 @@
 <h1><%= t('activerecord.models.user') -%></h1>
+
 <div id="user-avatar">
   <%= image_tag @user.avatar.url -%>
 </div>
 <div id="user-info">
-  <div id="user-name"> 
-    <h2><%= @user.name -%></h2>
-    <p><%= (@user.role_symbols - [:guest]).map{|s| t("roles.#{s}")}.join(', ') -%></p>
+  <div id="user-title"> 
+    <div id="user-name"><%= @user.name -%></div>
+    <div id="user-roles"><%= (@user.role_symbols - [:guest]).map{|s| t("roles.#{s}")}.join(', ') -%></div>
   </div>
-  
-  <%= styled_field 'text', @user, :nick %>
-  <%= styled_field 'text', @user, :age %>
-  <%= styled_field 'text', @user, :email %>
-  
+  <div id="user-data">
+    <table>
+      <tr>
+        <td><%= t 'activerecord.attributes.user.city' -%></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%= t 'activerecord.attributes.user.birthday' -%></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%= t 'activerecord.attributes.user.gender' -%></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%= t 'activerecord.attributes.user.about' -%></td>
+        <td></td>
+      </tr>
+    </table>
+    <%= styled_field 'text', @user, :nick %>
+    <%= styled_field 'text', @user, :age %>
+    <%= styled_field 'text', @user, :email %>
+  </div>
   <div class="clear"></div>
 </div>

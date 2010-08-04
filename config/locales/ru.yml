@@ -135,6 +135,14 @@ ru:
         age: Возраст
         roles : Роли
         role: Роль
+        fname: Имя
+        lname: Фамилия
+        sname: Отчество
+        avatar: Аватар
+        about: О себе
+        gender: Пол
+        birthday: Дата рождения
+        city: Город
       article:
         title: "Заголовок"
         sysname: "Системное имя (Латинские буквы, цифры и '_')"
