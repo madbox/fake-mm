@@ -9,10 +9,11 @@
   </div>
   <div class="menu">
     <!-- // menu -->
-    <div class="time"><%= styled_date comment.updated_at -%></div>
     <div class="options">
       <%= link_to t('actions.edit'), edit_comment_path( comment ) -%>&nbsp;&nbsp;&nbsp;
-      <%= link_to t('actions.destroy'), comment_path( comment ), :method => :delete -%></div>
+      <%= link_to t('actions.destroy'), comment_path( comment ), :method => :delete -%>
+    </div>
+    <div class="time"><%= styled_date comment.updated_at -%></div>
   </div>
   <div class="clear"></div>
 </li>
