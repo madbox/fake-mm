@@ -12,26 +12,23 @@
   </head>
   <body>
     
-    <div id="flash">
-    <%= render :partial => '/flash', :locals => {:flash => flash} %>
-    </div>
-
-    <div id="global-progress">
-      <%=t 'misc.loading' -%>
-    </div>
+    <div id="flash"><%= render :partial => '/flash', :locals => {:flash => flash} -%></div>
+    <div id="global-progress"><%=t 'misc.loading' -%></div>
 
     <div id="header">
       <div class="width-wrap">
 	<div id="entrance">
-	  <% unless current_user %>
-  	    <%= link_to t('actions.login'), login_path -%><br />
-	    <%= link_to t('actions.new_user'), register_path -%>
-	  <% else %>
-	    <%= link_to t('actions.show_profile'), profile_path -%><br />
-  	    <%= link_to t('actions.logout'), logout_path -%>
-	  <% end %>
-	</div>
-	<h1><%= link_to 'FAKE MUSICAL MAGAZINE', root_path -%></h1>
+	  <div class="text-login-top"></div> 
+            <% unless current_user -%>
+              <%= link_to '<div class="login-top">' + t('actions.login') + '</div>', login_path -%>
+              <%= link_to '<div class="login-top">' + t('actions.new_user') + '</div>', register_path -%>
+            <% else -%>
+              <%= link_to '<div class="login-top">' + t('actions.logout') + '</div>', logout_path -%>
+              <%= link_to '<div class="login-top">' + t('actions.show_profile') + '</div>', profile_path -%>
+            <% end -%>
+	  </div>
+        <img alt="fake-mm" class="logo" src="system/logo.png" />
+        <h1><%= link_to 'FAKE MUSICAL MAGAZINE', root_path -%></h1>
       </div>
     </div>
 
