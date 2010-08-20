@@ -22,8 +22,9 @@ class ArticlesController < ApplicationController
   end
 
   def drafts
-    @articles = Article.drafts
-    
+    @articles = Article.drafts.paginate :page => params[:page]
+#    raise @articles.inspect
+
     respond_to do |format|
       format.html { render 'editor' }# index.html.erb
       format.xml  { render :xml => @articles }

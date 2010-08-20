@@ -19,13 +19,13 @@
       <div class="width-wrap">
 	<div id="entrance">
 	  <div class="text-login-top"></div> 
-            <% unless current_user -%>
-              <%= link_to '<div class="login-top">' + t('actions.login') + '</div>', login_path -%>
-              <%= link_to '<div class="login-top">' + t('actions.new_user') + '</div>', register_path -%>
-            <% else -%>
-              <%= link_to '<div class="login-top">' + t('actions.logout') + '</div>', logout_path -%>
-              <%= link_to '<div class="login-top">' + t('actions.show_profile') + '</div>', profile_path -%>
-            <% end -%>
+            <% unless current_user %>
+              <%= link_to '<div class="login-top">' + t('actions.login') + '</div>', login_path %>
+              <%= link_to '<div class="login-top">' + t('actions.new_user') + '</div>', register_path %>
+            <% else %>
+              <%= link_to '<div class="login-top">' + t('actions.logout') + '</div>', logout_path %>
+              <%= link_to '<div class="login-top">' + t('actions.show_profile') + '</div>', profile_path %>
+            <% end %>
 	  </div>
         <img alt="fake-mm" class="logo" src="system/logo.png" />
         <h1><%= link_to 'FAKE MUSICAL MAGAZINE', root_path -%></h1>
