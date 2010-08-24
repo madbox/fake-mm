@@ -1,3 +1,4 @@
+# -*- coding: undecided -*-
 module ArticlesHelper
 
   def article_author_link( article )

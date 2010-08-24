@@ -1,12 +1,28 @@
 <% if type == :news_of_the_day -%>
 
-<a href="<%= article_path(article) -%>">
-  <h1><%= t('actions.show_news_of_the_day') -%></h1>
+
+<h1><%= t('actions.show_news_of_the_day') -%></h1>
+<div class="box-ph-408">
+  <div class="box-ffff">
+    <div class="title-ph"><%= article.title -%></div>
+    <div class="meta"><%= link_to_remote "Предыдущая новость", :url => prev_news_of_the_day_path(article.id) -%> | <%= link_to_remote "Следующая новость", :url => next_news_of_the_day_path(article.id) -%> | <a href="<%= article_path(article) -%>">Читать далее</a></div>
+  </div>
+  
   <img src="<%= article.imagemm.url -%>" />
-  <h2><%= article.title -%></h2>
-  <p><%= article.description -%></p>
+  
+</div>
+<a href="<%= article_path(article) -%>">
+  <div class="max-news-height">
+    <h2><%= article.title -%></h2>
+    <p><%= article.description -%></p>
+    
+  </div>
 </a>
-<div class="box-footer">Корреспондент: <%= article_author_link( @article ) -%></div>
+<div class="box-footer"><b>Корреспондент: </b><%= article_author_link( article ) -%>  
+  <% unless article.source_link.blank? %>
+  | <b> Источник:</b> <%= article_source_link( @article ) -%>
+  <% end %>
+</div>
 
 <% elsif type == :plain -%>
 

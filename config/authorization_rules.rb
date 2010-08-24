@@ -14,6 +14,7 @@ authorization do
   end
   
   role :guest do
+    has_permission_on [:articles], :to => [:next_news, :prev_news]
     has_permission_on [:articles, :comments, :categories, :users], :to => [:index, :show]
     has_permission_on [:user_sessions], :to => [:new, :create]
     has_permission_on [:users], :to => [:show, :update, :new, :create, :recover_password, :reset_password]

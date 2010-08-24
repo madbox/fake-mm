@@ -176,4 +176,24 @@ class ArticlesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def next_news
+    unless @article = Article.published.news.most_important.find(:first, :conditions => { :id_gt => params[:id]} )
+      @article = Article.find(params[:id]) if @article.nil?
+    end
+    
+    respond_to do |f|
+      f.js
+    end
+  end
+
+  def prev_news
+    unless @article = Article.published.news.most_important.find(:first, :conditions => { :id_lt => params[:id]} )
+      @article = Article.find(params[:id]) if @article.nil?
+    end
+    
+    respond_to do |f|
+      f.js
+    end
+  end
 end

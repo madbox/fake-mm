@@ -1,0 +1,1 @@
+page.replace_html "news-of-the-day", :partial => @article, :locals => {:type => :news_of_the_day}

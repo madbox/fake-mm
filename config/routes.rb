@@ -79,6 +79,9 @@ ActionController::Routing::Routes.draw do |map|
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
 
+  map.next_news_of_the_day '/next_news/:id', :controller => 'articles', :action => 'next_news'
+  map.prev_news_of_the_day '/prev_news/:id', :controller => 'articles', :action => 'prev_news'
+
   map.login  '/login',  :controller => 'user_sessions', :action => 'new'
   map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
   
