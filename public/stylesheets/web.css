@@ -240,8 +240,8 @@ div.h98 { min-height: 98px; _height: 98px; }
 
 /* articles */
 /* #article-simple {margin: 8px; } */
-.not-authorized #article-simple img.main-image {float: right; margin: 0px 0px 10px 10px; display: inline; }
-.not-authorized #article-simple.box h1 { width: 406px; }
+/* .not-authorized #article-simple img.main-image {float: right; margin: 0px 0px 10px 10px; display: inline; } */
+/* .not-authorized #article-simple.box h1 { width: 406px; } */
 /* .authorized #article-simple */
 .authorized #article-simple h2{ margin-top: 1em; }
 #article-simple .box-footer-plain { margin-bottom: 1em; border-bottom: 1px solid black; }
