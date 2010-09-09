@@ -29,8 +29,8 @@
      -->
 <div style="float: left; margin-right: 1ex;" >  <script type="text/javascript">
     document.write(VK.Share.button({
-      title: "Статья на Fake-mm.ru",
-      description: "Читаю статью \"<%= @article.title -%>\" на fake-mm.ru"},{type: "round", text: "Поделиться"}));
+      title: "<%= @article.title -%>",
+      description: "<%=h @article.description -%> Читать далее: <%= article_url( @article ) -%>"},{type: "round", text: "Поделиться"}));
   </script>
 </div>
   <iframe src="http://www.facebook.com/plugins/like.php?href=<%= article_url @article -%>&amp;layout=button_count&amp;show_faces=true&amp;width=100&amp;action=like&amp;font=tahoma&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:23px;" allowTransparency="true"></iframe>

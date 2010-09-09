@@ -27,8 +27,12 @@
       <% if @feature0 %>
         <a href="<%= article_path(@feature0) %>">
           <%= image_tag @feature0.imagemh.url %>
-	  <h2><%= @feature0.title -%></h2>
-          <p><%= @feature0.description -%></p>
+	  
+          <div class="column-text">
+	    <h2><%= @feature0.title -%></h2>
+            <p><%= @feature0.description -%></p>
+          </div>
+
           <div class="box-footer"><%= @feature0.publish_date.to_s(:short) -%></div>
 	</a>
       <% else %>
@@ -41,8 +45,12 @@
       <% if @feature1 %>
         <a href="<%= article_path(@feature1) %>">
           <%= image_tag @feature1.imagemh.url %>
-	  <h2><%= @feature1.title -%></h2>
-          <p><%= @feature1.description -%></p>
+	
+	  <div class="column-text">
+            <h2><%= @feature1.title -%></h2>
+            <p><%= @feature1.description -%></p>
+          </div>
+
           <div class="box-footer"><%= @feature1.publish_date.to_s(:short) -%></div>
 	</a>
       <% else %>
@@ -58,8 +66,12 @@
     <% if @review %>
       <a href="<%= article_path @review -%>">
 	<%= image_tag @review.imagemh.url %>
-	<h2><%= @review.title -%></h2>
-	<p><%= @review.description -%></p>
+
+	<div class="column-text">
+          <h2><%= @review.title -%></h2>
+	  <p><%= @review.description -%></p>
+        </div>
+
 	<div class="box-footer"><%= @review.publish_date.to_s(:short) -%></div>
       </a>
     <% else %>
@@ -76,8 +88,10 @@
     <% if @public_category_last -%>
     <a href="<%= article_path @public_category_last -%>">
       <%= image_tag @public_category_last.imagemh.url %>
+      <div class="column-text">
       <h2><%= @public_category_last.title %></h2>
       <p><%= @public_category_last.description -%></p>
+      </div>
       <div class="box-footer"><%= @public_category_last.publish_date.to_s(:short) -%></div>
     </a>
     <% else %>
