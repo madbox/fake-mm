@@ -65,12 +65,21 @@
 	</div>
 
 	<div id="content" class="<%= current_user ? 'authorized' : 'not-authorized' -%>">
-	  <% unless current_user && ! @hide_user_sidebar %>
+	  <% if @hide_user_sidebar %>
 	    <%= yield %>
 	  <% else %>
 	    <div id="user-sidebar">
 	      <div id="user-nav" class="box">
 		<h1><%= t('titles.user_menu') -%></h1>
+		<ul>
+                  <li><%= link_to 'О журнале', Article.find_by_sysname('about') -%></li>
+                  <li><%= link_to 'Контакты', Article.find_by_sysname('contact') -%></li>
+<!--                  <li><%= link_to 'Команда', '#' -%></li>
+                  <li><%= link_to 'Вокансии', '#' -%></li> -->
+                  <li><%= link_to 'Логотип и стиль', Article.find_by_sysname('style') -%></li>
+		</ul>
+
+                <% if current_user %>
 		<ul>
 		  <li><%= link_to t('actions.show_articles'), articles_path -%></li>
 		  <li><%= link_to t('actions.show_my_articles'), user_articles_path(current_user) -%></li>
@@ -79,22 +88,23 @@
 		  <li><%= link_to t('actions.show_categories'), categories_path -%></li>
 		  <li><%= link_to t('actions.edit_profile'), edit_user_path(current_user) %></li>
 		</ul>
-		
-		<% has_role? :admin do -%>
-		<ul>
-		  <li><%= link_to t('actions.article_editor') + " (#{Article.drafts.count}/#{Article.published.count}/#{Article.count})", article_editor_path, :title => t('actions.titles.show_article_editor') -%></li>
-		  <li><%= link_to t('actions.new_article'), new_article_path -%></li>	
-		  <% if @article && !@article.new_record? -%>		  
-		    <li><%= link_to t('actions.edit_article'), edit_article_path( @article ) -%></li>
-		  <% end -%>
-		  <li><%= link_to t('actions.new_category'), new_category_path -%></li>
-		  <li><%= link_to t('actions.show_drafts') + " (#{Article.drafts.count})", drafts_path, :title => t('actions.titles.show_drafts') -%></li>
-		  <li><%= link_to t('actions.show_all_categories') + " (#{Category.public.count}/#{Category.count})", all_categories_path, :title => t('actions.titles.show_all_categories') -%></li>
-		  <li><%= link_to t('actions.list_events'), events_path, :title => t('actions.titles.events_index') -%></li>
-		</ul>
-		<ul>
-		  <li><%= link_to t('actions.show_users'), users_path -%></li>
-		</ul>
+
+                  <% has_role? :admin do -%>
+                    <ul>
+                      <li><%= link_to t('actions.article_editor') + " (#{Article.drafts.count}/#{Article.published.count}/#{Article.count})", article_editor_path, :title => t('actions.titles.show_article_editor') -%></li>
+                      <li><%= link_to t('actions.new_article'), new_article_path -%></li>	
+                      <% if @article && !@article.new_record? -%>		  
+                        <li><%= link_to t('actions.edit_article'), edit_article_path( @article ) -%></li>
+                      <% end -%>
+                      <li><%= link_to t('actions.new_category'), new_category_path -%></li>
+                      <li><%= link_to t('actions.show_drafts') + " (#{Article.drafts.count})", drafts_path, :title => t('actions.titles.show_drafts') -%></li>
+                      <li><%= link_to t('actions.show_all_categories') + " (#{Category.public.count}/#{Category.count})", all_categories_path, :title => t('actions.titles.show_all_categories') -%></li>
+                      <li><%= link_to t('actions.list_events'), events_path, :title => t('actions.titles.events_index') -%></li>
+                    </ul>
+                    <ul>
+                      <li><%= link_to t('actions.show_users'), users_path -%></li>
+                    </ul>
+                  <% end %>
 		<% end -%>
 		
 	      </div>
