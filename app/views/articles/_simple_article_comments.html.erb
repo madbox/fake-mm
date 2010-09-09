@@ -1,5 +1,5 @@
     <div id="comments">
-      <h1>Коментарии</h1>
+      <h1>Комментарии</h1>
       <% if @article.comments.size > 0 -%>
       <ul>
 	<%= render :partial => "comments/comment", :collection => @article.comments %>

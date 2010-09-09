@@ -9,8 +9,11 @@
   </div>
   
   <img src="<%= article.imagemm.url -%>" />
-  
 </div>
+
+<!-- Tes this!  <%= link_to_remote "Предыдущая новость", :url => prev_news_of_the_day_path(article.id) -%><br />
+    <%= link_to_remote "Следующая новость", :url => next_news_of_the_day_path(article.id) -%> -->
+
 <a href="<%= article_path(article) -%>">
   <div class="max-news-height">
     <h2><%= article.title -%></h2>

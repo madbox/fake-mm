@@ -178,7 +178,7 @@ class ArticlesController < ApplicationController
   end
 
   def next_news
-    unless @article = Article.published.news.most_important.find(:first, :conditions => { :id_gt => params[:id]} )
+    unless @article = Article.published.news.most_important.find(:first, :conditions => { :publish_date_gt => Article.find( params[:id] ).publish_date}, :order => "publish_date" )
       @article = Article.find(params[:id]) if @article.nil?
     end
     
@@ -188,7 +188,7 @@ class ArticlesController < ApplicationController
   end
 
   def prev_news
-    unless @article = Article.published.news.most_important.find(:first, :conditions => { :id_lt => params[:id]} )
+    unless @article = Article.published.news.most_important.find(:first, :conditions => { :publish_date_lt => Article.find( params[:id] ).publish_date}, :order => "publish_date DESC" )
       @article = Article.find(params[:id]) if @article.nil?
     end
     
