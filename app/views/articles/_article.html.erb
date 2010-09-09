@@ -62,6 +62,47 @@
 
 <% elsif type == :editor_item -%>
 
+<div class="category-item">
+  <div class="category-image">
+    <a href="/categories/1069603862">
+      <%= image_tag article.imagemv.url %>
+    </a>
+  </div>
+  <div class="category-info">
+    <h2>
+      <%= link_to article.title, article_path(article) -%>
+    </h2>
+    <div class="min-previu">
+      <p><%= link_to <%= t('activerecord.attributes.article.category')-%>, , article_path(article) -%></p>
+    </div>
+    <ul class="min-user">
+      <li class="box-list-miniuser">
+        
+        <a href="<%= article_path(article) -%>">
+          <%= image_tag article.imagemv.url, :height => 40, :width => 40, :class => "mini-ava" %>
+        </a>
+        <div class="size">
+          <%= link_to article.title, article_path(article) -%>
+        </div>
+        <div class="options"><%= link_to 'Просмотр', article_path(article) -%></div>
+	<div class="fine"><b>Добавленно:</b> 10июня | <b>Автор:</b> Кристина Метревели</div>
+      </li>
+    </ul>
+    <div class="category-info-footer">
+      <div class="category-info-footer-attributes">
+        <div class="link"><%= link_to 'Все статьи', category_path( article.category ) -%></div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="menu-rub">
+    <a href="http://fake-mm.ru/categories/1069603862/edit">Редактировать</a>
+    <a href="http://fake-mm.ru/categories/1069603862/edit">Убрать с публикации</a>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<!--
 <div class="editor-item">
   <div class="editor-item-title"><%= link_to article.title, article_path(article) -%><id><%= article.id -%></id></div>
   <div class="editor-item-info">
@@ -99,7 +140,7 @@
     <%= article.updated_at.to_s(:short) -%>
   </div>
 </div>
-
+-->
 <% else -%>
 
 <p>Unknown template type: <%= type -%> for article</p>

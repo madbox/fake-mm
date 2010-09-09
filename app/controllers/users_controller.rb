@@ -6,10 +6,13 @@ class UsersController < ApplicationController
   end
 
   def new
+    @hide_user_sidebar = true
+
     @user = User.new
   end
   
   def create
+    @hide_user_sidebar = true
     @user = User.new(params[:user])
     @user.roles << Role.find_by_sysname('customer')
     if @user.save
@@ -48,10 +51,12 @@ class UsersController < ApplicationController
   end
 
   def recover_password
+    @hide_user_sidebar = true
     @user = User.new
   end
 
   def reset_password
+    @hide_user_sidebar = true
     @user = User.find_by_email(params[:user][:email])
 
     if @user

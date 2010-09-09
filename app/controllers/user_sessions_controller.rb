@@ -4,6 +4,7 @@ class UserSessionsController < ApplicationController
   # GET /user_sessions/new
   # GET /user_sessions/new.xml
   def new
+    @hide_user_sidebar = true
     @user_session = UserSession.new
 
     respond_to do |format|
@@ -15,6 +16,7 @@ class UserSessionsController < ApplicationController
   # POST /user_sessions
   # POST /user_sessions.xml
   def create
+    @hide_user_sidebar = true
     @user_session = UserSession.new(params[:user_session])
 
     respond_to do |format|
@@ -32,6 +34,7 @@ class UserSessionsController < ApplicationController
   # DELETE /user_sessions/1
   # DELETE /user_sessions/1.xml
   def destroy
+    @hide_user_sidebar = true
     @user_session = UserSession.find
     @user_session.destroy
 
