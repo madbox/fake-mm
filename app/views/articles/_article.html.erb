@@ -48,18 +48,14 @@
 
 <% elsif type == :category_list_item -%>
 
-<li<%= (defined?(odd) && (odd == 'true' ? ' class="odd"' : '') )-%>>
+<li class="ui-state-default <%= (defined?(odd) && (odd == 'true' ? ' odd' : '') ) -%>">
   <a href="<%= article_url( article ) -%>">
-    <div class="h135 column-wrap list-pic">
-      <%= image_tag article.imagemv.url %>
-      <div class="list-pic-footer"><%= article.publish_date ? Russian::strftime( article.publish_date, "%d %B %Y").split.map{|w|w.mb_chars.capitalize}.join(" ") : t('misc.article_unpublished') -%><hr/></div>
-      <div class="clear"></div>
-    </div>
-    <div class="column-wrap h135 list-content">
-      <h2><%=h article.title -%></h2>
-      <p><%=h article.description -%></p>
-      <div class="box-footer"><%= t('actions.read_next') -%></div>
-      <div class="clear"></div>
+    <div class="box-system-prev">
+      <%= image_tag article.imagemv.url, :class => "img-news" %>
+      <div class="time-news"><%= article.publish_date ? Russian::strftime( article.publish_date, "%d %B %Y").split.map{|w|w.mb_chars.capitalize}.join(" ") : t('misc.article_unpublished') -%></div>
+      <div class="news-content"><div class="title"><%=h article.title -%></div>
+        <p><%=h article.description -%></p>
+      </div>
     </div>
   </a>
 </li>
