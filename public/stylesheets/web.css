@@ -167,18 +167,18 @@ div.h98 { min-height: 98px; _height: 98px; }
 #events.box { width: 408px; margin: 0px 0px 0px 0px; float:left; display: inline; }
 
 #features { width: 408px; margin: 8px; margin: 8px 8px 0px 0px; float:left; display: inline; /*padding-top: 16px;*/ }
-#features .column-text { max-height: 210px; overflow: hidden;}
+#features .column-text { max-height: 190px; overflow: hidden;}
 #features h2 { font-size: 16pt; }
 #features .feature{ float:left; display: inline; width: 200px; margin: 0px; height: 522px; overflow: hidden; }
 #features *.first { margin-right: 8px; }
 #reviews { width: 200px; margin: 8px 8px 0px 0px; float: left; display: inline; /*padding-top: 16px;*/ }
 #reviews h2 { font-size: 16pt; }
 #reviews.box {height: 550px; overflow: hidden;}
-#reviews .column-text { max-height: 210px; overflow: hidden;}
+#reviews .column-text { max-height: 190px; overflow: hidden;}
 #categories.box {height: 550px; overflow: hidden;}
 #categories { width: 200px; margin: 8px 0 0 0; float:left; display: inline; /*padding-top: 16px;*/ }
 #categories h2 { font-size: 16pt; }
-#categories .column-text { max-height: 210px; overflow: hidden;}
+#categories .column-text { max-height: 190px; overflow: hidden;}
 
 /* Logged in markup */
 #user-sidebar { float: left; width: 200px; margin-right: 8px; margin-bottom: 8px; }
