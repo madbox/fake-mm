@@ -61,7 +61,7 @@
 </li>
 
 <% elsif type == :editor_item -%>
-
+<!--
 <div class="category-item">
   <div class="category-image">
     <a href="/categories/1069603862">
@@ -101,8 +101,8 @@
   </div>
   <div class="clear"></div>
 </div>
+-->
 
-<!--
 <div class="editor-item">
   <div class="editor-item-title"><%= link_to article.title, article_path(article) -%><id><%= article.id -%></id></div>
   <div class="editor-item-info">
@@ -140,7 +140,7 @@
     <%= article.updated_at.to_s(:short) -%>
   </div>
 </div>
--->
+
 <% else -%>
 
 <p>Unknown template type: <%= type -%> for article</p>
