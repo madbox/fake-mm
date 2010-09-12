@@ -41,7 +41,12 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = current_user
+    unless current_user.has_role? :admin
+      @user = current_user
+    else
+      @user = User.find params[:id]
+    end
+
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated!"
       redirect_to profile_url
