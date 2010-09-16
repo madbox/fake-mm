@@ -1,6 +1,13 @@
-<li>
-  <div>
-    <%= user.name -%> : <%= user.roles.map(&:name).join(', ') -%>
+<li class="box-list-miniuser">
+  <%= image_tag user.avatar.url(:small), :class => "mini-ava", :width => 40, :height => 40 -%>
+  <div class="size">
+    <b><%= user.name -%></b> - <%=h user.about -%>
   </div>
-  <div><%= link_to t('actions.edit'), edit_user_path( user ) -%></div>
+  <div class="options">
+    <%= link_to t('actions.edit'), edit_user_path( user ) -%>
+    <%= link_to t('actions.show_profile'), edit_user_path( user ) -%>
+  </div>
+  <div class="fine">
+    <b>Дата регистрации:</b> <%= styled_date user.created_at -%>&nbsp;|&nbsp;<b>Должность: </b> <%= (user.role_symbols - [:guest]).map{|s| t("roles.#{s}")}.join(', ') -%>
+  </div>
 </li>

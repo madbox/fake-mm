@@ -3,7 +3,7 @@
     <h1><%= link_to @category.name, categories_path -%></h1>
     
     <ul id="list-comment">
-      <% for article in @category.articles do %>
+      <% for article in @articles do %>
       <%= render article, :type => :category_list_item, :odd => cycle( :true, :false ) %>
       <% end %>
     </ul>

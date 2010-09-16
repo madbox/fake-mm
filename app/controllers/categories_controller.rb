@@ -22,7 +22,8 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find( :last, :conditions => ['id = ? OR sysname = ? ', params[:id], params[:id]] )
-
+    @articles = @category.articles.find( :all, :order => "publish_date DESC" )
+    
     raise ActiveRecord::RecordNotFound, "Category with id or sysname #{params[:id].inspect}" unless @category
 
     respond_to do |format|
