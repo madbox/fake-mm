@@ -71,13 +71,6 @@
 	    <div id="user-sidebar">
 	      <div id="user-nav" class="box">
 		<h1><%= t('titles.user_menu') -%></h1>
-		<ul>
-                  <li><%= link_to 'О журнале', Article.find_by_sysname('about') -%></li>
-                  <li><%= link_to 'Контакты', Article.find_by_sysname('contact') -%></li>
-<!--                  <li><%= link_to 'Команда', '#' -%></li>
-                  <li><%= link_to 'Вокансии', '#' -%></li> -->
-                  <li><%= link_to 'Логотип и стиль', Article.find_by_sysname('style') -%></li>
-		</ul>
 
                 <% if current_user %>
 		<ul>
@@ -106,6 +99,14 @@
                     </ul>
                   <% end %>
 		<% end -%>
+
+		<ul>
+                  <li><%= link_to 'О журнале', Article.find_by_sysname('about') -%></li>
+                  <li><%= link_to 'Контакты', Article.find_by_sysname('contact') -%></li>
+<!--                  <li><%= link_to 'Команда', '#' -%></li>
+                  <li><%= link_to 'Вокансии', '#' -%></li> -->
+                  <li><%= link_to 'Логотип и стиль', Article.find_by_sysname('style') -%></li>
+		</ul>
 		
 	      </div>
 	      <div id="user-adversticement" class="box">

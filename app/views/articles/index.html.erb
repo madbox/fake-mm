@@ -2,7 +2,7 @@
   <div class="category box">
     <h1><%= t('titles.articles') -%></h1>
     
-    <ul>
+    <ul id="list-comment">
       <% for article in @articles do %>
       <%= render article, :type => :category_list_item, :odd => cycle(true,false) %>
       <% end %>

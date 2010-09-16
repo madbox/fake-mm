@@ -31,7 +31,7 @@ class Article < ActiveRecord::Base
   validates_attachment_presence :imagemm, :if => lambda { |a| !a.draft && !a.published }
 
   named_scope :news, :joins => :category, :conditions => ["categories.sysname = ?", 'news'], :order => 'publish_date DESC'
-  named_scope :published, :conditions => {:published => true}
+  named_scope :published, :conditions => {:published => true}, :order => "publish_date DESC"
   named_scope :drafts, :conditions => {:draft => true} 
 
   named_scope :most_important, :order => 'importance DESC'

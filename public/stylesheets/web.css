@@ -277,7 +277,10 @@ div.h98 { min-height: 98px; _height: 98px; }
 .category li .list-content p { max-height: 30px; overflow: hidden; }
 /* category index */
 
-.category-item { margin-bottom: 8px;  } 
+.category-item { 
+    margin-bottom: 8px;  
+    border-bottom: 1px dotted black; 
+} 
 .category-item h2 { margin: 0px; }
 .category-image { float: left; margin-right: 8px; }
 .category-info { height: 300px; position: relative; margin-left: 208px; }
@@ -288,7 +291,6 @@ div.h98 { min-height: 98px; _height: 98px; }
     bottom: 0px; 
     right: 0px; 
     font-size: 8pt; 
-    border-bottom: 1px solid black; 
     padding-bottom: 8px; 
 }
 

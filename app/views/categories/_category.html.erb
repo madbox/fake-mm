@@ -1,24 +1,30 @@
 <div class="category-item">
-  <a href="<%= category_path(category) -%>">
   <div class="category-image">
     <%= image_tag( category.imagemh.url ) %>
   </div>
   <div class="category-info">
-    <h2><%= category.name -%></h2>
-    <p><%= category.description -%></p>
+    <a href="<%= category_path(category) -%>"><h2><%= category.name -%></h2></a>
+    <div class="min-previu"><a href="<%= category_path(category) -%>"><p><%= category.description -%></p></a></div>
+
+      <ul class="min-user">
+        <% for article in category.articles.find( :all, :order => 'publish_date DESC', :limit => 2 ) do %>
+          <%= render :partial => '/articles/article', :locals => { :article => article, :type => :category_preview } %>
+        <% end %>
+      </ul>
+
     <div class="category-info-footer">
-      <div class="category-item-info-footer-source">
-	<div><%= t 'activerecord.attributes.category.author'-%> : <%= category.author -%></div>
-	<div><%= t 'activerecord.attributes.category.photographer'-%> : <%= category.created_at.to_s(:short) -%></div>
-      </div>
       <div class="category-info-footer-attributes">
-	<div><%= t 'activerecord.attributes.created_at'-%> : <%= category.created_at.to_s(:short) -%></div>
+	<div class="link">
+          <% permitted_to? :edit, :categories do -%>
+          <%= link_to t('actions.edit'), edit_category_url(category) %>
+          <% end -%>
+          |
+          <%= link_to 'Все статьи', category_path(category) -%></div>
       </div>
     </div>
+
+
+
   </div>
   <div class="clear"></div>
-  </a>
-  <% permitted_to? :edit, :categories do -%>
-  <%= link_to t('actions.edit'), edit_category_url(category) %>
-  <% end -%>
 </div>
