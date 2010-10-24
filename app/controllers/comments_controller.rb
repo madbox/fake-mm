@@ -4,7 +4,12 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.xml
   def index
-    @comments = Comment.all
+#    raise ( user = User.find_by_id( params[:user_id].to_i ) ).kind_of?( User ).inspect
+    if !params[:user_id].blank? && ( user = User.find_by_id( params[:user_id].to_i ) ).kind_of?( User )
+      @comments = user.comments
+    else
+      @comments = Comment.find( :all, :order => "id DESC" )
+    end
     @grouped_comments = @comments.group_by( &:article )
 
     respond_to do |format|
