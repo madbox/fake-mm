@@ -63,6 +63,7 @@ module ArticlesHelper
     end
 
     if article.publish_date
+      # TODO replace to_s(:short) to styled_date call
       footer_content.push %Q{ #{ I18n.t( 'activerecord.attributes.article.publish_date' ) }: #{ article.publish_date.to_s( :short ) } }
     end
 

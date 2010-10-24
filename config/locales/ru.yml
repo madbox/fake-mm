@@ -1,5 +1,6 @@
 ru:
   actions:
+    hide: "Скрыть"
     new: "Создать"
     next: "Вперед"
     prev: "Назад"
@@ -24,7 +25,7 @@ ru:
     show_events: "Вся афиша"
     new_article: "Новая статья"
     show_news_of_the_day: "Новость дня"
-    new_comment: "Добавить коментарий"
+    new_comment: "Добавить комментарий"
     update: "Сохранить"
     read_next: "Читать далее..."
     new_user: Зарегистрироваться
@@ -57,9 +58,10 @@ ru:
     news: "Новости"
     all_categories: "Все категории"
     edit_category: "Редктирование категории"
+    comments: "Комментарии"
   misc:
     loading: "Загрузка..."
-    comments: "Коментариев"
+    comments: "Комментариев"
     no_review: "Нет рецензий"
     no_feature: "Нет features"
     author_unknown: "Неизвестный"
@@ -73,6 +75,7 @@ ru:
     total: "Всего {{count}}"
     pictures: Картинки
     article_unpublished: Не опубликована
+    are_u_sure: "Вы уверены?"
   categories:
     system: "Системная"
     features: "Features"

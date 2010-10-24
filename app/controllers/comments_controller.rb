@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   # GET /comments.xml
   def index
     @comments = Comment.all
+    @grouped_comments = @comments.group_by( &:article )
 
     respond_to do |format|
       format.html # index.html.erb

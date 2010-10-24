@@ -7,7 +7,11 @@ module ApplicationHelper
     if datetime.nil?
       "---"
     else
-      Russian::strftime( datetime, "%d %B %Y").split.map{|w|w.mb_chars.capitalize}.join(" ")
+      begin
+        Russian::strftime( datetime, "%d %B %Y").split.map{|w|w.mb_chars.capitalize}.join(" ")
+      rescue
+        datetime.to_s(:short)
+      end 
     end
   end
   

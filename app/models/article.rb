@@ -38,6 +38,10 @@ class Article < ActiveRecord::Base
 
   named_scope :public_category_last, :include => :category, :conditions => ["categories.public = ?", true], :order => 'publish_date DESC'
 
+  def before_validate
+    sysname.downcase! if sysname.kind_of? String
+  end
+
   # for will_paginate
   def self.per_page
     10

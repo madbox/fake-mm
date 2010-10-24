@@ -1,5 +1,5 @@
 set :application, "fake-mm"
-set :repository,  "ssh://hosting_madbox@locum.ru/home/hosting_madbox/fake-mm.git"
+set :repository,  "ssh://hosting_madbox@hydrogen.locum.ru/home/hosting_madbox/fake-mm.git"
 
 dpath = "/home/hosting_madbox/projects/fake-mm"
 
@@ -10,9 +10,9 @@ set :deploy_to, dpath
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "locum.ru"                          # Your HTTP server, Apache/etc
-role :app, "locum.ru"                          # This may be the same as your `Web` server
-role :db,  "locum.ru", :primary => true # This is where Rails migrations will run
+role :web, "hydrogen.locum.ru"                          # Your HTTP server, Apache/etc
+role :app, "hydrogen.locum.ru"                          # This may be the same as your `Web` server
+role :db,  "hydrogen.locum.ru", :primary => true # This is where Rails migrations will run
 #role :db,  "your slave db-server here"
 
 after "deploy:update_code", :copy_database_config

@@ -52,7 +52,7 @@
   <a href="<%= article_url( article ) -%>">
     <div class="box-system-prev">
       <%= image_tag article.imagemv.url, :class => "img-news" %>
-      <div class="time-news"><%= article.publish_date ? Russian::strftime( article.publish_date, "%d %B %Y").split.map{|w|w.mb_chars.capitalize}.join(" ") : t('misc.article_unpublished') -%></div>
+      <div class="time-news"><%= article.publish_date ? styled_date( article.publish_date ) : t('misc.article_unpublished') -%></div>
       <div class="news-content"><div class="title"><%=h article.title -%></div>
         <p><%=h article.description -%></p>
       </div>
@@ -94,9 +94,9 @@
       <%= link_to t( 'misc.pictures' ), article_show_pictures_path( article ) -%>
     </div>
     <%= t('misc.created_at') -%>:
-    <%= article.created_at.to_s(:short) -%> |
+    <%= styled_date article.created_at -%> |
     <%= t('misc.updated_at') -%>:
-    <%= article.updated_at.to_s(:short) -%>
+    <%= styled_date article.updated_at -%>
   </div>
 </div>
 
@@ -114,6 +114,29 @@
     <b>Доб.:</b> <%= styled_date article.publish_date -%>&nbsp;|&nbsp;<b><%=t 'activerecord.attributes.article.author' -%>:</b> <%= article_author_link article -%>
   </div>
 </li>
+
+<% elsif type == :comments_index %>
+
+      <div class="box-system-person">
+        <div class="img-news">
+          <%= image_tag article.imagemv.url, :class => "img-news", :alt => "5", :width => '96', :height => '96' %>
+        </div>
+        <div class="content-news">
+          <div class="name"><%= article.title -%></div>
+          <div class="fname"><%= article.description -%></div>
+        </div>
+        <div class="menu-news2">  
+          <div class="news-del">
+            <%= link_to t('actions.hide'), "#" -%>
+          </div>
+          <div class="news-del">
+            <%= link_to t('actions.show'), article -%>
+          </div>
+        </div>
+        <div class="time-news">
+          Автор: <%= article_author_link( article ) -%>
+        </div>
+      </div>
 
 <% else -%>
 

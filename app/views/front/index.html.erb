@@ -33,7 +33,7 @@
             <p><%= @feature0.description -%></p>
           </div>
 
-          <div class="box-footer"><%= @feature0.publish_date.to_s(:short) -%></div>
+          <div class="box-footer"><%= styled_date( @feature0.publish_date ) -%></div>
 	</a>
       <% else %>
         <%= t 'misc.no_feature' -%>
@@ -51,7 +51,7 @@
             <p><%= @feature1.description -%></p>
           </div>
 
-          <div class="box-footer"><%= @feature1.publish_date.to_s(:short) -%></div>
+          <div class="box-footer"><%= styled_date @feature1.publish_date -%></div>
 	</a>
       <% else %>
         <%= t 'misc.no_feature' -%>
@@ -72,7 +72,7 @@
 	  <p><%= @review.description -%></p>
         </div>
 
-	<div class="box-footer"><%= @review.publish_date.to_s(:short) -%></div>
+	<div class="box-footer"><%= styled_date @review.publish_date -%></div>
       </a>
     <% else %>
       <%= t 'misc.no_review' -%>
@@ -92,7 +92,7 @@
       <h2><%= @public_category_last.title %></h2>
       <p><%= @public_category_last.description -%></p>
       </div>
-      <div class="box-footer"><%= @public_category_last.publish_date.to_s(:short) -%></div>
+      <div class="box-footer"><%= styled_date @public_category_last.publish_date -%></div>
     </a>
     <% else %>
     <div class="box-footer"></div>

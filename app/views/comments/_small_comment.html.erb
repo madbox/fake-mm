@@ -1,0 +1,13 @@
+          <img alt="5" class="mini-ava" width="40px" height="40px" src="http://fake-mm.ru/system/avatars/750230080/small/x_302f0b0f.jpg?1276987667" />
+          <div class="size">
+            <%= comment.content -%>
+          </div>
+          <div class="options">
+            <%= link_to t('actions.show'), article_path( comment.article, :anchor => comment.id ) %>
+          </div>
+          <div class="options">
+            <%= link_to t('actions.destroy'), comment, :confirm => t('misc.are_u_sure'), :method => :delete %>
+          </div>
+          <div class="fine">
+            <b>Добавлено:</b> <%= styled_date comment.updated_at -%>
+          </div>
