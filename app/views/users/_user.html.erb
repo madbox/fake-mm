@@ -5,7 +5,7 @@
   </div>
   <div class="options">
     <%= link_to t('actions.edit'), edit_user_path( user ) -%>
-    <%= link_to t('actions.show_profile'), edit_user_path( user ) -%>
+    <%= link_to t('actions.show_profile'), user -%>
   </div>
   <div class="fine">
     <b>Дата регистрации:</b> <%= styled_date user.created_at -%>&nbsp;|&nbsp;<b>Должность: </b> <%= (user.role_symbols - [:guest]).map{|s| t("roles.#{s}")}.join(', ') -%>
