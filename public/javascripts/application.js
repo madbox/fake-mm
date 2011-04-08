@@ -15,8 +15,6 @@ $(document).ready(function(){
 		result += ' ' + $( this ).data('role');
 	    });
 
-            alert(result);
-
             $.ajax({
 	        type: "post",
 	        url: "/users/" + $('#user-profile').data('user-id') + "/set_roles",
