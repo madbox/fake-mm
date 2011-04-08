@@ -1,0 +1,8 @@
+admin:
+  sysname: admin
+customer:
+  sysname: customer
+author:
+  sysname: author
+newsmaker:
+  sysname: newsmaker

@@ -1,0 +1,7 @@
+<div class="red-profile">
+<ul id="role-selectable" class="selectable">
+  <% Role.all.each do |role| -%>
+  <li class="selectable-item<%= @current_user.roles.include?( role ) ? ' ui-selected' : '' -%>" data-role="<%= role.sysname -%>"><%= role.name -%></li>
+  <% end -%>
+</ul>
+</div>

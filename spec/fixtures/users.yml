@@ -1,0 +1,27 @@
+newsmaker:
+  email: newsmaker@test.ru
+  crypted_password: qwe
+  persistence_token: qwe
+  perishable_token: qwe
+  about: 'test newsmaker'
+  roles: customer, newsmaker
+guest:
+  email: guest@test.ru
+  crypted_password: qwe
+  persistence_token: qwe
+  perishable_token: qwe
+  about: 'test newsmaker'
+admin:
+  email: admin@test.ru
+  crypted_password: qwe
+  persistence_token: qwe
+  perishable_token: qwe
+  about: 'test newsmaker'
+  roles: admin
+author:
+  email: author@test.ru
+  crypted_password: qwe
+  persistence_token: qwe
+  perishable_token: qwe
+  about: 'test newsmaker'
+  roles: author

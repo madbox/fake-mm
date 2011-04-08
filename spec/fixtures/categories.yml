@@ -1,0 +1,6 @@
+system:
+  name: "Системная"
+  sysname: "system"
+news:
+  name: "Новости"
+  sysname: "news"

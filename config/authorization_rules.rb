@@ -1,4 +1,12 @@
 authorization do
+  role :newsmaker do
+    includes :customer
+    has_permission_on [ :articles ], :to => [ :manage ], :join_by => :and do
+      if_attribute :user => is { user }
+      if_attribute :is_news? => is { true }
+    end
+  end
+
   role :author do
     includes :customer
     has_permission_on [:articles, :comments, :events], :to => [ :manage, :editor, :drafts ]
@@ -25,6 +33,7 @@ authorization do
     includes :author
     has_permission_on [:comments, :categories, :users, :user_sessions, :events, :assigments], :to => [ :manage, :index_all]
     has_permission_on [:roles], :to => [:read]
+    has_permission_on [:users], :to => [:set_roles]
   end
 end
 

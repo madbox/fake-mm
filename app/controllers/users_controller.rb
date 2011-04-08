@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   filter_access_to :all
 
   def index
-    @users = User.all
+    @users = User.paginate :page => params[:page], :per_page => 20, :order => 'id DESC'
   end
 
   def new
@@ -79,5 +79,15 @@ class UsersController < ApplicationController
       flash[:error] = I18n.t('errors.user_not_found')
       redirect_to recover_password_path
     end
+  end
+
+  def set_roles
+    roles = params['roles'].strip.split( ' ' )
+    user = User.find( params['user_id'].to_i )
+
+    user.roles.clear
+    user.roles << Role.find_all_by_sysname( roles )
+
+    render :text => ''
   end
 end

@@ -2,6 +2,7 @@
   <h1><%=t 'titles.users' %></h1>
   <div id="list-comment">
     <ul class="min-user">
+      <%= will_paginate @articles, :prev_label => '<<', :next_label => '>>' -%>
       <%= render :partial => "user", :collection => @users %>
     </ul>
   </div>

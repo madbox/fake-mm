@@ -1,7 +1,22 @@
 <h1><%= t('titles.edit_user') %></h1>
 
+<div id="user-profile" data-user-id="<%= @user.id -%>">
+
+<%= render :partial => 'edit_data' %>
+<%= render :partial => 'edit_contacts' %>
+<%= render :partial => 'edit_about' %>
+<%= render :partial => 'edit_avatar' %>
+<%= render :partial => 'edit_security' %>
+<%= render :partial => 'edit_private' %>
+<%= render :partial => 'edit_roles' %>
+
+<%= render :partial => 'edit_menu' %>
+
+<div class="clear"></div>
+</div>
+<!--
 <% form_for(@user, :html => { :multipart => true }) do |f| %>
-  <%= f.error_messages %>
+<%= f.error_messages %>
 
 <% permitted_to? :manage, :users do %>
 <div>ID :<%= @user.id -%></div>
@@ -19,25 +34,25 @@
 <%= styled_field 'edit', @user, :city, f, 'text_field' %>
 <%= styled_field 'edit', @user, :avatar, f, :file_field -%>
 
-  <p>
-    <%= f.submit t('actions.update') %>
-  </p>
+<p>
+  <%= f.submit t('actions.update') %>
+</p>
 <% end %>
 
 <% permitted_to? :manage, :assigments do %>
-  <!-- roles -->
-  <h3><%= t 'activerecord.attributes.user.roles' -%></h3>
-  <% if @user.roles.size > 0 -%>
-  <ul>
-    <% for role in @user.roles do -%>  
-    <li><%= role.name %> : <%= @user.id -%> : <%= role.id -%> : [<%= link_to 'X', user_assigment_path( @user, role ), :method => :delete -%>]</li>
-    <% end -%>  
-  </ul>
-  <% end -%>
-  
-  <% form_for :assigment, :url => user_assigments_url(@user) do |f| %>
-    <%= f.hidden_field :user_id, :value => @user.id -%>
-    <%= f.select :role_id, options_for_select( Role.all.map{|r|[ t("roles.#{r.sysname}"), r.id ]} ) -%>
-    <%= f.submit -%>
-  <% end  %>
+<h3><%= t 'activerecord.attributes.user.roles' -%></h3>
+<% if @user.roles.size > 0 -%>
+<ul>
+  <% for role in @user.roles do -%>  
+  <li><%= role.name %> : <%= @user.id -%> : <%= role.id -%> : [<%= link_to 'X', user_assigment_path( @user, role ), :method => :delete -%>]</li>
+  <% end -%>  
+</ul>
 <% end -%>
+
+<% form_for :assigment, :url => user_assigments_url(@user) do |f| %>
+<%= f.hidden_field :user_id, :value => @user.id -%>
+<%= f.select :role_id, options_for_select( Role.all.map{|r|[ t("roles.#{r.sysname}"), r.id ]} ) -%>
+<%= f.submit -%>
+<% end  %>
+<% end -%>
+-->

@@ -23,6 +23,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :user_sessions
   map.resource :profile, :controller => 'users'
   map.resources :users do |user|
+    user.map 'set_roles', :controller => 'users', :action => 'set_roles'
     user.resources :articles
     user.resources :assigments
     user.resources :comments, :through => :articles

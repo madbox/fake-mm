@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 class Article < ActiveRecord::Base
+  using_access_control
+
   belongs_to :user
   belongs_to :category
   belongs_to :style
@@ -23,20 +25,28 @@ class Article < ActiveRecord::Base
   has_attached_file :imagemh, :styles => {:normal => "200x300"}, :default_style => :normal, :default_url => "/images/missing_:class_:attachment_:style.jpg"
   has_attached_file :imagemm, :styles => {:normal => "408x272"}, :default_style => :normal, :default_url => "/images/missing_:class_:attachment_:style.jpg"
 
-  # Все картинки должны быть, если мы хотим вывести из черновиков
-  validates_attachment_presence :imagebv, :if => lambda { |a| !a.draft && !a.published }
-  validates_attachment_presence :imagebh, :if => lambda { |a| !a.draft && !a.published }
-  validates_attachment_presence :imagemv, :if => lambda { |a| !a.draft && !a.published }
-  validates_attachment_presence :imagemh, :if => lambda { |a| !a.draft && !a.published }
-  validates_attachment_presence :imagemm, :if => lambda { |a| !a.draft && !a.published }
+  # Все картинки должны быть, если статья - не черноик.
+  validates_attachment_presence :imagebv, :if => lambda { |a| !a.draft }
+  validates_attachment_presence :imagebh, :if => lambda { |a| !a.draft }
+  validates_attachment_presence :imagemv, :if => lambda { |a| !a.draft }
+  validates_attachment_presence :imagemh, :if => lambda { |a| !a.draft }
+  validates_attachment_presence :imagemm, :if => lambda { |a| !a.draft }
+
+  # Статья должна быть не черновиком, если она опубликована
+  validates_inclusion_of :draft, :in => [false], :if => lambda { |a| a.published }
 
   named_scope :news, :joins => :category, :conditions => ["categories.sysname = ?", 'news'], :order => 'publish_date DESC'
-  named_scope :published, :conditions => {:published => true}, :order => "publish_date DESC"
-  named_scope :drafts, :conditions => {:draft => true} 
+  named_scope :published, :conditions => { :published => true }, :order => "publish_date DESC"
+  named_scope :drafts, :conditions => { :draft => true } 
 
   named_scope :most_important, :order => 'importance DESC'
 
   named_scope :public_category_last, :include => :category, :conditions => ["categories.public = ?", true], :order => 'publish_date DESC'
+
+  # helper for authorization_rules clarity
+  def is_news?
+    category.sysname == 'news'
+  end
 
   def before_validate
     sysname.downcase! if sysname.kind_of? String
