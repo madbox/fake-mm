@@ -1,8 +1,12 @@
 <h1><%= t('titles.edit_user') %></h1>
 
 <% permitted_to? :manage, :users do %>
-<div>Ваш профиль: <%= @current_user.id -%>, <%= @current_user.name -%></div>
-<div>Вы редактируете: <%= @user.id -%>, <%= @user.name -%></div>
+<div class="red-profile">
+  <h2>Что происходит вообще?</h2>
+  <p>
+    Ваш профиль: <%= @current_user.id -%>, <%= @current_user.name -%>, <%= @user.email -%><br /><br />
+    Вы редактируете профиль: <%= @user.id -%>, <%= @user.name -%>, <%= @user.email -%></p>
+</div>
 <% end %>
 
 <div id="user-profile" data-user-id="<%= @user.id -%>">
@@ -23,45 +27,3 @@
 <% end %>
 <div class="clear"></div>
 </div>
-<!--
-<% form_for(@user, :html => { :multipart => true }) do |f| %>
-<%= f.error_messages %>
-
-<% permitted_to? :manage, :users do %>
-<div>ID :<%= @user.id -%></div>
-<% end %>
-
-<%= styled_field 'edit', @user, :email, f, 'text_field' %>
-<%= styled_field 'edit', @user, :password, f, 'text_field' %>
-<%= styled_field 'edit', @user, :password_confirmation, f, 'text_field' %>
-<%= styled_field 'edit', @user, :nick, f, 'text_field' %>
-<%= styled_field 'edit', @user, :birthday, f, 'date_select' %>
-<%= styled_field 'edit', @user, :fname, f, 'text_field' %>
-<%= styled_field 'edit', @user, :lname, f, 'text_field' %>
-<%= styled_field 'edit', @user, :sname, f, 'text_field' %>
-<%= styled_field 'edit', @user, :gender, f, 'gender_select' %>
-<%= styled_field 'edit', @user, :city, f, 'text_field' %>
-<%= styled_field 'edit', @user, :avatar, f, :file_field -%>
-
-<p>
-  <%= f.submit t('actions.update') %>
-</p>
-<% end %>
-
-<% permitted_to? :manage, :assigments do %>
-<h3><%= t 'activerecord.attributes.user.roles' -%></h3>
-<% if @user.roles.size > 0 -%>
-<ul>
-  <% for role in @user.roles do -%>  
-  <li><%= role.name %> : <%= @user.id -%> : <%= role.id -%> : [<%= link_to 'X', user_assigment_path( @user, role ), :method => :delete -%>]</li>
-  <% end -%>  
-</ul>
-<% end -%>
-
-<% form_for :assigment, :url => user_assigments_url(@user) do |f| %>
-<%= f.hidden_field :user_id, :value => @user.id -%>
-<%= f.select :role_id, options_for_select( Role.all.map{|r|[ t("roles.#{r.sysname}"), r.id ]} ) -%>
-<%= f.submit -%>
-<% end  %>
-<% end -%>
--->
