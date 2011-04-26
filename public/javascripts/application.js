@@ -8,6 +8,10 @@ $(document).ready(function(){
 
     // selector
 
+    activate_selectable();
+});
+
+function activate_selectable(){
     $( ".selectable" ).selectable({
 	stop: function() {
 	    var result = '';
@@ -15,14 +19,15 @@ $(document).ready(function(){
 		result += ' ' + $( this ).data('role');
 	    });
 
-            $.ajax({
-	        type: "post",
-	        url: "/users/" + $('#user-profile').data('user-id') + "/set_roles",
-	        data: "roles=" + result,
-	        dataType: 'script'
-            });
+            // $.ajax({
+	    //     type: "post",
+	    //     url: "/users/" + $('#user-profile').data('user-id') + "/set_roles",
+	    //     data: "roles=" + result,
+	    //     dataType: 'script'
+            // });
 
+            $( "#user_roles" ).val(result);
 	}
     });
+}
 
-})

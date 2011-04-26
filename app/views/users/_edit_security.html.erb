@@ -1,3 +1,6 @@
 <div class="red-profile">
-Security
+  <h2><%=t 'titles.security' -%></h2>
+  <% fields_for @user do |f| %>
+    <%= styled_field 'edit', @user, :password, f, 'password_field' %>
+  <% end %>
 </div>

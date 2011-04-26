@@ -1,43 +1,13 @@
   <div class="red-profile">
-    <table width="100%" cellspacing="0" cellpadding="5px">
-      <caption>Аватар</caption>
-      <tr>
-        <td align="right" width="100px"><div class="field_label"><label for="user_fname">Загрузить</label></div></td>
-        <td><div class="field"><input type="file" value="Антон" size="20" name="user[fname]" id="user_fname"></div> </td>
-      </tr>
-    </table>
+    <h2><%=t 'titles.avatar' -%></h2>
+    
+    <% fields_for @user do |f| %>
+    <%= styled_field 'edit', @user, :avatar, f, 'file_field' %>
+    <% end %>
 
-    <table bgcolor="#ffffff" width="100%" cellspacing="0" cellpadding="5px">
-      <caption>Привью Аватара</caption>
-      <tr>
-        <td align="center">
-
-
-          <table border="0px" width="100%" height="110px" cellspacing="0" cellpadding="10px">
-            <tr>
-              <td align="center"><img src="http://fake-mm.ru/system/avatars/750230074/normal/408_611.jpg?1281569220" alt="408_611"> 
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-
-    <table border="0px" bgcolor="#ffffff" width="100%" cellspacing="0" cellpadding="10px">
-      <caption>Мини привью</caption>
-      <tr>
-        <td align="center" width="50%"><img src="http://fake-mm.ru/system/avatars/750230074/small/408_611.jpg?1281569220" alt="408_611">
-        </td>
-        <td align="center"><img width="40px" height="40px" src="http://fake-mm.ru/system/avatars/750230074/small/408_611.jpg?1281569220" alt="408_611">
-        </td>
-      </tr>
-    </table>
-
-    <table width="100%" cellspacing="0" cellpadding="5px">
-      <caption>Внимание!</caption>
-      <tr>
-        <td width="100px"> <p>Если вас не устраивает качество вашего аватара, мы рекомендуем закачивать его в размере 200x300 пикселов в формате JPG.</p><p></p></td>
-      </tr>
-    </table>
-
+      <h3>Внимание!</h3>
+      <p>
+	Если вас не устраивает качество вашего аватара, мы рекомендуем
+	закачивать его в размере 200x300 пикселов в формате
+	JPG.</p>
   </div>

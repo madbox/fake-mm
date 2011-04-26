@@ -10,7 +10,9 @@
     <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js' %>
     <%= javascript_include_tag 'jrails' %>
     <%= javascript_include_tag 'application' %>
+    <% unless RAILS_ENV == 'production' %>
     <script type="text/javascript" src="http://vkontakte.ru/js/api/share.js?9" charset="windows-1251"></script>
+    <% end %>
   </head>
   <body>
     

@@ -890,11 +890,16 @@ padding-left: 8px;}
 .right-men-menu  li {	font-size: 13px;}
 
 .right-men-menu  li:hover {background: #ccc;}
-.red-profile {width: 408px; float: left; 
-	background-color: #f1f1f1;
-	border: 1px; 
-	border-style: solid;
-	border-color: #888888;}
+.red-profile {
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 408px; 
+    float: left; 
+    background-color: #f1f1f1;
+    border: 1px; 
+    border-style: solid;
+    border-color: #888888;
+}
 
 .worck-men2 {	
 	font-size: 13px;

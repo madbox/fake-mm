@@ -1,7 +1,16 @@
 <div class="red-profile">
-<ul id="role-selectable" class="selectable">
-  <% Role.all.each do |role| -%>
-  <li class="selectable-item<%= @current_user.roles.include?( role ) ? ' ui-selected' : '' -%>" data-role="<%= role.sysname -%>"><%= role.name -%></li>
-  <% end -%>
-</ul>
+  <h2><%=t 'titles.roles' -%></h2>
+
+<% permitted_to? :manage, :users do %>
+  <% fields_for @user do |f| %>
+  <%= f.hidden_field :roles, :value => @user.roles_string %>
+  <% end %>
+
+  <ul id="role-selectable" class="selectable">
+    <% Role.all.each do |role| -%>
+    <li class="selectable-item<%= @user.roles.include?( role ) ? ' ui-selected' : '' -%>" data-role="<%= role.sysname -%>"><%= role.name -%></li>
+    <% end -%>
+  </ul>
+<% end %>
+
 </div>

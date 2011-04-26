@@ -38,6 +38,13 @@ class UsersController < ApplicationController
     else
       @user = User.find params[:id]
     end
+    
+    @section = params['section'] || 'about'
+
+    respond_to do |f|
+      f.js{ render :partial => ['edit', @section].compact.join('_') }
+      f.html
+    end
   end
   
   def update
@@ -47,9 +54,13 @@ class UsersController < ApplicationController
       @user = User.find params[:id]
     end
 
+    if params[:user] && params[:user]['roles']
+      params[:user]['roles'] = params[:user]['roles'].split(' ').map{ |role_name| Role.find_by_sysname role_name }
+    end
+
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated!"
-      redirect_to profile_url
+      redirect_to user_url(@user)
     else
       render :action => :edit
     end

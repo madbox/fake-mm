@@ -40,7 +40,12 @@ ru:
       show_drafts: "Всего"
       show_all_categories: "Публичных/Всего"
   titles:
+    contacts: "Контакты"
+    roles: "Роли"
+    avatar: "Аватар"
+    about: "О мне"
     events: "Афиша"
+    security: "Безопасность"
     new_feedback: "Обратная связь"
     users: "Пользователи"
     edit_user: Параметры профиля
@@ -85,6 +90,8 @@ ru:
     guest: "Гость"
     customer: "Читатель"
     admin: "Администратор"
+    newsmaker: "Автор новостей"
+    author: "Автор статей"
   errors:
     authorization_failed: "Не достаточно прав для выполнения операции"
     article_publishing_failed: "Ошибка при публикации статьи"

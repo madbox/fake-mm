@@ -1,4 +1,15 @@
 <div class="red-profile">
+  <h2><%=t 'titles.about' -%></h2>
+  <% fields_for @user do |f| %>
+<%= styled_field 'edit', @user, :nick, f, 'text_field' %>
+<%= styled_field 'edit', @user, :birthday, f, 'date_select' %>
+<%= styled_field 'edit', @user, :fname, f, 'text_field' %>
+<%= styled_field 'edit', @user, :lname, f, 'text_field' %>
+<%= styled_field 'edit', @user, :sname, f, 'text_field' %>
+<%= styled_field 'edit', @user, :gender, f, 'gender_select' %>
+<%= styled_field 'edit', @user, :city, f, 'text_field' %>
+  <% end %>
+<!--
 <table width="100%" cellspacing="0" cellpadding="5px">
 <caption>О себе</caption>
 <tbody><tr>
@@ -25,5 +36,5 @@
 <td align="top"><div class="border-pset"></div></td>
 </tr>
 </tbody></table>
-
+-->
 </div>

@@ -1,18 +1,24 @@
   <div class="right-men-menu">
     <ul>
-      <li> <a href="">Основное</a></li>
-      <li> <a href="">Контакты</a></li>
-      <li> <a href="">О себе</a></li>
-      <li class="this-menu"> <a href="">Аватар</a></li>
-      <!--<li> <a href="">myspace.com</a></li>-->		
-
+      <li> <%= link_to_remote t('titles.contacts'), :url => edit_user_path(@user, :section => 'contacts'),
+	                                            :method => :get,
+	                                            :update => "#user-profile-content" -%></li>
+      <li> <%= link_to_remote t('titles.about'),    :url => edit_user_path(@user, :section => 'about'),
+	                                            :method => :get,
+	                                            :update => "#user-profile-content" -%></li>
+      <li> <%= link_to_remote t('titles.avatar'),   :url => edit_user_path(@user, :section => 'avatar'),
+	                                            :method => :get,
+	                                            :update => "#user-profile-content" -%></li>
     </ul>
     <ul>
-      <li> <a href="">Пароль и защита</a></li>
-      <li> <a href="">Приватность</a></li>
-      <li> <a href="">Должность</a></li>
-      <!--<li> <a href="">last.fm</a></li>
-	       <li> <a href="">myspace.com</a></li>
-      <li> <a href="">livegournal</a></li> -->
+      <li> <%= link_to_remote t('titles.security'), :url => edit_user_path(@user, :section => 'security'),
+	                                            :method => :get,
+	                                            :update => "#user-profile-content" -%></li>
+      <% permitted_to? :manage, :users do %>
+      <li> <%= link_to_remote t('titles.roles'),    :url => edit_user_path(@user, :section => 'roles'),
+	                                            :method => :get,
+	                                            :update => "#user-profile-content",
+                                                    :success => %Q{activate_selectable()} -%></li>
+      <% end %>
     </ul>
   </div>

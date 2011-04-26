@@ -1,17 +1,26 @@
 <h1><%= t('titles.edit_user') %></h1>
 
+<% permitted_to? :manage, :users do %>
+<div>Ваш профиль: <%= @current_user.id -%>, <%= @current_user.name -%></div>
+<div>Вы редактируете: <%= @user.id -%>, <%= @user.name -%></div>
+<% end %>
+
 <div id="user-profile" data-user-id="<%= @user.id -%>">
 
-<%= render :partial => 'edit_data' %>
-<%= render :partial => 'edit_contacts' %>
-<%= render :partial => 'edit_about' %>
-<%= render :partial => 'edit_avatar' %>
-<%= render :partial => 'edit_security' %>
-<%= render :partial => 'edit_private' %>
-<%= render :partial => 'edit_roles' %>
+<% form_for(@user, :html => { :multipart => true }) do |f| %>
+<%= f.error_messages %>
+
+<div id="user-profile-content">
+<%= render :partial => "edit_#{@section}", :locals => { :f => f }  %>
+</div>
+
+<div class="red-profile">
+<%= f.submit t('actions.update') -%>
+</div>
 
 <%= render :partial => 'edit_menu' %>
 
+<% end %>
 <div class="clear"></div>
 </div>
 <!--

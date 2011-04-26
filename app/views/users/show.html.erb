@@ -11,7 +11,7 @@
     </div>
     <div id="user-roles" class="editable">
       <% has_role? :admin do %>
-      <div class="edit-link"><%= link_to t('actions.edit'), '#' -%></div>
+      <div class="edit-link"><%= link_to t('actions.edit'), edit_user_path(@user) -%></div>
       <% end %>
       <%= (@user.role_symbols - [:guest]).map{|s| t("roles.#{s}")}.join(', ') -%>
     </div>

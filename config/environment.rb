@@ -19,11 +19,12 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem "authlogic", :source => 'http://gemcutter.org'
-  config.gem 'paperclip', :source => 'http://gemcutter.org'
+  config.gem "authlogic", :version => "2.1.3"
+  config.gem 'paperclip', :version => "2.3.8"
   config.gem 'russian', :source => 'http://gemcutter.org'
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
   config.gem "will_paginate", :source => "http://gemcutter.org"
+  config.gem "ar-extensions", :version => "0.9.2"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

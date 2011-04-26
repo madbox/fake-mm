@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
     @role_symbols ||= ( roles.map{|r|r.sysname.to_sym} << :guest )
   end
 
+  def roles_string
+    roles.map{ |r| r.sysname }
+  end
+
   def self.generate_password( p_length = 8 )
     chars = '1234567890QWERTYUIOPLKJHGFDSAZXCVBNMqwertyuioplkjhgfdsazxcvbnm'
     new_pass = ''
