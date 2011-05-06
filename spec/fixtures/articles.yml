@@ -17,3 +17,17 @@ unpublishable:
   content: 'some content'
   sysname: 'unpublishable'
   category: system
+
+published:
+  user: admin
+  title: 'published article'
+  content: 'some content'
+  sysname: 'pub'
+  category: system
+  draft: false
+  published: true
+  imagebv_file_name: 'file1'
+  imagebh_file_name: 'file2'
+  imagemv_file_name: 'file3'
+  imagemh_file_name: 'file4'
+  imagemm_file_name: 'file5'

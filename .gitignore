@@ -1,3 +1,5 @@
 /.gitignore
 /TAGS
 /tmp
+/config/database.yml
+/log/*

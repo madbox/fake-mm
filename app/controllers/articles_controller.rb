@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find_by_sysname(params[:id])
     @pictures_only = params[:pictures]
-    @article.update_attribute( :views_count, @article.views_count + 1 )
+    @article.increase_views_count!
 
     @comment = Comment.new
 
