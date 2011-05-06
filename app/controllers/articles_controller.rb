@@ -35,6 +35,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1.xml
   def show
     @article = Article.find_by_sysname(params[:id])
+    (redirect_to :root && return unless @article
+
     @pictures_only = params[:pictures]
     @article.increase_views_count!
 

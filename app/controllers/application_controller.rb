@@ -2,9 +2,10 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  before_filter :prepare_news, :set_current_user
+  before_filter :prepare_news
 
   include AuthenticatedSystem
+  before_filter :set_current_user
 
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
@@ -25,7 +26,7 @@ class ApplicationController < ActionController::Base
   protected
   
   def set_current_user
-    Authorization.current_user = current_user
+    # Authorization.current_user = current_user
   end
   
   def prepare_news
@@ -42,6 +43,7 @@ class ApplicationController < ActionController::Base
   
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
+    logger.debug UserSession.find.inspect
     @current_user_session = UserSession.find
   end
   
