@@ -26,7 +26,8 @@ class ApplicationController < ActionController::Base
   protected
   
   def set_current_user
-    # Authorization.current_user = current_user
+    logger.debug "Current user: #{current_user.roles.inspect}"
+    Authorization.current_user = current_user
   end
   
   def prepare_news
@@ -43,7 +44,6 @@ class ApplicationController < ActionController::Base
   
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
-    logger.debug UserSession.find.inspect
     @current_user_session = UserSession.find
   end
   
