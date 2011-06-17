@@ -26,7 +26,6 @@ class ApplicationController < ActionController::Base
   protected
   
   def set_current_user
-    logger.debug "Current user: #{current_user.roles.inspect}"
     Authorization.current_user = current_user
   end
   
