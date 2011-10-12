@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  filter_access_to :all, :attribute_check => true
+  filter_access_to :all
 
   # GET /articles
   # GET /articles.xml

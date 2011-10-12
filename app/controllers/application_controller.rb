@@ -2,7 +2,7 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  before_filter :prepare_news
+  before_filter :set_current_user, :prepare_news
 
   include AuthenticatedSystem
 
@@ -46,4 +46,7 @@ class ApplicationController < ActionController::Base
     @current_user = current_user_session && current_user_session.record
   end
 
+  def set_current_user
+    Authorization.current_user = current_user
+  end
 end

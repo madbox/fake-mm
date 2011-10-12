@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class Article < ActiveRecord::Base
-  using_access_control
+#  using_access_control
 
   belongs_to :user
   belongs_to :category

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class User < ActiveRecord::Base
   acts_as_authentic
-  using_access_control
+#  using_access_control
 
   has_many :articles
   has_many :categories

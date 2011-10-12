@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  filter_access_to :all, :attribute_check => true
+  filter_access_to :all
   # filter_resource_access
 
   # GET /comments
