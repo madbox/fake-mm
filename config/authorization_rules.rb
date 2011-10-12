@@ -2,7 +2,7 @@ authorization do
   role :newsmaker do
     includes :customer
     has_permission_on [ :articles ], :to => [ :manage ], :join_by => :and do
-      if_attribute :user => is { user }
+      if_attribute :articles => is { user }
       if_attribute :is_news? => is { true }
     end
   end

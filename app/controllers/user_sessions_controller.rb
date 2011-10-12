@@ -25,6 +25,7 @@ class UserSessionsController < ApplicationController
         format.html { redirect_to profile_path }
         format.xml  { render :xml => @user_session, :status => :created, :location => @user_session }
       else
+        logger.debug "=========>" + @user_session.errors.inspect
         format.html { render :action => "new" }
         format.xml  { render :xml => @user_session.errors, :status => :unprocessable_entity }
       end
