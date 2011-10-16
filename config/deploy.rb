@@ -1,5 +1,5 @@
 set :application, "fake-mm"
-set :repository,  "ssh://hosting_madbox@hydrogen.locum.ru/home/hosting_madbox/fake-mm.git"
+set :repository,  "git@github.com:madbox/fake-mm.git"
 
 dpath = "/home/hosting_madbox/projects/fake-mm"
 

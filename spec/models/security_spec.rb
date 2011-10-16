@@ -4,6 +4,11 @@ describe User do
   fixtures :all
 
   describe "Admin" do
+    it "should be able to publish articles" do
+      lambda { with_user( users( :admin ) ) do
+          articles( :unpublished ).publish
+        end }.should_not raise_error( Authorization::NotAuthorized )
+    end
   end
   
   describe "Guest" do
@@ -17,6 +22,23 @@ describe User do
                           :user => users( :guest ) )
         end
       }.should raise_error( Authorization::NotAuthorized )
+    end
+
+    it "should not be able to update attributes other than views_count" do
+      lambda { 
+        with_user( users( :guest ) ) do
+          # testing against full list of attrs is unnesesary, i think
+          articles( :published ).update_attribute( :title, "another title")
+        end
+      }.should raise_error( Authorization::NotAuthorized )
+    end
+
+    it "should be able to update view_count for an article" do
+      lambda { 
+        with_user( users( :guest ) ) do
+          articles( :published ).increase_views_count!
+        end
+      }.should_not raise_error( Authorization::NotAuthorized )
     end
   end
   

@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Article do
   fixtures :all
 
-
   it "should be creatable" do
     without_access_control do
       lambda { 

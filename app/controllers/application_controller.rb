@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_current_user, :prepare_news
 
   include AuthenticatedSystem
+  before_filter :set_current_user
 
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
@@ -23,7 +24,11 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-
+  
+  def set_current_user
+    Authorization.current_user = current_user
+  end
+  
   def prepare_news
     news_count = 8
     @news = Article.published.news.find(:all, :limit => news_count)

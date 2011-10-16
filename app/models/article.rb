@@ -43,6 +43,10 @@ class Article < ActiveRecord::Base
 
   named_scope :public_category_last, :include => :category, :conditions => ["categories.public = ?", true], :order => 'publish_date DESC'
 
+  def increase_views_count!
+    self.update_attribute( :views_count, self.views_count + 1 )
+  end
+
   # helper for authorization_rules clarity
   def is_news?
     category.sysname == 'news'
